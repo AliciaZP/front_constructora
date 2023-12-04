@@ -6,32 +6,32 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { ObrasComponent } from './pages/obras/obras.component';
-import { OperariosComponent } from './pages/operarios/operarios.component';
-import { NuevaObraComponent } from './pages/nueva-obra/nueva-obra.component';
-import { EditObraComponent } from './pages/edit-obra/edit-obra.component';
-import { NuevoOperarioComponent } from './pages/nuevo-operario/nuevo-operario.component';
-import { EditOperarioComponent } from './pages/edit-operario/edit-operario.component';
+import { ConstructionsComponent } from './pages/constructions/constructions.component';
+import { WorkersComponent } from './pages/workers/workers.component';
+import { NewConstructionComponent } from './pages/new-construction/new-construction.component';
+import { EditConstructionComponent } from './pages/edit-construction/edit-construction.component';
+import { NewWorkerComponent } from './pages/new-worker/new-worker.component';
+import { EditWorkerComponent } from './pages/edit-worker/edit-worker.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent,
+    RegisterComponent,
     NavBarComponent,
     FooterComponent,
     ErrorComponent,
-    ObrasComponent,
-    OperariosComponent,
-    NuevaObraComponent,
-    EditObraComponent,
-    NuevoOperarioComponent,
-    EditOperarioComponent,
+    ConstructionsComponent,
+    WorkersComponent,
+    NewConstructionComponent,
+    EditConstructionComponent,
+    NewWorkerComponent,
+    EditWorkerComponent,
     HomeComponent
   ],
   imports: [

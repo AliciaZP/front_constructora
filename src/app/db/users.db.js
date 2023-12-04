@@ -1,6 +1,6 @@
-import { Usuarios } from '../interfaces/usuario.interface'
+import { Users } from '../interfaces/user.interface'
 
-export const Usuarios = [
+export const Users = [
     {
         _id: "1",
         nombre: "Juan",
