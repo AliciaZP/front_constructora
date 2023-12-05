@@ -4,8 +4,8 @@ export interface Construction {
     description: string;
     direction: string;
     city: string,
-    assignment_date: Date;
-    deadline: Date;
+    assignment_date: Date,
+    deadline: Date,
     phone: string;
     construction_type: string;
     work_time: string;

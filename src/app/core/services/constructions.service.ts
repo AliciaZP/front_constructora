@@ -29,7 +29,6 @@ export class ConstructionsService {
     localStorage.setItem('array_newConstructions', JSON.stringify(this.arrConstruction));
   }
 
-
   updateConstructionById(constructionId: string, formUpdate: Construction): void {
     const constructionIndex = this.arrConstruction.findIndex(construction => construction._id === constructionId);
 
@@ -42,17 +41,55 @@ export class ConstructionsService {
     this.arrConstruction = this.arrConstruction.filter(construction => construction._id !== constructionId);
   }
 
-  getCities() { }
-  filterByCity() { }
+  //Funciones para las ciudades
+  getCities(): string[] {
+    const constructionsUnordered = [...new Set(this.arrConstruction.map(construction => construction.city))];
+    const constructionsOrdered = constructionsUnordered.sort((a, b) => a.localeCompare(b));
+    return constructionsOrdered;
+  }
 
-  getConstructionTypes() { }
-  filterByConstructionType() { }
+  filterByCity(pCity: string): Construction[] {
+    return this.arrConstruction.filter(construction => construction.city === pCity)
+  }
 
-  orderByName() { }
+  //Funciones para los tipos de construccion
+  getConstructionTypes(): string[] {
+    const constructionsUnordered = [...new Set(this.arrConstruction.map(construction => construction.construction_type))];
+    const constructionsOrdered = constructionsUnordered.sort((a, b) => a.localeCompare(b));
+    return constructionsOrdered;
+  }
 
-  orderByAssignmentDate() { }
+  filterByConstructionType(pConstructionType: string): Construction[] {
+    return this.arrConstruction.filter(construction => construction.construction_type === pConstructionType)
+  }
 
-  orderByDeadline() { }
+  //Funciones para los filtros de ordenacion
+
+  orderByName(ascendente: boolean): Construction[] {
+    // Ordenar y devolver una nueva lista sin modificar la original
+    return this.arrConstruction.slice().sort((a, b) => {
+      const comparacion = a.name.localeCompare(b.name);
+      return ascendente ? comparacion : -comparacion;
+    });
+  }
+
+  //el metodo local compare no funciona con el tipo date, asi que hay que usar esta funcion
+  orderByAssignmentDate(ascendente: boolean) {
+    return this.arrConstruction.slice().sort((a, b) => {
+      const fechaA = new Date(a.assignment_date).getTime();
+      const fechaB = new Date(b.assignment_date).getTime();
+      return ascendente ? fechaB - fechaA : fechaA - fechaB;
+    });
+  }
+  //el metodo local compare no funciona con el tipo date, asi que hay que usar esta funcion
+  orderByDeadline(ascendente: boolean) {
+    return this.arrConstruction.slice().sort((a, b) => {
+      const fechaA = new Date(a.deadline).getTime();
+      const fechaB = new Date(b.deadline).getTime();
+      return ascendente ? fechaB - fechaA : fechaA - fechaB;
+    });
+  }
+
 
 };
 

@@ -14,13 +14,13 @@ export class ConstructionsComponent {
 
   arrConstructions: Construction[] = []
 
-  /*   arrCategorias: string[] = []
-    arrAutores: string[] = [] */
+  arrCities: string[] = []
+  arrConstructionTypes: string[] = []
 
   ngOnInit() {
     this.arrConstructions = this.constructionsService.getAll();
-    /*     this.arrCategorias = this.postsServices.getCategorias();
-        this.arrAutores = this.postsServices.getAutores(); */
+    this.arrCities = this.constructionsService.getCities();
+    this.arrConstructionTypes = this.constructionsService.getConstructionTypes();
   }
 
 
@@ -31,40 +31,29 @@ export class ConstructionsComponent {
    */
 
   //Aqui empiezan los fitros
-  /* 
-    onChangeCategoria($event: any) {
-      this.arrPosts = $event.target.value === "" ? this.postsServices.getAll() : this.postsServices.getByCategoria($event.target.value);
-    };
-  
-    onChangeAutor($event: any) {
-      this.arrPosts = $event.target.value === "" ? this.postsServices.getAll() : this.postsServices.getByAutor($event.target.value);
-    }
-  
-    onChangeTitulo($event: any) {
-      const ascendente = $event.target.value === "A-Z";
-      this.arrPosts = this.postsServices.orderByTitulo(ascendente);
-      //si el value no corresponde, la funcion ejectua en orden descendente
-    }
-  
-    onChangeFecha($event: any) {
-      const ascendente = $event.target.value === "reciente";
-      this.arrPosts = this.postsServices.orderByDate(ascendente);
-    } //si el value no corresponde, la funcion ejectua en orden descendente
-  
-   */
+
+  onChangeCity($event: any) {
+    this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAll() : this.constructionsService.filterByCity($event.target.value);
+  };
+
+  onChangeConstructionType($event: any) {
+    this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAll() : this.constructionsService.filterByConstructionType($event.target.value);
+  };
+
+  onChangeName($event: any) {
+    const ascendente = $event.target.value === "A-Z";
+    this.arrConstructions = this.constructionsService.orderByName(ascendente);
+    //si el value no corresponde, la funcion ejectua en orden descendente
+  }
+
+  onChangeAssignmentDate($event: any) {
+    const ascendente = $event.target.value === "reciente";
+    this.arrConstructions = this.constructionsService.orderByAssignmentDate(ascendente);
+  } //si el value no corresponde, la funcion ejectua en orden descendente
+
+  onChangeDeadline($event: any) {
+    const ascendente = $event.target.value === "reciente";
+    this.arrConstructions = this.constructionsService.orderByDeadline(ascendente);
+  } //si el value no corresponde, la funcion ejectua en orden descendente
 
 }
-
-
-/* 
-getCities() { }
-filterByCity() { }
-
-getConstructionTypes() { }
-filterByConstructionType() { }
-
-orderByName() { }
-
-orderByAssignmentDate() { }
-
-orderByDeadline() { } */
