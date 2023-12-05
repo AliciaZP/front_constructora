@@ -43,18 +43,19 @@
         </div>
 
 
-        <div class="mb-5">
+        <div class="my-5">
             <article class="mb-5" *ngFor="let worker of arrWorkers">
                 <div class="row">
                     <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
                     <div class="col-3">
-                        <figure>
+                        <figure class="mb-2">
                             <img [src]="worker.image" alt="imagen del post">
                         </figure>
+                        <p class="mb-3">{{worker.job}} en {{worker.city}}</p>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-7">
-                        <p class="mb-3">Puesto: {{worker.job}} en {{worker.city}}</p>
+
                         <p class="mb-3">Teléfono: {{worker.phone}}</p>
                         <p class="mb-3">Email: {{worker.email}}</p>
                         <p class="mb-3">Contraseña: {{worker.password}}</p>
