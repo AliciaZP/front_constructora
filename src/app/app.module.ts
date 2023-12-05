@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from "./shared/shared.module";
 
 
 
@@ -11,15 +12,15 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    SharedModule
+  ]
 })
 export class AppModule { }
