@@ -50,27 +50,31 @@
 
     <div class="mb-5">
         <article class="mb-5" *ngFor="let worker of arrWorkers">
-            <div>
+            <div class="row">
                 <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
-                <figure class="pr-3">
-                    <img [src]="worker.image" alt="imagen del post">
-                </figure>
-                <p class="mb-3">Puesto: {{worker.job}} en {{worker.city}}</p>
-                <p class="mb-3">Teléfono: {{worker.phone}}</p>
-                <p class="mb-3">Email: {{worker.email}}</p>
-                <p class="mb-3">Contraseña: {{worker.password}}</p>
-                <p class="mb-3">DNI: {{worker.dni}}</p>
-                <p class="mb-3">Permisos: {{worker.role}}</p>
-
+                <div class="col-3">
+                    <figure>
+                        <img [src]="worker.image" alt="imagen del post">
+                    </figure>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-7">
+                    <p class="mb-3">Puesto: {{worker.job}} en {{worker.city}}</p>
+                    <p class="mb-3">Teléfono: {{worker.phone}}</p>
+                    <p class="mb-3">Email: {{worker.email}}</p>
+                    <p class="mb-3">Contraseña: {{worker.password}}</p>
+                    <p class="mb-3">DNI: {{worker.dni}}</p>
+                    <p class="mb-3">Permisos: {{worker.role}}</p>
+                    <div class="pb-3">
+                        <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker._id]">
+                            Editar Operario
+                        </button>
+                        <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div class="pb-3">
-                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/constructions','edit', worker._id]">
-                    Editar Operario
-                </button>
-                <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario
-                </button>
-            </div>
 
         </article>
     </div>

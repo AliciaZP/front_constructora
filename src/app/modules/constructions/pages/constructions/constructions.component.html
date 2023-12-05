@@ -64,7 +64,7 @@
             </div>
 
             <div class="pb-3">
-                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', construction._id]">
+                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/constructions','edit', construction._id]">
                     Editar Obra
                 </button>
                 <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(construction._id)">Borrar Obra

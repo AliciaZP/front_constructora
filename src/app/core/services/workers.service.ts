@@ -15,17 +15,42 @@ export class WorkersService {
     return this.arrWorkers;
   }
 
-  getWorkerById() { }
+  getWorkerById(workerId: string): User {
+    const workerFound = this.arrWorkers.find(worker => worker._id === workerId);
+    return workerFound ? { ...workerFound } : { _id: "", name: "", surname: "", dni: "", phone: "", email: "", password: "", role: "", active: true, job: "", city: "", image: "", }
+  };
 
-  createWorker() { }
+  createWorker(pWorker: User) {
+    const usersDB = localStorage.getItem('array_newConstructions');
+    if (usersDB) {
+      this.arrWorkers = JSON.parse(usersDB);
+    }
+    this.arrWorkers.push(pWorker);
+    localStorage.setItem('array_newWorkers', JSON.stringify(this.arrWorkers));
+  }
 
-  createWorkerReport() { }
+  updateWorkerById(workerId: string, formUpdate: User): void {
+    const workerIndex = this.arrWorkers.findIndex(worker => worker._id === workerId);
 
-  updateWorkerById() { }
+    if (workerIndex !== -1) {
+      this.arrWorkers[workerIndex] = { ...this.arrWorkers[workerIndex], ...formUpdate };
+    }
+  }
 
   deleteWorkerById(workerId: string): void {
     this.arrWorkers = this.arrWorkers.filter(worker => worker._id !== workerId);
   }
+
+
+
+
+
+
+
+
+  createWorkerReport() { }
+
+
 
 
 }
