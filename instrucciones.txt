@@ -1,0 +1,12 @@
+ALICIA
+05-10-2023
+
+- Services:
+    constructions.service (OK)
+    workers.service (FALTA)
+
+- Empiezo con MODULES/CONSTRUCTIONS
+
+        - new construction: (faltaría poner el Sweetalert)
+        - edit construction: 
+        

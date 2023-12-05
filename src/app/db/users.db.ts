@@ -1,5 +1,3 @@
-import { Users } from '../interfaces/user.interface'
-
 export const Users = [
     {
         _id: "1",

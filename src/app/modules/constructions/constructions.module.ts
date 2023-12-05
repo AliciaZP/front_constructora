@@ -13,7 +13,7 @@ import { ConstructionsRoutingModule } from './constructions-routing.module';
   declarations: [
     NewConstructionComponent,
     EditConstructionComponent,
-    ConstructionsComponent
+    ConstructionsComponent,
   ],
   imports: [
     CommonModule,
