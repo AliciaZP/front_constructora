@@ -1,1 +1,73 @@
-<p>obras works!</p>
+<section class="m-5">
+    <h2 class="mb-5">LISTADO DE OBRAS</h2>
+
+    <div id="filtros">
+        <!--      <div class="pb-2">
+            <label>Selecciona la categoría</label>
+            <select class="bloque2 mx-1 d-block" (change)="onChangeCategoria($event)">
+                <option class="bloque2" value="">Todas las categorías</option>
+                <option class="bloque2" *ngFor="let categoria of arrCategorias" [value]="categoria">{{categoria}}
+                </option>
+            </select>
+        </div>
+
+
+        <div class="pb-2">
+            <label>Selecciona el autor</label>
+            <select class="bloque3 mx-1 d-block" (change)="onChangeAutor($event)">
+                <option class="bloque3" value="">Todos los autores</option>
+                <option class="bloque3" *ngFor="let autor of arrAutores" [value]="autor">{{autor}}</option>
+            </select>
+        </div>
+
+
+        <div class="pb-2">
+            <label>Ordenar por título</label>
+            <select class="bloque4 mx-1 d-block" (change)="onChangeTitulo($event)">
+                <option class="bloque4" value="A-Z">De la A a la Z</option>
+                <option class="bloque4" value="Z-A">De la Z a la A</option>
+            </select>
+        </div>
+
+
+        <div class="pb-2">
+            <label>Ordenar por fecha</label>
+            <select class="bloque5 mx-1 d-block" (change)="onChangeFecha($event)">
+                <option class="bloque5" value="reciente">Más reciente</option>
+                <option class="bloque5" value="antiguo">Más antiguo</option>
+            </select>
+        </div>
+ -->
+    </div>
+
+    <div class="mb-5">
+        <article class="mb-5" *ngFor="let construction of arrConstructions">
+            <div>
+                <h3 class="mb-3">{{construction.name}}</h3>
+                <p class="mb-3">{{construction.construction_type}}</p>
+                <p class="mb-3">{{construction.city}}</p>
+                <p class="mb-3">{{construction.description}}</p>
+
+                <p class="mb-3">Dirección: {{construction.direction}}</p>
+                <p class="mb-3">Teléfono de caseta de obra: {{construction.phone}}</p>
+                <p class="mb-3">Horario laboral: {{construction.work_time}}</p>
+                <p class="mb-3">Fecha de inicio: {{construction.assignment_date}}</p>
+                <p class="mb-3">Fecha de finalización: {{construction.deadline}}</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- _id: string;
+name: string;
+description: string;
+direction: string;
+city: string,
+assignment_date: Date;
+deadline: Date;
+phone: string;
+construction_type: string;
+work_time: string;
+lat?: number;
+lng?: number;
+ -->
