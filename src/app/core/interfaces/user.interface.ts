@@ -1,12 +1,13 @@
-export interface Usuario {
+export interface User {
     _id: string;
-    nombre: string;
-    apellidos: string;
+    name: string;
+    surname: string;
     dni: string;
-    telefono: string;
+    phone: string;
     email: string;
-    contraseña: string;
-    rol: string;
-    activo: boolean;
-    puesto: string;
+    password: string;
+    role: string;
+    active: boolean;
+    job: string;
+    city: string,
 }

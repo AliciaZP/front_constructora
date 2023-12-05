@@ -1,13 +1,15 @@
-export interface Obra {
+export interface Construction {
     _id: string;
-    nombre: string;
-    descripcion: string;
-    direccion: string;
-    fecha_inicio: Date;
-    fecha_finalizacion: Date;
-    telefono: string;
-    tipo_obra: string;
-    horario: string;
-    latitud?: number;
-    longitud?: number;
+    name: string;
+    description: string;
+    direction: string;
+    city: string,
+    assignment_date: Date;
+    deadline: Date;
+    phone: string;
+    construction_type: string;
+    work_time: string;
+    lat?: number;
+    lng?: number;
+
 }
