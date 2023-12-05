@@ -41,16 +41,59 @@ export class WorkersService {
     this.arrWorkers = this.arrWorkers.filter(worker => worker._id !== workerId);
   }
 
+  //Funciones para los filtros
+
+  //Funciones para las ciudades
+  getCities(): string[] {
+    const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.city))];
+    const workersOrdered = workersUnordered.sort((a, b) => a.localeCompare(b));
+    return workersOrdered;
+  }
+
+  filterByCity(pCity: string): User[] {
+    return this.arrWorkers.filter(worker => worker.city === pCity)
+  }
+
+  //Funciones para los trabajos
+  getJobs(): string[] {
+    const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.job))];
+    const workersOrdered = workersUnordered.sort((a, b) => a.localeCompare(b));
+    return workersOrdered;
+  }
+
+  filterByJob(pJob: string): User[] {
+    return this.arrWorkers.filter(worker => worker.job === pJob)
+  }
+
+  //Funciones para los roles
+  getRoles(): string[] {
+    const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.role))];
+    const workersOrdered = workersUnordered.sort((a, b) => a.localeCompare(b));
+    return workersOrdered;
+  }
+
+  filterByRole(pRole: string): User[] {
+    return this.arrWorkers.filter(worker => worker.role === pRole)
+  }
 
 
+  //Funciones para los filtros de ordenacion
 
+  orderByName(ascendente: boolean): User[] {
+    // Ordenar y devolver una nueva lista sin modificar la original
+    return this.arrWorkers.slice().sort((a, b) => {
+      const comparacion = a.name.localeCompare(b.name);
+      return ascendente ? comparacion : -comparacion;
+    });
+  }
 
-
-
+  orderBySurname(ascendente: boolean): User[] {
+    // Ordenar y devolver una nueva lista sin modificar la original
+    return this.arrWorkers.slice().sort((a, b) => {
+      const comparacion = a.surname.localeCompare(b.surname);
+      return ascendente ? comparacion : -comparacion;
+    });
+  }
 
   createWorkerReport() { }
-
-
-
-
 }

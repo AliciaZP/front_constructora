@@ -1,7 +1,5 @@
 <section class="m-5">
     <h2 class="mb-5">LISTADO DE OPERARIOS</h2>
-
-    <!-- 
     <div id="filtros" class="mb-5" class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -12,83 +10,66 @@
                     </option>
                 </select>
             </div>
-
             <div class="mb-3">
-                <label>Selecciona el tipo de construcción</label>
-                <select (change)="onChangeConstructionType($event)">
-                    <option value="">Todos los tipos</option>
-                    <option *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}</option>
+                <label>Selecciona el rol</label>
+                <select (change)="onChangeRole($event)">
+                    <option value="">Todos los roles</option>
+                    <option *ngFor="let role of arrRoles" [value]="role">{{role}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Selecciona el puesto</label>
+                <select (change)="onChangeJob($event)">
+                    <option value="">Todos los puestos</option>
+                    <option *ngFor="let job of arrJobs" [value]="job">{{job}}</option>
                 </select>
             </div>
         </div>
         <div class="col-6">
             <div class="mb-3">
-                <label>Ordenar por nombre de la Obra</label>
+                <label>Ordenar por nombre del Operario</label>
                 <select (change)="onChangeName($event)">
                     <option value="A-Z">De la A a la Z</option>
                     <option value="Z-A">De la Z a la A</option>
                 </select>
             </div>
-
             <div class="mb-3">
-                <label>Ordenar por fecha de creación</label>
-                <select (change)="onChangeAssignmentDate($event)">
-                    <option value="reciente">Más reciente</option>
-                    <option value="antiguo">Más antigua</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label>Ordenar por fecha de finalización</label>
-                <select (change)="onChangeDeadline($event)">
-                    <option value="reciente">Más reciente</option>
-                    <option value="antiguo">Más antigua</option>
+                <label>Ordenar por apellido del Operario</label>
+                <select (change)="onChangeSurname($event)">
+                    <option value="A-Z">De la A a la Z</option>
+                    <option value="Z-A">De la Z a la A</option>
                 </select>
             </div>
         </div>
-    </div> -->
 
 
-    <div class="mb-5">
-        <article class="mb-5" *ngFor="let worker of arrWorkers">
-            <div class="row">
-                <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
-                <div class="col-3">
-                    <figure>
-                        <img [src]="worker.image" alt="imagen del post">
-                    </figure>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-7">
-                    <p class="mb-3">Puesto: {{worker.job}} en {{worker.city}}</p>
-                    <p class="mb-3">Teléfono: {{worker.phone}}</p>
-                    <p class="mb-3">Email: {{worker.email}}</p>
-                    <p class="mb-3">Contraseña: {{worker.password}}</p>
-                    <p class="mb-3">DNI: {{worker.dni}}</p>
-                    <p class="mb-3">Permisos: {{worker.role}}</p>
-                    <div class="pb-3">
-                        <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker._id]">
-                            Editar Operario
-                        </button>
-                        <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario
-                        </button>
+        <div class="mb-5">
+            <article class="mb-5" *ngFor="let worker of arrWorkers">
+                <div class="row">
+                    <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
+                    <div class="col-3">
+                        <figure>
+                            <img [src]="worker.image" alt="imagen del post">
+                        </figure>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-7">
+                        <p class="mb-3">Puesto: {{worker.job}} en {{worker.city}}</p>
+                        <p class="mb-3">Teléfono: {{worker.phone}}</p>
+                        <p class="mb-3">Email: {{worker.email}}</p>
+                        <p class="mb-3">Contraseña: {{worker.password}}</p>
+                        <p class="mb-3">DNI: {{worker.dni}}</p>
+                        <p class="mb-3">Permisos: {{worker.role}}</p>
+                        <div class="pb-3">
+                            <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker._id]">
+                                Editar Operario
+                            </button>
+                            <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-        </article>
+            </article>
+        </div>
     </div>
 </section>
-
-<!-- _id: "user_20",
-name: "María",
-surname: "Luna",
-dni: "12345678J",
-phone: "2345678901",
-email: "maria.luna@example.com",
-password: "mypass789",
-role: "operario",
-active: true,
-job: "Operador de grúa",
-city: "Madrid",
-image: "" -->
