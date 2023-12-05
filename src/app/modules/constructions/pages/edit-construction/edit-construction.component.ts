@@ -34,6 +34,7 @@ export class EditConstructionComponent {
       Validators.maxLength(45)]),
       work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(150)]),
+      image: new FormControl(null, Validators.required),
     })
   }
 
@@ -42,8 +43,8 @@ export class EditConstructionComponent {
       this.constructionId = params['constructionId']
       const response = this.constructionsService.getConstructionById(this.constructionId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time } = response
-      this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time })
+      const { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image } = response
+      this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image })
     })
   }
   onSubmit() {

@@ -17,18 +17,18 @@ export class ConstructionsComponent {
   arrCities: string[] = []
   arrConstructionTypes: string[] = []
 
+  botonActivo: boolean = true;
+
   ngOnInit() {
     this.arrConstructions = this.constructionsService.getAll();
     this.arrCities = this.constructionsService.getCities();
     this.arrConstructionTypes = this.constructionsService.getConstructionTypes();
   }
 
-
-  /*   onConstructionDelete($event: string) {
-      const response = this.constructionsService.deleteConstructionById($event)
-      this.arrConstructions = this.constructionsService.getAll();
-    }
-   */
+  onClickDelete($event: string) {
+    const response = this.constructionsService.deleteConstructionById($event)
+    this.arrConstructions = this.constructionsService.getAll();
+  }
 
   //Aqui empiezan los fitros
 
@@ -55,5 +55,4 @@ export class ConstructionsComponent {
     const ascendente = $event.target.value === "reciente";
     this.arrConstructions = this.constructionsService.orderByDeadline(ascendente);
   } //si el value no corresponde, la funcion ejectua en orden descendente
-
 }

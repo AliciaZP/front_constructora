@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Construction } from '../interfaces/construction.interfaces';
+
 import { ConstructionsDB } from 'src/app/db/constructions.db';
+import { Construction } from '../interfaces/construction.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ConstructionsService {
 
   getConstructionById(constructionId: string): Construction {
     const constructionFound = this.arrConstruction.find(construction => construction._id === constructionId);
-    return constructionFound ? { ...constructionFound } : { _id: "", name: "", description: "", direction: "", city: "", assignment_date: new Date(), deadline: new Date(), phone: "", construction_type: "", work_time: "" }
+    return constructionFound ? { ...constructionFound } : { _id: "", name: "", description: "", direction: "", city: "", assignment_date: new Date(), deadline: new Date(), phone: "", construction_type: "", work_time: "", image: "" }
   };
 
   createConstruction(pConstruction: Construction) {

@@ -13,6 +13,13 @@
         </div>
 
         <div class="m-5">
+            <label>Imagen de la obra (300 x 300 px) </label>
+            <input type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
+            <p class="error" *ngIf="checkError('image','required')">
+                La imagen es obligatoria.</p>
+        </div>
+
+        <div class="m-5">
             <label>Tipo de construcción:</label>
             <input type="text" formControlName='construction_type' placeholder="Inserta aquí el tipo de la obra">
             <p class="error" *ngIf="checkError('construction_type','required')">El

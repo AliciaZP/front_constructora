@@ -9,6 +9,7 @@ export interface Construction {
     phone: string;
     construction_type: string;
     work_time: string;
+    image: string,
     lat?: number;
     lng?: number;
 

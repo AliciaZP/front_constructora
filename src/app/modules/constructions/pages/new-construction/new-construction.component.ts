@@ -33,6 +33,7 @@ export class NewConstructionComponent {
       Validators.maxLength(45)]),
       work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(150)]),
+      image: new FormControl(null, Validators.required),
     })
   }
 

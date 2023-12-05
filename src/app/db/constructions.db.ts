@@ -11,6 +11,7 @@ export const ConstructionsDB = [
         phone: "912 320 320",
         construction_type: "Zona residencial",
         work_time: "L-V De 08:00 a 20:00",
+        image: "https://creamadridnuevonorte.com/web/app/uploads/2021/11/MNN-skyline.jpg"
     },
     {
         _id: "construction_2",
@@ -23,5 +24,6 @@ export const ConstructionsDB = [
         phone: "881 86 62 70",
         construction_type: "Edificio",
         work_time: "S-D De 08:00 a 20:00",
+        image: "https://www.paxinasgalegas.es/imagenes/pobra-do-carami%C3%B1al_img120917t0m0w1600h800.jpg"
     }
 ];
