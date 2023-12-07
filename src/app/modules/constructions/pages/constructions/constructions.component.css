@@ -1,13 +1,102 @@
-h3 {
-    font-size: 2rem;
+#filtros {
+    background-color: rgb(234, 234, 234)
 }
 
-img {
-    width: 400px;
-    height: auto;
+
+h1 {
+    font-size: 3.5rem;
+    padding-top: 22rem;
+    font-weight: 800;
+    line-height: 2rem;
 }
 
 h2 {
     font-size: 2.5rem;
+}
 
+h3 {
+    color: var(--color-second);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-main);
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+
+select {
+    display: block;
+}
+
+article {
+
+    width: 250px;
+    border: 1px solid var(--color-third);
+    box-shadow: 5px 5px 0px var(--color-third);
+
+    &:hover {
+        border: 1px solid var(--color-main);
+        box-shadow: 5px 5px 0px var(--color-main);
+        transform: scale(1.1);
+    }
+}
+
+.article-clickable {
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.city {
+    color: var(--color-main);
+}
+
+figure {
+    height: 200px;
+    position: relative;
+}
+
+
+
+small {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: rgba(15, 15, 15, 0.5);
+    color: white;
+}
+
+
+span {
+    font-weight: 600;
+}
+
+button {
+    padding: 0.5rem;
+    margin-right: 2rem;
+    width: 100px;
+    border: none;
+    color: white;
+    background-color: var(--color-second);
+    font-size: 0.8rem;
+
+    &:hover {
+        background-color: var(--color-main);
+    }
 }

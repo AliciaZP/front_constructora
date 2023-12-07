@@ -4,7 +4,7 @@ export const ConstructionsDB = [
         _id: "construction_1",
         name: "Madrid Nuevo Norte",
         description: "Madrid Nuevo Norte es la marca actual del proyecto promovido por Adif  a través de la mercantil Crea Madrid Nuevo Norte, antes conocida como DUCH y DCN . En ella participan BBVA, la constructora San José y Merlin Properties para la remodelación de una parte importante del norte de Madrid, amparada en la iniciativa de los últimos gobiernos municipales de remodelar el plan parcial que afectaba a la zona (Revisión del plan parcial de reforma interior del área de planeamiento remitido 08.03 «Prolongación de la Castellana»). La actuación afecta a unas 311 hectáreas (en 5,6 km de longitud paralela a las vías del tren), y supone la creación de 3.3 millones de metros cuadrados al norte del distrito de Chamartín",
-        direction: "Calle Agustín de Foxa,s/n 28036 - Madrid",
+        direction: "Calle Agustín de Foxa, s/n 28036 - Madrid",
         city: "Madrid",
         assignment_date: new Date(2023, 12, 1),
         deadline: new Date(2023, 12, 31),

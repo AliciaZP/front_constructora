@@ -1,81 +1,92 @@
 <section class="m-5">
     <h2 class="mb-5">LISTADO DE OBRAS</h2>
 
-    <search-bar></search-bar>
-
-    <div id="filtros" class="mb-5" class="row">
+    <div id="filtros" class="my-4 p-1 row">
         <div class="col-6">
-            <div class="mb-3">
-                <label>Selecciona la ciudad</label>
-                <select (change)="onChangeCity($event)">
-                    <option value="">Todas las ciudades</option>
-                    <option *ngFor="let city of arrCities" [value]="city">{{city}}
-                    </option>
-                </select>
-            </div>
+            <div class="row">
+                <h4 class="col-2">Filtrar:</h4>
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Ubicación</label>
+                    <select (change)="onChangeCity($event)">
+                        <option value="">España</option>
+                        <option *ngFor="let city of arrCities" [value]="city">{{city}}
+                        </option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label>Selecciona el tipo de construcción</label>
-                <select (change)="onChangeConstructionType($event)">
-                    <option value="">Todos los tipos</option>
-                    <option *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}</option>
-                </select>
+                <div class="col-5">
+                    <label class="pe-3 pb-2">Tipo de construcción</label>
+                    <select (change)="onChangeConstructionType($event)">
+                        <option value="">Seleccionar</option>
+                        <option *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="col-6">
-            <div class="mb-3">
-                <label>Ordenar por nombre de la Obra</label>
-                <select (change)="onChangeName($event)">
-                    <option value="A-Z">De la A a la Z</option>
-                    <option value="Z-A">De la Z a la A</option>
-                </select>
-            </div>
 
-            <div class="mb-3">
-                <label>Ordenar por fecha de creación</label>
-                <select (change)="onChangeAssignmentDate($event)">
-                    <option value="reciente">Más reciente</option>
-                    <option value="antiguo">Más antigua</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label>Ordenar por fecha de finalización</label>
-                <select (change)="onChangeDeadline($event)">
-                    <option value="reciente">Más reciente</option>
-                    <option value="antiguo">Más antigua</option>
-                </select>
+        <div class="col-6">
+            <div class="row">
+                <h4 class="col-2">Ordenar:</h4>
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Nombre</label>
+                    <select (change)="onChangeName($event)">
+                        <option value="A-Z">De la A a la Z</option>
+                        <option value="Z-A">De la Z a la A</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Creación</label>
+                    <select (change)="onChangeAssignmentDate($event)">
+                        <option value="reciente">Más reciente</option>
+                        <option value="antiguo">Más antigua</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Finalización</label>
+                    <select (change)="onChangeDeadline($event)">
+                        <option value="reciente">Más reciente</option>
+                        <option value="antiguo">Más antigua</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="mb-5">
-        <article class="mb-5" *ngFor="let construction of arrConstructions">
-            <div>
-                <h3 class="mb-3">{{construction.name}}</h3>
-                <figure class="pr-3">
+    <!--     <search-bar></search-bar> -->
+
+    <div class="my-5 flex-container">
+        <article class="mb-2" *ngFor="let construction of arrConstructions">
+            <div class="article-clickable" *ngIf="botonActivo"
+                [routerLink]="['/constructions',':constructionId', construction._id]">
+                <figure>
                     <img [src]="construction.image" alt="imagen de la obra">
+                    <small>{{construction.construction_type}}</small>
                 </figure>
-                <p class="mb-3">{{construction.construction_type}} - {{construction.city}}</p>
-                <p class="mb-3">{{construction.description}}</p>
-
-                <p class="mb-3">Dirección: {{construction.direction}}</p>
-                <p class="mb-3">Teléfono de caseta de obra: {{construction.phone}}</p>
-                <p class="mb-3">Horario laboral: {{construction.work_time}}</p>
-                <p class="mb-3">Fecha de inicio: {{construction.assignment_date | date:'dd/MM/yyyy'}}</p>
-                <p class="mb-3">Fecha de finalización: {{construction.deadline | date:'dd/MM/yyyy'}}</p>
+                <div class="data px-3">
+                    <h3 class="mb-3">{{construction.name}}</h3>
+                    <p class="mb-3"><span class="city">{{construction.city}}</span>
+                    </p>
+                    <p class="mb-3"><span>Finalización:</span> {{construction.deadline | date:'dd-MM-yyyy'}}</p>
+                </div>
             </div>
-
-            <div class="pb-3">
-                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/constructions','edit', construction._id]">
-                    Editar Obra
-                </button>
-                <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(construction._id)">Borrar Obra
-                </button>
-            </div>
-
         </article>
     </div>
 </section>
+
+<!-- 
+
+            <button *ngIf="botonActivo" [routerLink]="['/constructions','edit', construction._id]">
+                Editar Obra
+            </button>
+            <button *ngIf="botonActivo" (click)="onClickDelete(construction._id)">Borrar Obra
+            </button> -->
+
+
+<!--       <p class="mb-3">{{construction.description}}</p> -->
+<!--       <p class="mb-3"><span>Teléfono de caseta de obra: </span>{{construction.phone}}</p>
+<p class="mb-5"><span>Horario laboral:</span> {{construction.work_time}}</p> <p class="mb-3"><span>Dirección:</span> {{construction.direction}}</p>-->
+<!--   <p class="mb-3"><span>Fecha de inicio: </span>{{construction.assignment_date | date:'dd/MM/yyyy'}}</p> -->
 
 <!-- _id: string;
 name: string;
