@@ -58,7 +58,7 @@
     <div class="my-5 flex-container">
         <article class="mb-2" *ngFor="let construction of arrConstructions">
             <div class="article-clickable" *ngIf="botonActivo"
-                [routerLink]="['/constructions',':constructionId', construction._id]">
+                [routerLink]="['/constructions','construction', construction._id]">
                 <figure>
                     <img [src]="construction.image" alt="imagen de la obra">
                     <small>{{construction.construction_type}}</small>
@@ -83,31 +83,3 @@
     </div> -->
 
 </section>
-
-<!-- 
-
-            <button *ngIf="botonActivo" [routerLink]="['/constructions','edit', construction._id]">
-                Editar Obra
-            </button>
-            <button *ngIf="botonActivo" (click)="onClickDelete(construction._id)">Borrar Obra
-            </button> -->
-
-
-<!--       <p class="mb-3">{{construction.description}}</p> -->
-<!--       <p class="mb-3"><span>Teléfono de caseta de obra: </span>{{construction.phone}}</p>
-<p class="mb-5"><span>Horario laboral:</span> {{construction.work_time}}</p> <p class="mb-3"><span>Dirección:</span> {{construction.direction}}</p>-->
-<!--   <p class="mb-3"><span>Fecha de inicio: </span>{{construction.assignment_date | date:'dd/MM/yyyy'}}</p> -->
-
-<!-- _id: string;
-name: string;
-description: string;
-direction: string;
-city: string,
-assignment_date: Date;
-deadline: Date;
-phone: string;
-construction_type: string;
-work_time: string;
-lat?: number;
-lng?: number;
- -->

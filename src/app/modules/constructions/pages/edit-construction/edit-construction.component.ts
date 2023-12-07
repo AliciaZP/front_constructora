@@ -50,7 +50,7 @@ export class EditConstructionComponent {
   onSubmit() {
     if (this.editConstruction.valid) {
       this.constructionsService.updateConstructionById(this.constructionId, this.editConstruction.value);
-      this.router.navigate(['/constructions']);
+      this.router.navigate([`/constructions/construction/${this.constructionId}`]);
     } else {
       console.log('error');
     }

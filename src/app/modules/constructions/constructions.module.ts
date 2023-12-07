@@ -7,6 +7,7 @@ import { EditConstructionComponent } from './pages/edit-construction/edit-constr
 import { ConstructionsComponent } from './pages/constructions/constructions.component';
 import { ConstructionsRoutingModule } from './constructions-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { IdConstructionComponent } from './pages/id-construction/id-construction.component';
 
 
 
@@ -15,6 +16,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NewConstructionComponent,
     EditConstructionComponent,
     ConstructionsComponent,
+    IdConstructionComponent,
   ],
   imports: [
     CommonModule,
