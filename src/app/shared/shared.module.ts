@@ -5,6 +5,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
 import { CardWorkersComponent } from './components/card-workers/card-workers.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,17 +17,19 @@ import { CardWorkersComponent } from './components/card-workers/card-workers.com
     HomeComponent,
     FooterComponent,
     ErrorComponent,
-    CardWorkersComponent
+    CardWorkersComponent,
+    SearchBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule, HttpClientModule
   ],
   exports: [
     NavBarComponent,
     HomeComponent,
     FooterComponent,
     ErrorComponent,
-    CardWorkersComponent
+    CardWorkersComponent,
+    SearchBarComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,8 @@
+<div>
+    <label>Búsqueda:</label>
+    <input type="text" [formControl]="searchBar" placeholder="Inserta aquí tu búsqueda">
+</div>
+
+<ul>
+    <li *ngFor="let construction of constructions">{{construction}}</li>
+</ul>

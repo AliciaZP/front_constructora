@@ -20,7 +20,7 @@ import { SharedModule } from "./shared/shared.module";
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class AppModule { }
