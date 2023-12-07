@@ -13,6 +13,9 @@ export class ConstructionsComponent {
   constructionsService = inject(ConstructionsService)
 
   arrConstructions: Construction[] = []
+  /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK
+  page: number = 1;
+    totalPages: number = 0; */
 
   arrCities: string[] = []
   arrConstructionTypes: string[] = []
@@ -23,6 +26,9 @@ export class ConstructionsComponent {
     this.arrConstructions = this.constructionsService.getAll();
     this.arrCities = this.constructionsService.getCities();
     this.arrConstructionTypes = this.constructionsService.getConstructionTypes();
+
+    /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK    
+    this.loadConstructions(); */
   }
 
   onClickDelete($event: string) {
@@ -30,6 +36,25 @@ export class ConstructionsComponent {
     this.arrConstructions = this.constructionsService.getAll();
   }
 
+
+  /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK
+    modifyPage(siguiente: boolean) {
+      if (siguiente) this.page++;
+      else this.page--;
+      this.loadConstructions();
+    }
+  
+    async loadConstructions() {
+      try {
+        const response = await this.constructionsService.getAll(this.page)
+        this.arrConstructions = response.results;
+        this.totalPages = response.info.pages;
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+   */
   //Aqui empiezan los fitros
 
   onChangeCity($event: any) {
