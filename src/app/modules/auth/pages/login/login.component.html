@@ -16,12 +16,14 @@
             <div class="mb-4">
                 <label class="mb-2">Email:</label>
                 <input class="input" type="Email" formControlName='email' placeholder="Inserta aquí tu email">
+                <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
 
             </div>
             <div class="mb-4">
                 <label class="mb-2">Contraseña: </label>
                 <input class="input" type="password" formControlName='password'
                     placeholder="Inserta aquí tu contraseña">
+                <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
             </div>
             <div class="pt-2">
                 <input class="button" type="submit" value="Iniciar sesión">
