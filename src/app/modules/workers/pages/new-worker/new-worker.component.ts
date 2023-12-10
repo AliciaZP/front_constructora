@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WorkersService } from 'src/app/core/services/workers.service';
 
@@ -19,20 +19,20 @@ export class NewWorkerComponent {
     this.newWorker = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(45)]),
-      description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      direction: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      city: new FormControl(null, [Validators.required, Validators.minLength(3),
+      surname: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(70)]),
-      assignment_date: new FormControl(null, Validators.required),
-      deadline: new FormControl(null, Validators.required),
+      dni: new FormControl(null, [Validators.required, this.dniValidator]),
       phone: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(12)]),
-      construction_type: new FormControl(null, [Validators.required, Validators.minLength(3),
+      email: new FormControl(null, [Validators.required, Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)]),
+      password: new FormControl(null, [Validators.required, this.passwordValidator]),
+      role: new FormControl(null, Validators.required),
+      active: new FormControl(null, Validators.required),
+      job: new FormControl(null, [Validators.required, Validators.minLength(3),
+      Validators.maxLength(70)]),
+      city: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(45)]),
-      work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      image: new FormControl(null, Validators.required),
+      image: new FormControl(null, Validators.required)
     })
   }
 
@@ -50,4 +50,41 @@ export class NewWorkerComponent {
     return this.newWorker.get(controlName)?.hasError(errorName) && this.newWorker.get(controlName)?.touched;
   };
 
+
+  dniValidator(control: AbstractControl) {
+    const value = control.value;
+    const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+    if (/^\d{8}[a-zA-Z]$/.test(value)) {
+      const numero = value.substring(0, value.length - 1); //sacar numero sin letra
+      const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
+      const resto = numero % 23; //sacar el resto
+      const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
+
+      if (letra != letraSeleccionada!.toUpperCase()) {
+        return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
+      } else {
+        return null //('Dni correcto');
+      }
+    } else {
+      return { dnivalidator: 'Dni erroneo, formato no válido' }
+    }
+  }
+
+
+  passwordValidator(control: AbstractControl) {
+    const value = control.value;
+
+    if (!value) {
+      return null;
+    }
+
+    const incluyeMayus = /[A-Z]/.test(value);
+    const incluyeNum = /\d/.test(value);
+    const incluyeSimbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+    const longitudValida = value.length <= 20;
+
+    const passwordValida = incluyeMayus && incluyeNum && incluyeSimbol && longitudValida;
+    return passwordValida ? null : { passwordvalidator: true };
+  }
 }
