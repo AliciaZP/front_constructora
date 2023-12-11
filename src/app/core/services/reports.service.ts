@@ -42,4 +42,30 @@ export class ReportsService {
     this.arrReports = this.arrReports.filter(report => report._id !== reportId);
   }
 
+
+  //Funciones para las ciudades
+  getTypes(): string[] {
+    const reportsUnordered = [...new Set(this.arrReports.map(report => report.type))];
+    const reportsOrdered = reportsUnordered.sort((a, b) => a.localeCompare(b));
+    return reportsOrdered;
+  }
+
+  filterByType(pType: string): Report[] {
+    return this.arrReports.filter(construction => construction.type === pType)
+  }
+
+
+
+  //Funciones para los filtros de ordenacion
+
+
+  //el metodo local compare no funciona con el tipo date, asi que hay que usar esta funcion
+  orderByDate(ascendente: boolean) {
+    return this.arrReports.slice().sort((a, b) => {
+      const fechaA = new Date(a.date).getTime();
+      const fechaB = new Date(b.date).getTime();
+      return ascendente ? fechaB - fechaA : fechaA - fechaB;
+    });
+  }
+
 }

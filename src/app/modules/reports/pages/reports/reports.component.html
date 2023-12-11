@@ -1,0 +1,47 @@
+<section class="m-5">
+    <h2 class="mb-5">LISTADO DE REPORTES</h2>
+
+    <div id="filtros" class="my-4 p-1 row">
+        <div class="col-6">
+            <div class="row">
+                <h4 class="col-2">Filtrar:</h4>
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Tipo de reporte:</label>
+                    <select (change)="onChangeType($event)">
+                        <option value="">Todos</option>
+                        <option *ngFor="let type of arrTypes" [value]="type">{{type}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="row">
+                <h4 class="col-2">Ordenar:</h4>
+                <div class="col-3">
+                    <label class="pe-3 pb-2">Creación</label>
+                    <select (change)="onChangeAssignmentDate($event)">
+                        <option value="reciente">Más reciente</option>
+                        <option value="antiguo">Más antigua</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5 flex-container">
+        <article class="mb-2" *ngFor="let report of arrReports">
+            <div class="article-clickable" *ngIf="botonActivo" [routerLink]="['/reports', report._id]">
+                <div class="data p-3">
+                    <h3 class="mb-3">{{report.title}}</h3>
+                    <p class="mb-3"><span class="city">{{report.description}}</span>
+                    </p>
+                    <p class="mb-3"><span>Fecha:</span> {{report.date | date:'dd-MM-yyyy'}}</p>
+                    <p class="mb-3"><span>Tipo de reporte:</span> {{report.type}}</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>

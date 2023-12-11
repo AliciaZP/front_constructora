@@ -5,7 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
-import { ReportsComponent } from './modules/reports/reports.component';
+import { ReportsComponent } from './modules/reports/pages/reports/reports.component';
+import { EditReportComponent } from './modules/reports/pages/edit-report/edit-report.component';
 
 
 
@@ -14,6 +15,7 @@ import { ReportsComponent } from './modules/reports/reports.component';
   declarations: [
     AppComponent,
     ReportsComponent,
+    EditReportComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
