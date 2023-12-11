@@ -22,6 +22,8 @@ h2 {
 
 .icons {
     color: white;
+    display: flex;
+    gap: 1rem;
 }
 
 .nav-links {

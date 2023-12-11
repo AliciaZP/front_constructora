@@ -24,6 +24,8 @@
 
 .social {
     margin-left: 10px;
+    display: flex;
+    gap: 1rem;
 }
 
 h3 {
@@ -34,13 +36,16 @@ h3 {
     background-color: var(--color-main);
     display: flex;
     justify-content: space-between;
-
-
-
 }
 
 ul li a {
     text-decoration: none;
     color: white;
 
+}
+
+.flex {
+    display: flex;
+    gap: 7rem;
+    padding: 10px;
 }
