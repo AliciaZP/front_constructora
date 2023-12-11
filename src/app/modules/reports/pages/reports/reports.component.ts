@@ -1,29 +1,35 @@
 import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Report } from 'src/app/core/interfaces/report.interface';
 import { ReportsService } from 'src/app/core/services/reports.service';
 
 @Component({
-  selector: 'app-reports',
+  selector: 'reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent {
+
   reportsService = inject(ReportsService)
 
   arrReports: Report[] = []
-
   arrTypes: string[] = []
+
+  reportSelected!: Report
   botonActivo: boolean = true;
+  activatedRoute = inject(ActivatedRoute)
+
 
   ngOnInit() {
     this.arrReports = this.reportsService.getAll();
     this.arrTypes = this.reportsService.getTypes();
 
-  }
 
-  onClickDelete($event: string) {
-    const response = this.reportsService.deleteReportById($event)
-    this.arrReports = this.reportsService.getAll();
+    this.activatedRoute.params.subscribe((params) => {
+
+      const response = this.reportsService.getReportById(params['reportId']);
+      this.reportSelected = response
+    })
   }
 
   //Aqui empiezan los fitros

@@ -42,6 +42,9 @@
                     <p class="mb-3"><span>Tipo de reporte:</span> {{report.type}}</p>
                 </div>
             </div>
+            <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/reports','edit', reportSelected._id]">Editar
+                reporte
+            </button>
         </article>
     </div>
 </section>

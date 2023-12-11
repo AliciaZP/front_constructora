@@ -1,7 +1,7 @@
 <section id="form-editReport">
 
     <h2 class="m-5">EDITAR REPORTE </h2>
-    <form [formGroup]='newReport' (ngSubmit)="onSubmit()">
+    <form [formGroup]='editReport' (ngSubmit)="onSubmit()">
 
         <div class="m-5">
             <label>Asunto:</label>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="m-5">
-            <input class="button" type="submit" value="Añadir reporte">
+            <input class="button" type="submit" value="Editar reporte">
         </div>
 
     </form>

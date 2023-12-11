@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ReportsService } from 'src/app/core/services/reports.service';
 
 @Component({
-  selector: 'app-new-report',
+  selector: 'new-report',
   templateUrl: './new-report.component.html',
   styleUrls: ['./new-report.component.css']
 })
