@@ -38,11 +38,6 @@ export class ReportsService {
     }
   }
 
-  deleteReportById(reportId: string): void {
-    this.arrReports = this.arrReports.filter(report => report._id !== reportId);
-  }
-
-
   //Funciones para las ciudades
   getTypes(): string[] {
     const reportsUnordered = [...new Set(this.arrReports.map(report => report.type))];
