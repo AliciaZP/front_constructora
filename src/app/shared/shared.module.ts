@@ -8,6 +8,7 @@ import { CardWorkersComponent } from './components/card-workers/card-workers.com
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterLink
 
   ],
   exports: [
