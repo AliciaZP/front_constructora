@@ -18,6 +18,29 @@ h2 {
     font-weight: var(--fontweight-h4);
 }
 
+.custom-select {
+    color: var(--color-second);
+    background-color: white;
+    padding: 3px;
+    border: 1px solid var(--color-second);
+}
+
+.custom-option {
+    color: var(--color-second);
+    /* Color del texto de las opciones */
+    background-color: white;
+    /* Color de fondo de las opciones */
+}
+
+/* Estilos adicionales para cuando el select está enfocado */
+.custom-select:focus {
+    outline: none;
+    /* Elimina el resplandor predeterminado al enfocar el select */
+    box-shadow: none;
+    /* Agrega una sombra al enfocar el select */
+}
+
+
 /* listado de reports */
 h3 {
     color: var(--color-main);
@@ -29,6 +52,10 @@ h3 {
 h4 {
     font-size: var(--fontsize-h4);
     font-weight: 600;
+}
+
+i {
+    color: var(--color-third);
 }
 
 article {
@@ -86,6 +113,6 @@ article button.edit {
     color: var(--color-main);
 }
 
-.blue-title {
+.black-title {
     color: var(--color-second);
 }
