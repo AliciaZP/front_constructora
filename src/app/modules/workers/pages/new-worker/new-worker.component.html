@@ -1,1 +1,126 @@
-<p>nuevo-operario works!</p>
+<section id="form-newworker">
+
+    <h2 class="m-5">NUEVO OPERARIO</h2>
+    <form [formGroup]='newWorker' (ngSubmit)="onSubmit()">
+
+        <div class="m-5">
+            <label>Nombre:</label>
+            <input type="text" formControlName='name' placeholder="Inserta aquí el nombre del operario">
+            <p class="error" *ngIf="checkError('name','required')">
+                El nombre es obligatorio.</p>
+            <p class="error" *ngIf="checkError('name','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('name','maxlength')">La longitud máxima son 45 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Apellido</label>
+            <input type="text" formControlName='surname' placeholder="Inserta aquí el apellido del operario">
+            <p class="error" *ngIf="checkError('surname','required')">
+                El apellido es obligatorio.</p>
+            <p class="error" *ngIf="checkError('surname','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('surname','maxlength')">La longitud máxima son 70 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Fotografía del operario (300 x 300 px) </label>
+            <input type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
+            <p class="error" *ngIf="checkError('image','required')">
+                La imagen es obligatoria.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Dni</label>
+            <input type="text" formControlName='dni' placeholder="Inserta aquí el DNI del operario">
+            <p class="error" *ngIf="checkError('dni','required')">El
+                dni es obligatorio.</p>
+            <p class="error" *ngIf="checkError('dni','dniValidator')">Inserta un dni válido.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Teléfono de contacto:</label>
+            <input type="text" formControlName='phone' placeholder="Inserta aquí el teléfono del operario">
+            <p class="error" *ngIf="checkError('phone','required')">El
+                teléfono es obligatorio.</p>
+            <p class="error" *ngIf="checkError('phone','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('phone','maxlength')">La longitud máxima son 12 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Email:</label>
+            <input type="email" formControlName='email' placeholder="Inserta aquí el email del operario">
+            <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
+            <p class="error" *ngIf="checkError('email','pattern')">El formato del email no es válido.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Contraseña:</label>
+            <input type="text" formControlName='password' placeholder="Inserta aquí el la contraseña del operario">
+            <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
+            <p class="error" *ngIf="checkError('password','passwordvalidator')">El formato de la constraseña no es
+                válido. Debe tener al menos un carácter en mayúscula, un carácter numérico, un carácter especial y su
+                longitud no puede superar 20 caracteres</p>
+        </div>
+
+        <div class="m-5">
+            <label>Puesto:</label>
+            <input type="text" formControlName='job' placeholder="Inserta aquí el puesto del operario">
+            <p class="error" *ngIf="checkError('job','required')">El
+                puesto es obligatorio.</p>
+            <p class="error" *ngIf="checkError('job','minlength')">La longitud mínima son 3 caracteres.
+            </p>
+            <p class="error" *ngIf="checkError('job','maxlength')">La longitud máxima son 70 caracteres.
+            </p>
+        </div>
+
+        <div class="m-5">
+            <label>Ciudad:</label>
+            <input type="text" formControlName='city' placeholder="Inserta aquí la ciudad de la obra">
+            <p class="error" *ngIf="checkError('city','required')">
+                La ciudad es obligatoria.</p>
+            <p class="error" *ngIf="checkError('city','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('city','maxlength')">La longitud máxima son 70 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Rol:</label>
+            <select formControlName='role'>
+                <option value="" selected>Seleccionar</option>
+                <option value="admin">Admin</option>
+                <option value="user">Operario</option>
+            </select>
+            <p class="error" *ngIf="checkError('role','required')">
+                El rol es obligatorio.</p>
+        </div>
+
+
+        <div class="m-5">
+            <label>Activo:</label>
+            <select formControlName='active'>
+                <option value="" selected>Seleccionar</option>
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+            <p class="error" *ngIf="checkError('active','required')">
+                El estado es obligatorio.</p>
+        </div>
+
+        <div class="m-5">
+            <input class="button" type="submit" value="Añadir operario">
+        </div>
+
+    </form>
+
+</section>
+<!-- 
+    _id: string;
+    name: string;
+    surname: string;
+    dni: string;
+    phone: string;
+    email: string;
+    password: string;
+    role: string;
+    active: boolean;
+    job: string;
+    city: string,
+    image: string, -->

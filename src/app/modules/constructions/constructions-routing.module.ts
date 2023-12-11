@@ -4,9 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConstructionsComponent } from './pages/constructions/constructions.component';
 import { NewConstructionComponent } from './pages/new-construction/new-construction.component';
 import { EditConstructionComponent } from './pages/edit-construction/edit-construction.component';
+import { IdConstructionComponent } from './pages/id-construction/id-construction.component';
 
 const routes: Routes = [
   { path: '', component: ConstructionsComponent },
+  { path: 'construction/:constructionId', component: IdConstructionComponent },
   { path: 'new', component: NewConstructionComponent },
   { path: 'edit/:constructionId', component: EditConstructionComponent }
 ]

@@ -6,6 +6,8 @@ import { NewConstructionComponent } from './pages/new-construction/new-construct
 import { EditConstructionComponent } from './pages/edit-construction/edit-construction.component';
 import { ConstructionsComponent } from './pages/constructions/constructions.component';
 import { ConstructionsRoutingModule } from './constructions-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { IdConstructionComponent } from './pages/id-construction/id-construction.component';
 
 
 
@@ -13,12 +15,14 @@ import { ConstructionsRoutingModule } from './constructions-routing.module';
   declarations: [
     NewConstructionComponent,
     EditConstructionComponent,
-    ConstructionsComponent
+    ConstructionsComponent,
+    IdConstructionComponent,
   ],
   imports: [
     CommonModule,
     ConstructionsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ConstructionsModule { }

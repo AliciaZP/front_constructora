@@ -1,1 +1,106 @@
-<p>nueva-obra works!</p>
+<section id="form-newconstruction">
+
+    <h2 class="m-5">NUEVA OBRA </h2>
+    <form [formGroup]='newConstruction' (ngSubmit)="onSubmit()">
+
+        <div class="m-5">
+            <label>Nombre:</label>
+            <input type="text" formControlName='name' placeholder="Inserta aquí el nombre de la obra">
+            <p class="error" *ngIf="checkError('name','required')">
+                El nombre es obligatorio.</p>
+            <p class="error" *ngIf="checkError('name','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('name','maxlength')">La longitud máxima son 45 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Imagen de la obra (300 x 300 px) </label>
+            <input type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
+            <p class="error" *ngIf="checkError('image','required')">
+                La imagen es obligatoria.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Tipo de construcción:</label>
+            <input type="text" formControlName='construction_type' placeholder="Inserta aquí el tipo de la obra">
+            <p class="error" *ngIf="checkError('construction_type','required')">El
+                tipo de construcción es obligatorio.</p>
+            <p class="error" *ngIf="checkError('construction_type','minlength')">La longitud mínima son 3 caracteres.
+            </p>
+            <p class="error" *ngIf="checkError('construction_type','maxlength')">La longitud máxima son 45 caracteres.
+            </p>
+        </div>
+
+        <div class="m-5">
+            <label>Descripción del proyecto:</label>
+            <textarea formControlName='description' placeholder="Inserta aquí la descripción de la obra">
+            </textarea>
+            <p class="error" *ngIf="checkError('description','required')">
+                La descripción es obligatoria.</p>
+            <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Ciudad:</label>
+            <input type="text" formControlName='city' placeholder="Inserta aquí la ciudad de la obra">
+            <p class="error" *ngIf="checkError('city','required')">
+                La ciudad es obligatoria.</p>
+            <p class="error" *ngIf="checkError('city','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('city','maxlength')">La longitud máxima son 70 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Dirección completa:</label>
+            <input type="text" formControlName='direction' placeholder="Inserta aquí la dirección de la obra">
+            <p class="error" *ngIf="checkError('direction','required')">
+                La dirección es obligatoria.</p>
+            <p class="error" *ngIf="checkError('direction','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('direction','maxlength')">La longitud máxima son 150 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Teléfono de contacto:</label>
+            <input type="text" formControlName='phone' placeholder="Inserta aquí el teléfono de la obra">
+            <p class="error" *ngIf="checkError('phone','required')">El
+                teléfono es obligatorio.</p>
+            <p class="error" *ngIf="checkError('phone','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('phone','maxlength')">La longitud máxima son 12 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Horario laboral:</label>
+            <input type="text" formControlName='work_time' placeholder="Inserta aquí el horario de la obra">
+            <p class="error" *ngIf="checkError('work_time','required')">El
+                horario es obligatorio.</p>
+            <p class="error" *ngIf="checkError('work_time','minlength')">La longitud mínima son 3 caracteres.
+            </p>
+            <p class="error" *ngIf="checkError('work_time','maxlength')">La longitud máxima son 150 caracteres.
+            </p>
+        </div>
+
+        <div class="m-5">
+            <label>Fecha de asignación:</label>
+            <input type="text" formControlName='deadline' placeholder="Inserta aquí la fecha de creacion">
+            <p class="error" *ngIf="checkError('deadline','required')">
+                La fecha de creación obligatoria.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Fecha de finalización:</label>
+            <input type="text" formControlName='assignment_date' placeholder="Inserta aquí la fecha de finalizacion">
+            <p class="error" *ngIf="checkError('assignment_date','required')">La fecha de finalización obligatoria.</p>
+        </div>
+
+        <!--         <div>
+            <label>Mapa:</label>
+            <input type="text" placeholder="Aquí iría el mapa para la lat y lng">
+            <p class="error" *ngIf="checkError('name','required')">El
+                mapa es obligatorio.</p>
+        </div> -->
+
+        <div class="m-5">
+            <input class="button" type="submit" value="Añadir obra">
+        </div>
+
+    </form>
+
+</section>

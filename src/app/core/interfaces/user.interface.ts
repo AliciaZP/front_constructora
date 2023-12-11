@@ -10,4 +10,5 @@ export interface User {
     active: boolean;
     job: string;
     city: string,
+    image: string,
 }

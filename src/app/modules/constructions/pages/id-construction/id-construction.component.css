@@ -1,0 +1,167 @@
+h2 {
+    font-size: 2.5rem;
+    color: var(--color-main);
+    font-weight: 700;
+}
+
+h3 {
+    color: var(--color-second);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.back {
+    cursor: pointer;
+}
+
+.back h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-second);
+
+    &:hover {
+        color: var(--color-main);
+    }
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+
+figure {
+    position: relative;
+}
+
+.dates :nth-child(2) {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    bottom: 3rem;
+    right: 0;
+    padding: 0.5rem;
+    background-color: green;
+    color: white;
+}
+
+.dates :nth-child(4) {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: var(--color-main);
+    color: white;
+}
+
+span {
+    font-weight: 600;
+}
+
+.construction-info i {
+    font-size: 2rem;
+    color: var(--color-second);
+}
+
+.construction-info p:nth-child(-n+2) {
+    font-size: 1.3rem;
+    color: var(--color-second);
+}
+
+.map-info span {
+    font-size: 1.2rem;
+}
+
+.map-info i {
+    font-size: 1.3rem;
+    color: var(--color-main);
+}
+
+.map-info h3 {
+    font-size: 1.7rem;
+    color: var(--color-main);
+}
+
+
+.description {
+    line-height: 1.5rem;
+}
+
+/* Estilos mapa */
+.bloque-2 {
+    border: 1px solid black;
+    background-color: rgb(234, 234, 234);
+    border-radius: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+}
+
+
+/* Estilos del area privada */
+#admin-area {
+    position: fixed;
+    top: 10px;
+    /* Ajusta la distancia desde la parte inferior según tus necesidades */
+    right: 10px;
+    background-color: var(--color-second);
+}
+
+#admin-area h3 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+#admin-area i {
+    font-size: 2rem;
+    color: var(--color-second);
+}
+
+.admin {
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+
+}
+
+button {
+    border: none;
+    color: var(--color-second);
+    background-color: var(--color-second);
+
+
+}
+
+.dropdown-menu {
+    width: 250px;
+    border-radius: none;
+    border: 1px solid black;
+}
+
+.dropdown-menu button {
+
+    width: 100%;
+    text-align: left;
+    align-items: center;
+    font-weight: 600;
+    color: var(--color-second);
+    background-color: white;
+    padding: 1rem;
+
+    &:hover {
+        background-color: var(--color-main)
+    }
+}
