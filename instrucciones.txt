@@ -1,0 +1,65 @@
+--Noticias
+    - Normativa sobre la normativa del trabajador
+    - Cursos para operarios: carretillero, gruistas, encofradores
+    - Cambios horarios
+
+OBRA DESDE CERO:
+
+Solar vacio:
+    ------------------------------1ª FASE ESTRUCTURAS----------------------------------------------
+    - Estructuristas, ferrallas(metal), albañiles hormigon -->todos estos para la cimentacion
+    - Gruista, operador de excavadoras, operador del camion(tierras que se llevan al vertedero)
+    - Vibradora y encofradores.
+
+    -Recurso preventivo (el que ve los peligros en la obra) uno o varios empleados, pueden ser cualquiera de los anteriores mientras que tengan el curso de Prevencion de riesgos laborables(min 40h) ENTODAS LAS FASES
+    
+    
+    -----------------------------------2ª FASE ENVOLVENTE o FACHADA--------------------------------
+    - Albañiles(ladrillos, cemento....)
+    - Albañiles que se descuelgan (para ir haciendo cosas por fuera)
+    - TODOS ALBAÑILES 
+    - Para el tejado (pizarristas si es especial de pizarra)
+
+    ---------------------------------3ª FASE INTERIORES--------------------------------------------
+    - Albañiles
+    - Fontaneros y poceros (para viviendas o piscina)
+    - Electricistas
+    - Carpinteros 
+    - Pladuristas
+    - Pintores
+    - Marmolistas
+    - Equipo de limpieza
+    - Especilistas en ceramica
+    - Equipo de diseño (para decorar las viviendas cocinas... baños....)
+    - Técnicos de instalaciones de gas
+    - Tecnicos de comunicaciones
+    - ascensorista es responsable de la instalación, mantenimiento y reparación de averías en ascensores (empresa)
+    -----------------------------------------------------------------------------------------------------------------------
+
+
+    EQUIPO TECNICO: arquitecto, arquitecto tecnico o aparejador--> son los encargados de ver si la obra va bien en tiempo y costes y estan en todo momento en la obra --> se les conoce como direccion facultativa
+
+
+
+en el espacio del operario poner en las eepis los dos tipos que hay individual y colectivos
+individuales:   - Casco
+                - Chaleco
+                - botas
+                - guantes
+                - Cascos para no oir ruidos
+                - arnes, cinturones de seguridad
+                - Gafas de proteccion
+                - Mascarillas
+colectivos:
+Barandillas, pasarelas y escaleras.
+Andamios y redes antiácidas.
+Sistemas de ventilación.
+Barreras de protección acústicas.
+Vallado perimetral de zonas de trabajo.
+Marquesinas contra caída de objetos.
+Extintores de incendios.
+Medios húmedos en ambientes polvorientos.
+Carcasa de protección de motores o piezas en continuo movimiento.
+Señalizaciones e indicativos.
+Barreras de protección térmicas en centros de trabajo.
+

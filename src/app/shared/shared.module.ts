@@ -21,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     SearchBarComponent
   ],
   imports: [
-    CommonModule, ReactiveFormsModule, HttpClientModule
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+
   ],
   exports: [
     NavBarComponent,

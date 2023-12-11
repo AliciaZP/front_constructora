@@ -1,0 +1,46 @@
+.top {
+    background-color: var(--color-second);
+    color: white;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+
+}
+
+.footer {
+    display: flex;
+
+}
+
+.datos {
+    margin-left: 20px;
+}
+
+.footer-icons {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.social {
+    margin-left: 10px;
+}
+
+h3 {
+    font-weight: bolder;
+}
+
+.bottom {
+    background-color: var(--color-main);
+    display: flex;
+    justify-content: space-between;
+
+
+
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+
+}
