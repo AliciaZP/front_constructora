@@ -1,21 +1,68 @@
-label {
-    display: block;
-}
+/* MOBILE FIRST */
 
-input {
-    width: 50rem;
-}
 
-textarea {
-    width: 50rem;
-}
-
+/* cabecera de la sección */
 h2 {
-    font-size: 2.5rem;
-
+    color: var(--color-second);
+    font-size: var(--fontsize-h2);
+    font-weight: var(--fontweight-h2);
 }
 
+/* filtros */
+#filtros {
+    background-color: rgb(234, 234, 234)
+}
+
+h4 {
+    font-size: var(--fontsize-h4);
+    font-weight: var(--fontweight-h4);
+    color: var(--color-main);
+}
+
+/* listado de reports */
 h3 {
-    font-weight: 600;
-    font-size: 1.5rem;
+    color: var(--color-main);
+    font-weight: var(--fontweight-h3);
+    font-size: var(--fontsize-h3);
+    line-height: var(----font-lineheight);
 }
+
+article {
+    border: 1px solid var(--color-third);
+    box-shadow: 5px 5px 0px var(--color-third);
+
+    &:hover {
+        border: 1px solid var(--color-main);
+        box-shadow: 5px 5px 0px var(--color-main);
+        transform: scale(1.025);
+    }
+}
+
+span {
+    font-weight: 600;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: var(--font-lineheight);
+}
+
+/* boton de editar */
+button {
+
+    color: white;
+    background-color: var(--color-second);
+    border: none;
+    width: 100px;
+    padding: 0.5rem;
+    font-weight: 500;
+
+    &:hover {
+        background-color: var(--color-main);
+    }
+}
+
+
+
+/* mediaqueries 768px*/
+@media(min-width: 48rem) {}

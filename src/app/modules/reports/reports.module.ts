@@ -4,8 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReportsRoutingModule } from './reports-routing.module';
 import { NewReportComponent } from './pages/new-report/new-report.component';
-import { EditReportComponent } from './pages/edit-report/edit-report.component';
-
 
 
 @NgModule({
