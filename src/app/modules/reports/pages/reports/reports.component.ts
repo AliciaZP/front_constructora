@@ -23,13 +23,6 @@ export class ReportsComponent {
   ngOnInit() {
     this.arrReports = this.reportsService.getAll();
     this.arrTypes = this.reportsService.getTypes();
-
-
-    this.activatedRoute.params.subscribe((params) => {
-
-      const response = this.reportsService.getReportById(params['reportId']);
-      this.reportSelected = response
-    })
   }
 
   //Aqui empiezan los fitros
@@ -39,7 +32,7 @@ export class ReportsComponent {
   };
 
 
-  onChangeAssignmentDate($event: any) {
+  onChangeDate($event: any) {
     const ascendente = $event.target.value === "reciente";
     this.arrReports = this.reportsService.orderByDate(ascendente);
   };

@@ -21,7 +21,7 @@
                 <h4 class="col-2">Ordenar:</h4>
                 <div class="col-3">
                     <label class="pe-3 pb-2">Creación</label>
-                    <select (change)="onChangeAssignmentDate($event)">
+                    <select (change)="onChangeDate($event)">
                         <option value="reciente">Más reciente</option>
                         <option value="antiguo">Más antigua</option>
                     </select>
@@ -42,7 +42,7 @@
                     <p class="mb-3"><span>Tipo de reporte:</span> {{report.type}}</p>
                 </div>
             </div>
-            <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/reports','edit', reportSelected._id]">Editar
+            <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/reports','edit', report._id]">Editar
                 reporte
             </button>
         </article>
