@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
 import { CardWorkersComponent } from './components/card-workers/card-workers.component';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -17,7 +18,9 @@ import { CardWorkersComponent } from './components/card-workers/card-workers.com
     CardWorkersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
+
   ],
   exports: [
     NavBarComponent,

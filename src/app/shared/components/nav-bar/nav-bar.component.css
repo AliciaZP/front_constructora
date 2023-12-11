@@ -1,0 +1,39 @@
+.contenedor {
+    background-color: var(--color-main);
+    color: white;
+    height: 60px;
+    padding: 20px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.icons {
+    color: white;
+}
+
+.nav-links {
+    background-color: var(--color-second);
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    height: 60px;
+    padding: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+}

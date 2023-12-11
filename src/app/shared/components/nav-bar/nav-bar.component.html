@@ -1,1 +1,43 @@
-<p>nav-bar works!</p>
+<header>
+    <nav class="contenedor">
+        <div class="columns">
+            <h1>SGAL HOME</h1>
+            <h2>Portal del Empleado</h2>
+            <ul class="icons">
+                <i class="fa-solid fa-bell fa-xs"></i>
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa-regular fa-circle-user"></i>
+            </ul>
+        </div>
+    </nav>
+    <nav>
+        <div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" [routerLink]="['/home']">HOME</a>
+
+                </li>
+                <li>
+                    <a href="">NOTICIAS</a>
+                </li>
+                <div class="dropdown">
+                    <li class="dropdown-toggle text-white" type="button" id="dropdownMenuDark" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        OBRAS
+                    </li>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
+                        <li><a class="dropdown-item" href="#">En Curso</a></li>
+                        <li><a class="dropdown-item" href="#">Finalizadas</a></li>
+                    </ul>
+                </div>
+                <li>
+                    <a href="" [routerLink]="['/workers']">USUARIOS</a>
+                </li>
+                <li>
+                    <a href="">OTROS</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>

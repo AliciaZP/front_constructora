@@ -1,0 +1,95 @@
+main #projects .grid {
+    display: grid;
+    gap: var(--space);
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 1fr;
+}
+
+main #projects .grid article {
+    filter: grayscale(100%);
+    transition: 1s;
+
+    &:hover {
+        filter: grayscale(0%);
+    }
+}
+
+main #projects .grid article:first-child {
+    background-image: url('https://www.alejandrospinola.es/s/img/emotionheader.jpg?1604599110.940px.360px');
+    background-size: cover;
+    background-position: center center;
+    height: 45vh;
+    overflow: hidden;
+}
+
+main #projects .grid article:last-child {
+    background-image: url("https://s1.eestatic.com/2021/10/15/invertia/empresas/construccion-infraestructuras/619699429_211756088_1706x960.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+main #projects .grid article:nth-child(2) {
+    background-image: url("https://aquimediosdecomunicacion.com/wp-content/uploads/2021/05/benidorm-paso-a-nivel-mayo-2021-5.jpg");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+main #projects .grid article {
+    position: relative;
+}
+
+main #projects .grid article h3 {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 0.60rem;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: 1s;
+    opacity: 0;
+}
+
+main #projects .grid article:hover h3 {
+    left: 1.25rem;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/* h4 {
+    color: var(--color-main);
+    font-weight: 700;
+    font-size: 100%;
+}
+
+img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    height: auto;
+
+}
+
+.uno {
+    margin: 5px;
+}
+
+h3 {
+    color: var(--color-main);
+    font-weight: 700;
+
+}
+
+h2 {
+    color: var(--color-main);
+}
+
+iframe {
+    width: 35%;
+    height: 200px;
+} */
