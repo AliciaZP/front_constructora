@@ -1,6 +1,5 @@
 /* MOBILE FIRST */
 
-
 /* cabecera de la sección */
 h2 {
     color: var(--color-second);
@@ -13,10 +12,10 @@ h2 {
     background-color: rgb(234, 234, 234)
 }
 
-h4 {
+#filtros h4 {
+    color: var(--color-main);
     font-size: var(--fontsize-h4);
     font-weight: var(--fontweight-h4);
-    color: var(--color-main);
 }
 
 /* listado de reports */
@@ -27,6 +26,11 @@ h3 {
     line-height: var(----font-lineheight);
 }
 
+h4 {
+    font-size: var(--fontsize-h4);
+    font-weight: 600;
+}
+
 article {
     border: 1px solid var(--color-third);
     box-shadow: 5px 5px 0px var(--color-third);
@@ -34,7 +38,6 @@ article {
     &:hover {
         border: 1px solid var(--color-main);
         box-shadow: 5px 5px 0px var(--color-main);
-        transform: scale(1.025);
     }
 }
 
@@ -47,8 +50,24 @@ span {
     line-height: var(--font-lineheight);
 }
 
+/* desplegable */
+
+.custom-button {
+    background-color: white;
+}
+
+.custom-button:focus {
+    box-shadow: none;
+}
+
+.custom-button:active,
+.custom-button.active {
+    background-color: white;
+    border-color: white;
+}
+
 /* boton de editar */
-button {
+article button.edit {
 
     color: white;
     background-color: var(--color-second);
@@ -62,7 +81,11 @@ button {
     }
 }
 
+/* color según tipo de reporte */
+.red-title {
+    color: var(--color-main);
+}
 
-
-/* mediaqueries 768px*/
-@media(min-width: 48rem) {}
+.blue-title {
+    color: var(--color-second);
+}
