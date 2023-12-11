@@ -9,7 +9,7 @@ h2 {
 
 /* filtros */
 #filtros {
-    background-color: rgb(234, 234, 234)
+    background-color: rgb(234, 234, 234);
 }
 
 #filtros h4 {
@@ -27,19 +27,30 @@ h2 {
 
 .custom-option {
     color: var(--color-second);
-    /* Color del texto de las opciones */
     background-color: white;
-    /* Color de fondo de las opciones */
 }
 
-/* Estilos adicionales para cuando el select está enfocado */
 .custom-select:focus {
     outline: none;
-    /* Elimina el resplandor predeterminado al enfocar el select */
     box-shadow: none;
-    /* Agrega una sombra al enfocar el select */
 }
 
+/* boton de Añadir reporte */
+
+.new-button {
+    color: white;
+    background-color: var(--color-second);
+    border: none;
+    padding: 1rem;
+    font-weight: 700;
+    line-height: var(--font-lineheight);
+    border-radius: 10px;
+
+    &:hover {
+        background-color: var(--color-main);
+    }
+
+}
 
 /* listado de reports */
 h3 {
@@ -80,7 +91,7 @@ span {
 /* desplegable */
 
 .custom-button {
-    background-color: white;
+    background-color: rgb(234, 234, 234);
 }
 
 .custom-button:focus {

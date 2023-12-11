@@ -1,7 +1,7 @@
 <section class="mx-5 mt-5">
     <h2 class="mb-4">LISTADO DE REPORTES</h2>
 
-    <div id="filtros" class="p-1 row">
+    <div id="filtros" class="m-1 row">
         <div class="col-sm-5">
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
@@ -26,13 +26,17 @@
                         <option class="custom-option" value="antiguo">Más antigua</option>
                     </select>
                 </div>
-
             </div>
         </div>
-    </div>
 
+        <div class="col-sm-2">
+            <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/reports','new']">
+                AÑADIR REPORTE
+            </button>
+        </div>
+    </div>
     <div class="my-4">
-        <article class="mb-4 accordion accordion-flush" *ngFor="let report of arrReports; let i = index">
+        <article class="mb-4 m-1 accordion accordion-flush" *ngFor="let report of arrReports; let i = index">
             <h3 class="accordion-header" [id]="'flush-heading-' + i">
                 <button class="accordion-button custom-button" type="button" data-bs-toggle="collapse"
                     [attr.data-bs-target]="'#flush-collapse-' + i" aria-expanded="false"
@@ -50,7 +54,8 @@
             <div class="p-3 mb-3">
                 <p class="mb-3"><span><i class="fa-solid fa-circle-exclamation"></i> TIPO DE REPORTE:</span>
                     {{report.type}}</p>
-                <p><span><i class="fa-solid fa-calendar-days"></i> FECHA:</span> {{report.date | date:'dd-MM-yyyy'}}</p>
+                <p><span><i class="fa-solid fa-calendar-days"></i> FECHA:</span> {{report.date | date:'dd-MM-yyyy'}}
+                </p>
             </div>
             <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/reports','edit', report._id]">Editar
                 reporte
