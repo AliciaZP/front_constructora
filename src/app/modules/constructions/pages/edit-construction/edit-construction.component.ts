@@ -10,55 +10,55 @@ import { ConstructionsService } from 'src/app/core/services/constructions.servic
 })
 export class EditConstructionComponent {
 
-  editConstruction: FormGroup;
-  constructionId: string = '';
-  constructionsService = inject(ConstructionsService)
+  // editConstruction: FormGroup;
+  // constructionId: string = '';
+  // // constructionsService = inject(ConstructionsService)
 
-  router = inject(Router)
-  activatedRoute = inject(ActivatedRoute)
+  // router = inject(Router)
+  // activatedRoute = inject(ActivatedRoute)
 
-  constructor() {
-    this.editConstruction = new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(45)]),
-      description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      direction: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      city: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(70)]),
-      assignment_date: new FormControl(null, Validators.required),
-      deadline: new FormControl(null, Validators.required),
-      phone: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(12)]),
-      construction_type: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(45)]),
-      work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      image: new FormControl(null, Validators.required),
-    })
-  }
+  // constructor() {
+  //   this.editConstruction = new FormGroup({
+  //     name: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(45)]),
+  //     description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+  //     direction: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(150)]),
+  //     city: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(70)]),
+  //     assignment_date: new FormControl(null, Validators.required),
+  //     deadline: new FormControl(null, Validators.required),
+  //     phone: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(12)]),
+  //     construction_type: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(45)]),
+  //     work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(150)]),
+  //     image: new FormControl(null, Validators.required),
+  //   })
+  // }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.constructionId = params['constructionId']
-      const response = this.constructionsService.getConstructionById(this.constructionId)
-      //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image } = response
-      this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image })
-    })
-  }
-  onSubmit() {
-    if (this.editConstruction.valid) {
-      this.constructionsService.updateConstructionById(this.constructionId, this.editConstruction.value);
-      this.router.navigate([`/constructions/construction/${this.constructionId}`]);
-    } else {
-      console.log('error');
-    }
-  };
+  // ngOnInit() {
+  //   this.activatedRoute.params.subscribe(params => {
+  //     this.constructionId = params['constructionId']
+  //     const response = this.constructionsService.getConstructionById(this.constructionId)
+  //     //hay que pasarle un objeto con los mismo campos que definimos en el form group
+  //     const { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image } = response
+  //     this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image })
+  //   })
+  // }
+  // onSubmit() {
+  //   if (this.editConstruction.valid) {
+  //     this.constructionsService.updateConstructionById(this.constructionId, this.editConstruction.value);
+  //     this.router.navigate([`/constructions/construction/${this.constructionId}`]);
+  //   } else {
+  //     console.log('error');
+  //   }
+  // };
 
 
-  checkError(controlName: string, errorName: string) {
-    return this.editConstruction.get(controlName)?.hasError(errorName) && this.editConstruction.get(controlName)?.touched;
-  };
+  // checkError(controlName: string, errorName: string) {
+  //   return this.editConstruction.get(controlName)?.hasError(errorName) && this.editConstruction.get(controlName)?.touched;
+  // };
 
 }

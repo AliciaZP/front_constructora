@@ -1,5 +1,5 @@
 export interface Construction {
-    _id: string;
+    id: string;
     name: string;
     description: string;
     direction: string;

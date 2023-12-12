@@ -11,45 +11,45 @@ import { ConstructionsService } from 'src/app/core/services/constructions.servic
 })
 export class NewConstructionComponent {
 
-  newConstruction: FormGroup;
-  constructionsService = inject(ConstructionsService)
+  // newConstruction: FormGroup;
+  // constructionsService = inject(ConstructionsService)
 
-  router = inject(Router)
+  // router = inject(Router)
 
-  constructor() {
-    this.newConstruction = new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(45)]),
-      description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      direction: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      city: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(70)]),
-      assignment_date: new FormControl(null, Validators.required),
-      deadline: new FormControl(null, Validators.required),
-      phone: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(12)]),
-      construction_type: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(45)]),
-      work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
-      Validators.maxLength(150)]),
-      image: new FormControl(null, Validators.required),
-    })
-  }
+  // constructor() {
+  //   this.newConstruction = new FormGroup({
+  //     name: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(45)]),
+  //     description: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+  //     direction: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(150)]),
+  //     city: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(70)]),
+  //     assignment_date: new FormControl(null, Validators.required),
+  //     deadline: new FormControl(null, Validators.required),
+  //     phone: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(12)]),
+  //     construction_type: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(45)]),
+  //     work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
+  //     Validators.maxLength(150)]),
+  //     image: new FormControl(null, Validators.required),
+  //   })
+  // }
 
-  onSubmit() {
-    if (this.newConstruction.valid) {
-      this.constructionsService.createConstruction(this.newConstruction.value);
-      this.router.navigate(['/constructions']);
-    } else {
-      console.log('error');
-    }
+  // onSubmit() {
+  //   if (this.newConstruction.valid) {
+  //     this.constructionsService.createConstruction(this.newConstruction.value);
+  //     this.router.navigate(['/constructions']);
+  //   } else {
+  //     console.log('error');
+  //   }
   };
 
 
-  checkError(controlName: string, errorName: string) {
-    return this.newConstruction.get(controlName)?.hasError(errorName) && this.newConstruction.get(controlName)?.touched;
-  };
+  // checkError(controlName: string, errorName: string) {
+  //   return this.newConstruction.get(controlName)?.hasError(errorName) && this.newConstruction.get(controlName)?.touched;
+  // };
 
 
-}
+// }
