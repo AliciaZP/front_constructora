@@ -1,11 +1,17 @@
-main #projects .grid {
+#projects .photos {
     display: grid;
-    gap: var(--space);
-    grid-template-rows: 1fr 1fr 2fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 250px 250px;
+    grid-gap: 10px;
+    padding: 20px;
 }
 
-main #projects .grid article {
+
+#projects .contenedor {
+    margin: 10px;
+}
+
+#projects .photos article {
     filter: grayscale(100%);
     transition: 1s;
 
@@ -14,33 +20,45 @@ main #projects .grid article {
     }
 }
 
-main #projects .grid article:first-child {
-    background-image: url('https://www.alejandrospinola.es/s/img/emotionheader.jpg?1604599110.940px.360px');
+#projects .photos article:first-child {
+    background-image: url("https://www.alejandrospinola.es/s/img/emotionheader.jpg?1604599110.940px.360px");
     background-size: cover;
     background-position: center center;
-    height: 45vh;
+
     overflow: hidden;
+    width: 100%;
+    grid-column: span 1;
+    grid-row: span 2;
+
 }
 
-main #projects .grid article:last-child {
+#projects .photos article:nth-child(2) {
     background-image: url("https://s1.eestatic.com/2021/10/15/invertia/empresas/construccion-infraestructuras/619699429_211756088_1706x960.jpg");
     background-size: cover;
     background-position: center center;
     overflow: hidden;
+    width: 100%;
+
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
-main #projects .grid article:nth-child(2) {
+#projects .photos article:last-child {
     background-image: url("https://aquimediosdecomunicacion.com/wp-content/uploads/2021/05/benidorm-paso-a-nivel-mayo-2021-5.jpg");
     background-size: cover;
     background-position: center center;
     overflow: hidden;
+    width: 100%;
+
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
-main #projects .grid article {
+#projects .photos article {
     position: relative;
 }
 
-main #projects .grid article h3 {
+#projects .photos article h3 {
     position: absolute;
     bottom: 1.25rem;
     left: 0.60rem;
@@ -48,48 +66,16 @@ main #projects .grid article h3 {
     font-weight: 500;
     transition: 1s;
     opacity: 0;
+    color: var(--color-main);
+    background-color: var(--color-third);
 }
 
-main #projects .grid article:hover h3 {
+#projects .photos article:hover h3 {
     left: 1.25rem;
     opacity: 1;
 }
 
-
-
-
-
-
-
-/* h4 {
-    color: var(--color-main);
-    font-weight: 700;
-    font-size: 100%;
-}
-
-img {
-    display: flex;
-    flex-wrap: wrap;
-    width: 25%;
-    height: auto;
-
-}
-
-.uno {
-    margin: 5px;
-}
-
-h3 {
-    color: var(--color-main);
-    font-weight: 700;
-
-}
-
-h2 {
-    color: var(--color-main);
-}
-
 iframe {
-    width: 35%;
-    height: 200px;
-} */
+    width: 100%;
+    height: 32.8125rem;
+}
