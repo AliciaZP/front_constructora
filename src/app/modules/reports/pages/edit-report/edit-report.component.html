@@ -1,0 +1,48 @@
+<section id="form-editReport">
+
+    <h2 class="m-5">EDITAR REPORTE </h2>
+    <form [formGroup]='editReport' (ngSubmit)="onSubmit()">
+
+        <div class="m-5">
+            <label>Asunto:</label>
+            <input type="text" formControlName='title' placeholder="Inserta aquí el asunto del reporte">
+            <p class="error" *ngIf="checkError('title','required')">
+                El nombre es obligatorio.</p>
+            <p class="error" *ngIf="checkError('title','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 45 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Descripción:</label>
+            <textarea formControlName='description' placeholder="Inserta aquí la descripción del reporte">
+            </textarea>
+            <p class="error" *ngIf="checkError('description','required')">
+                La descripción es obligatoria.</p>
+            <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Fecha de creación:</label>
+            <input type="text" formControlName='date' placeholder="Inserta aquí la fecha de creacion">
+            <p class="error" *ngIf="checkError('date','required')">
+                La fecha de creación obligatoria.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Tipo de reporte:</label>
+            <input type="text" formControlName='type' placeholder="Inserta aquí el tipo de reporte">
+            <p class="error" *ngIf="checkError('type','required')">El
+                tipo de construcción es obligatorio.</p>
+            <p class="error" *ngIf="checkError('type','minlength')">La longitud mínima son 3 caracteres.
+            </p>
+            <p class="error" *ngIf="checkError('type','maxlength')">La longitud máxima son 45 caracteres.
+            </p>
+        </div>
+
+        <div class="m-5">
+            <input class="button" type="submit" value="Editar reporte">
+        </div>
+
+    </form>
+
+</section>

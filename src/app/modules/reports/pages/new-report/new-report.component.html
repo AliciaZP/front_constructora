@@ -1,0 +1,70 @@
+<section id="form-newReport" class="mx-5 mt-5">
+
+    <h2 class="mb-5">NUEVO REPORTE </h2>
+
+    <div class="row">
+        <form class="col-sm-7" [formGroup]='newReport' (ngSubmit)="onSubmit()">
+            <h3 class="mb-4"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra tu trabajo en este reporte:</h3>
+            <div class="mb-4">
+                <label class="mb-1">Asunto:</label>
+                <input class="custom-option" type="text" formControlName='title'
+                    placeholder="Inserta aquí el asunto del reporte">
+                <p class="error" *ngIf="checkError('title','required')">
+                    El asunto es obligatorio.</p>
+                <p class="error" *ngIf="checkError('title','minlength')">La longitud mínima son 3 caracteres.</p>
+                <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 70 caracteres.</p>
+            </div>
+
+            <div class="mb-4">
+                <label class="mb-1">Descripción:</label>
+                <textarea class="custom-option" formControlName='description'
+                    placeholder="Inserta aquí la descripción del reporte">
+                </textarea>
+                <p class="error" *ngIf="checkError('description','required')">
+                    La descripción es obligatoria.</p>
+                <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
+            </div>
+            <div class="mb-4">
+                <label class="mb-1">Tipo de reporte:</label>
+                <select class="custom-select" formControlName="type">
+                    <option class="custom-option" value="actualización">Actualización</option>
+                    <option class="custom-option" value="incidencia">Incidencia</option>
+                </select>
+                <p class="error" *ngIf="checkError('type','required')">El
+                    tipo de reporte es obligatorio.</p>
+            </div>
+            <div class="mb-4">
+                <label class="mb-1">Fecha de creación:</label>
+                <input class="custom-option date" type="datetime-local" formControlName='date'
+                    placeholder="Inserta aquí la fecha de hoy">
+                <p class="error" *ngIf="checkError('date','required')">
+                    La fecha de creación obligatoria.</p>
+            </div>
+
+            <div class="pt-2 pb-5">
+                <input class="button-create" type="submit" value="CREAR REPORTE">
+            </div>
+        </form>
+
+        <div class="col-sm-4">
+            <h3 class="mb-4"> <i class="fa-regular fa-lightbulb me-2"></i>Antes de crear tu nuevo reporte...</h3>
+            <ul class="mb-5">
+                <li class="mb-4">El <span>asunto</span> debe ser claro y conciso.</li>
+                <li class="mb-4">Añade en la <span>descripción</span> los detalles que desees.</li>
+                <li class="mb-4"></li>
+                <li class="mb-4">El <span>tipo de reporte</span> es importante.</li>
+                <li class="mb-4">La <span>fecha</span> de creación se genera automáticamente.</li>
+                <li class="mb-5">Tu reporte será notificado al <span>administrador</span>.</li>
+                <li class="mb-3 advice"><i class="fa-solid fa-check me-2"></i>Recuerda que puedes actualizar tu reporte
+                    siempre
+                    que
+                    lo necesites.</li>
+                <li class="mb-3 advice"><i class="fa-solid fa-xmark me-2"></i>Recuerda que no puedes borrar tu reporte
+                    una vez
+                    publicado.</li>
+                <li class="mb-3 advice"><i class="fa-solid fa-question me-2"></i>Si tienes dudas sobre cómo realizar tu
+                    reporte, <a href="mailto:contacto@sgal-construcciones.com">contacta</a> con nosotros.</li>
+            </ul>
+        </div>
+    </div>
+</section>
