@@ -47,4 +47,6 @@ article.card {
 
 .iconos {
     background-color: var(--color-main);
+    color: white;
+
 }
