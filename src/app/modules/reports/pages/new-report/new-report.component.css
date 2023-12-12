@@ -31,22 +31,25 @@ label {
 
 input {
     display: block;
-    width: 40rem;
+    width: 15rem;
 
 }
 
 select {
     display: block;
-    width: 10rem;
+    width: 15rem;
 }
 
 textarea {
     display: block;
-    width: 40rem;
+    width: 15rem;
     height: 8rem;
     padding: 0.3rem;
 }
 
+.date {
+    width: 15rem;
+}
 
 .custom-option {
     color: var(--color-second);
@@ -62,15 +65,47 @@ textarea {
     padding: 0.3rem;
 }
 
+.custom-option:focus {
+    outline: none;
+    box-shadow: 0 0 0px 1px var(--color-second);
+}
+
 .custom-select:focus {
     outline: none;
-    box-shadow: none;
+    box-shadow: 0 0 0px 1px var(--color-second);
 }
 
 ::placeholder {
     color: var(--color-second);
     font-style: italic;
     font-size: 0.8rem;
+}
+
+/* efecto del borde cuando los campos están correctos o incorrectos */
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched {
+    border: 2px solid green;
+}
+
+
+textarea.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+textarea.ng-valid.ng-touched {
+    border: 2px solid green;
+}
+
+select.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+select.ng-valid.ng-touched {
+    border: 2px solid green;
 }
 
 
@@ -112,4 +147,64 @@ a {
 
 span {
     font-weight: 600;
+}
+
+
+
+
+/* mediaqueries */
+
+@media(min-width: 48rem) {
+    input {
+        width: 20rem;
+    }
+
+    select {
+        width: 15rem;
+    }
+
+    textarea {
+        width: 20rem;
+    }
+
+    .date {
+        width: 15rem;
+    }
+}
+
+@media(min-width: 1000px) {
+
+    input {
+        width: 30rem;
+    }
+
+    select {
+        width: 15rem;
+    }
+
+    textarea {
+        width: 30rem;
+    }
+
+    .date {
+        width: 15rem;
+    }
+}
+
+@media(min-width: 87.5rem) {
+    input {
+        width: 40rem;
+    }
+
+    select {
+        width: 15rem;
+    }
+
+    textarea {
+        width: 40rem;
+    }
+
+    .date {
+        width: 15rem;
+    }
 }
