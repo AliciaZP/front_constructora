@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule)
   },
   {
+    path: 'tasks',
+    loadChildren: () => import('./modules/tasks/tasks.module').then(m => m.TasksModule)
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },

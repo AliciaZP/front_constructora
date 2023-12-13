@@ -1,0 +1,57 @@
+<section id="form-editReport">
+
+    <h2 class="m-5">EDITAR TAREA </h2>
+    <form [formGroup]='editTask' (ngSubmit)="onSubmit()">
+
+        <div class="m-5">
+            <label>Título:</label>
+            <input type="text" formControlName='title' placeholder="Inserta aquí el nombre de la tarea">
+            <p class="error" *ngIf="checkError('title','required')">
+                El título es obligatorio.</p>
+            <p class="error" *ngIf="checkError('title','minlength')">La longitud mínima son 3 caracteres.</p>
+            <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 45 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Descripción:</label>
+            <textarea formControlName='description' placeholder="Inserta aquí la descripción de la tarea">
+            </textarea>
+            <p class="error" *ngIf="checkError('description','required')">
+                La descripción es obligatoria.</p>
+            <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Fecha de entrega:</label>
+            <input type="text" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
+            <p class="error" *ngIf="checkError('deadline','required')">
+                La fecha de entrega obligatoria.</p>
+        </div>
+        <div class="m-5">
+            <label>Fecha de asignación:</label>
+            <input type="text" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
+            <p class="error" *ngIf="checkError('assignment_date','required')">
+                La fecha de asignación obligatoria.</p>
+        </div>
+
+        <div class="m-5">
+            <label>Prioridad:</label>
+            <select class="custom-select" formControlName="priority">
+                <option class="custom-option" value="alta">Alta</option>
+                <option class="custom-option" value="media">Media</option>
+                <option class="custom-option" value="baja">Baja</option>
+            </select>
+            <p class="error" *ngIf="checkError('priority','required')">La prioridad es obligatorio.</p>
+            <p class="error" *ngIf="checkError('priority','minlength')">La longitud mínima son 3 caracteres.
+            </p>
+            <p class="error" *ngIf="checkError('priority','maxlength')">La longitud máxima son 45 caracteres.
+            </p>
+        </div>
+
+        <div class="m-5">
+            <input class="button" type="submit" value="Editar tarea">
+        </div>
+
+    </form>
+
+</section>
