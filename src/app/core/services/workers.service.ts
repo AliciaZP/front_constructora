@@ -1,18 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { User } from '../interfaces/user.interface';
 import { UsersDB } from 'src/app/db/users.db';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkersService {
-
+  httpClient = inject(HttpClient);
+  url: string = 'http://localhost:3000/api/workers'
   constructor() { }
   //Las CONSTRUCTIONS son una base de datos creada el front para probar, como los import no se pueden editar. Creo un array editable y trabajo sobre él a partir de la copia de CONSTRUCTIONSDB
   private arrWorkers: User[] = [...UsersDB];
 
   getAll() {
-    return this.arrWorkers;
+    return firstValueFrom(
+      this.httpClient.get<User[]>(`${this.url}`)
+    );
   }
 
   getWorkerById(workerId: string): User {
@@ -21,12 +26,9 @@ export class WorkersService {
   };
 
   createWorker(pWorker: User) {
-    const usersDB = localStorage.getItem('array_newConstructions');
-    if (usersDB) {
-      this.arrWorkers = JSON.parse(usersDB);
-    }
-    this.arrWorkers.push(pWorker);
-    localStorage.setItem('array_newWorkers', JSON.stringify(this.arrWorkers));
+    return firstValueFrom(
+      this.httpClient.post<User>(`${this.url}/new`, pWorker)
+    )
   }
 
   updateWorkerById(workerId: string, formUpdate: User): void {

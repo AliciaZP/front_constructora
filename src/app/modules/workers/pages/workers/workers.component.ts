@@ -19,40 +19,46 @@ export class WorkersComponent {
   botonActivo: boolean = true;
 
   ngOnInit() {
-    this.arrWorkers = this.workersService.getAll();
-    this.arrCities = this.workersService.getCities();
-    this.arrJobs = this.workersService.getJobs();
-    this.arrRoles = this.workersService.getRoles();
+    this.getAllWorkers()
+    // this.arrWorkers = this.workersService.getAll();
+    // this.arrCities = this.workersService.getCities();
+    // this.arrJobs = this.workersService.getJobs();
+    // this.arrRoles = this.workersService.getRoles();
   }
 
-  onClickDelete($event: string) {
-    const response = this.workersService.deleteWorkerById($event)
-    this.arrWorkers = this.workersService.getAll();
+  async getAllWorkers(){
+    const response = await this.workersService.getAll();
+    this.arrWorkers = response;
   }
 
-  //Aqui empiezan los fitros
+  // onClickDelete($event: string) {
+  //   const response = this.workersService.deleteWorkerById($event)
+  //   this.arrWorkers = this.workersService.getAll();
+  // }
 
-  onChangeCity($event: any) {
-    this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByCity($event.target.value);
-  };
+  // //Aqui empiezan los fitros
 
-  onChangeRole($event: any) {
-    this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByRole($event.target.value);
-  };
-  onChangeJob($event: any) {
-    this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByJob($event.target.value);
-  };
+  // onChangeCity($event: any) {
+  //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByCity($event.target.value);
+  // };
 
-  onChangeName($event: any) {
-    const ascendente = $event.target.value === "A-Z";
-    this.arrWorkers = this.workersService.orderByName(ascendente);
-    //si el value no corresponde, la funcion ejectua en orden descendente
-  }
+  // onChangeRole($event: any) {
+  //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByRole($event.target.value);
+  // };
+  // onChangeJob($event: any) {
+  //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByJob($event.target.value);
+  // };
 
-  onChangeSurname($event: any) {
-    const ascendente = $event.target.value === "A-Z";
-    this.arrWorkers = this.workersService.orderBySurname(ascendente);
-    //si el value no corresponde, la funcion ejectua en orden descendente
-  }
+  // onChangeName($event: any) {
+  //   const ascendente = $event.target.value === "A-Z";
+  //   this.arrWorkers = this.workersService.orderByName(ascendente);
+  //   //si el value no corresponde, la funcion ejectua en orden descendente
+  // }
+
+  // onChangeSurname($event: any) {
+  //   const ascendente = $event.target.value === "A-Z";
+  //   this.arrWorkers = this.workersService.orderBySurname(ascendente);
+  //   //si el value no corresponde, la funcion ejectua en orden descendente
+  // }
 
 }

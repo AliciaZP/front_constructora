@@ -27,6 +27,27 @@ export class ConstructionsService implements OnInit{
     )
   }
 
+  getConstructionWithReports(id: number){
+    return firstValueFrom(
+      this.httpClient.get<Construction>(`${this.url}/reports/${id}`)
+      );
+    }
+
+
+  createNewConstruction(body: Construction){
+    return firstValueFrom(
+      this.httpClient.post<Construction>(`${this.url}/new`, body)
+    );
+  }
+
+    // createConstruction(pConstruction: Construction) {
+    //   const constructionsDB = localStorage.getItem('array_newConstructions');
+    //   if (constructionsDB) {
+    //     this.arrConstruction = JSON.parse(constructionsDB);
+    //   }
+    //   this.arrConstruction.push(pConstruction);
+    //   localStorage.setItem('array_newConstructions', JSON.stringify(this.arrConstruction));
+    // }
   ngOnInit(): void {
 
   }
@@ -44,14 +65,6 @@ export class ConstructionsService implements OnInit{
   //   return constructionFound ? { ...constructionFound } : { _id: "", name: "", description: "", direction: "", city: "", assignment_date: new Date(), deadline: new Date(), phone: "", construction_type: "", work_time: "", image: "" }
   // };
 
-  // createConstruction(pConstruction: Construction) {
-  //   const constructionsDB = localStorage.getItem('array_newConstructions');
-  //   if (constructionsDB) {
-  //     this.arrConstruction = JSON.parse(constructionsDB);
-  //   }
-  //   this.arrConstruction.push(pConstruction);
-  //   localStorage.setItem('array_newConstructions', JSON.stringify(this.arrConstruction));
-  // }
 
   // updateConstructionById(constructionId: string, formUpdate: Construction): void {
   //   const constructionIndex = this.arrConstruction.findIndex(construction => construction._id === constructionId);

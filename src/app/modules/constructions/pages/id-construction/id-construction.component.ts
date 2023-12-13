@@ -16,16 +16,19 @@ export class IdConstructionComponent {
   activatedRoute = inject(ActivatedRoute)
   router = inject(Router)
   botonActivo: boolean = true;
+  arrWorkers!: any;
 
 
   async ngOnInit() {
     this.arrConstructions = await this.constructionsService.getAllConstructions();
-    console.log(this.constructionSelected);
+    // const { workers } = this.constructionSelected;
     this.activatedRoute.params.subscribe(async (params) => {
 
       const response = await this.constructionsService.getConstructionById(params['constructionId']);
       this.constructionSelected = response
-      console.log(this.constructionSelected)
+      const { workers } = this.constructionSelected;
+      this.arrWorkers = workers;
+
     })
   }
 

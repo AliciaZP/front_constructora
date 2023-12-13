@@ -29,28 +29,28 @@ export class EditReportComponent {
     })
   }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.reportId = params['reportId']
-      const response = this.reportsService.getReportById(this.reportId)
-      //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { title, description, date, type } = response
-      this.editReport.setValue({ title, description, date, type })
-    })
+  // ngOnInit() {
+  //   this.activatedRoute.params.subscribe(params => {
+  //     this.reportId = params['reportId']
+  //     const response = this.reportsService.getReportById(this.reportId)
+  //     //hay que pasarle un objeto con los mismo campos que definimos en el form group
+  //     const { title, description, date, type } = response
+  //     this.editReport.setValue({ title, description, date, type })
+  //   })
 
 
-  }
-  onSubmit() {
-    if (this.editReport.valid) {
-      this.reportsService.updateReportById(this.reportId, this.editReport.value);
-      this.router.navigate([`/reports`]);
-    } else {
-      console.log('error');
-    }
-  };
+  // }
+  // onSubmit() {
+  //   if (this.editReport.valid) {
+  //     this.reportsService.updateReportById(this.reportId, this.editReport.value);
+  //     this.router.navigate([`/reports`]);
+  //   } else {
+  //     console.log('error');
+  //   }
+  // };
 
 
-  checkError(controlName: string, errorName: string) {
-    return this.editReport.get(controlName)?.hasError(errorName) && this.editReport.get(controlName)?.touched;
-  };
+  // checkError(controlName: string, errorName: string) {
+  //   return this.editReport.get(controlName)?.hasError(errorName) && this.editReport.get(controlName)?.touched;
+  // };
 }

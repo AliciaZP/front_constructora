@@ -12,5 +12,7 @@ export interface Construction {
     image: string,
     lat?: number;
     lng?: number;
+    workers?: [];
+    reports?: [];
 
 }

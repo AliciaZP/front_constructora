@@ -7,7 +7,7 @@ import { EditReportComponent } from './pages/edit-report/edit-report.component';
 
 const routes: Routes = [
   { path: '', component: ReportsComponent },
-  { path: 'new', component: NewReportComponent },
+  { path: 'new/:constructionId', component: NewReportComponent },
   { path: 'edit/:reportId', component: EditReportComponent }
 ]
 

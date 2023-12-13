@@ -4,41 +4,41 @@
         <div class="col-6">
             <div class="mb-3">
                 <label>Selecciona la ciudad</label>
-                <select (change)="onChangeCity($event)">
+                <!-- <select (change)="onChangeCity($event)">
                     <option value="">Todas las ciudades</option>
                     <option *ngFor="let city of arrCities" [value]="city">{{city}}
                     </option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3">
                 <label>Selecciona el rol</label>
-                <select (change)="onChangeRole($event)">
+                <!-- <select (change)="onChangeRole($event)">
                     <option value="">Todos los roles</option>
                     <option *ngFor="let role of arrRoles" [value]="role">{{role}}</option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3">
                 <label>Selecciona el puesto</label>
-                <select (change)="onChangeJob($event)">
+                <!-- <select (change)="onChangeJob($event)">
                     <option value="">Todos los puestos</option>
                     <option *ngFor="let job of arrJobs" [value]="job">{{job}}</option>
-                </select>
+                </select> -->
             </div>
         </div>
         <div class="col-6">
             <div class="mb-3">
                 <label>Ordenar por nombre del Operario</label>
-                <select (change)="onChangeName($event)">
+                <!-- <select (change)="onChangeName($event)">
                     <option value="A-Z">De la A a la Z</option>
                     <option value="Z-A">De la Z a la A</option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3">
                 <label>Ordenar por apellido del Operario</label>
-                <select (change)="onChangeSurname($event)">
+                <!-- <select (change)="onChangeSurname($event)">
                     <option value="A-Z">De la A a la Z</option>
                     <option value="Z-A">De la Z a la A</option>
-                </select>
+                </select> -->
             </div>
         </div>
 
@@ -65,8 +65,8 @@
                             <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker._id]">
                                 Editar Operario
                             </button>
-                            <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario
-                            </button>
+                            <!-- <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario -->
+                            <!-- </button> -->
                         </div>
                     </div>
                 </div>

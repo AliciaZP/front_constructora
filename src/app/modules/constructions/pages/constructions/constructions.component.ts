@@ -17,11 +17,7 @@ export class ConstructionsComponent implements OnInit {
 
   constructor(){}
 
-  async getAllConstructions(){
-    const response = await this.constructionsService.getAllConstructions();
-    this.arrConstructions = response;
-    console.log(this.arrConstructions);
-  }
+
 
 
 
@@ -29,8 +25,8 @@ export class ConstructionsComponent implements OnInit {
   // arrConstructionTypes: string[] = []
 
 
-  ngOnInit() {
-    this.getAllConstructions()
+  async ngOnInit() {
+    this.arrConstructions = await this.constructionsService.getAllConstructions();
     console.log(this.arrConstructions)
       // this.arrConstructions = this.constructionsService.getAll();
       this.arrCities = this.getCities();
