@@ -1,6 +1,6 @@
 import { Injectable, OnInit, inject } from '@angular/core';
 
-import { ConstructionsDB } from 'src/app/db/constructions.db';
+// import { ConstructionsDB } from 'src/app/db/constructions.db';
 import { Construction } from '../interfaces/construction.interfaces';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
@@ -27,6 +27,35 @@ export class ConstructionsService implements OnInit{
     )
   }
 
+  getConstructionByType(type: string): Promise<Construction[]>{
+    return firstValueFrom(
+      this.httpClient.get<Construction[]>(`${this.url}/type/${type}`)
+    )
+  }
+
+  getConstructionByOrderName(name: string): Promise<Construction[]>{
+    return firstValueFrom(
+      this.httpClient.get<Construction[]>(`${this.url}/name/${name}`)
+    )
+  }
+  getConstructionByOrderDate(date: string): Promise<Construction[]>{
+    return firstValueFrom(
+      this.httpClient.get<Construction[]>(`${this.url}/date/${date}`)
+    )
+  }
+  getConstructionByOrderDeadline(deadline: string): Promise<Construction[]>{
+    return firstValueFrom(
+      this.httpClient.get<Construction[]>(`${this.url}/deadline/${deadline}`)
+    )
+  }
+
+
+  getConstructionsByCity(city: string): Promise<Construction[]>{
+    return firstValueFrom(
+      this.httpClient.get<Construction[]>(`${this.url}/filters/${city}`)
+    )
+  }
+
   getConstructionWithReports(id: number){
     return firstValueFrom(
       this.httpClient.get<Construction>(`${this.url}/reports/${id}`)
@@ -38,6 +67,19 @@ export class ConstructionsService implements OnInit{
     return firstValueFrom(
       this.httpClient.post<Construction>(`${this.url}/new`, body)
     );
+  }
+
+  updateConstructionById(constructionId: number, formUpdate: Construction) {
+    console.log(formUpdate)
+    return firstValueFrom(
+      this.httpClient.put<Construction>(`${this.url}/${constructionId}`, formUpdate)
+    )
+  }
+
+  deleteConstructionById(constructionId: string) {
+    return firstValueFrom(
+      this.httpClient.delete<Construction>(`${this.url}/${constructionId}`)
+    )
   }
 
     // createConstruction(pConstruction: Construction) {
@@ -66,17 +108,7 @@ export class ConstructionsService implements OnInit{
   // };
 
 
-  // updateConstructionById(constructionId: string, formUpdate: Construction): void {
-  //   const constructionIndex = this.arrConstruction.findIndex(construction => construction._id === constructionId);
 
-  //   if (constructionIndex !== -1) {
-  //     this.arrConstruction[constructionIndex] = { ...this.arrConstruction[constructionIndex], ...formUpdate };
-  //   }
-  // }
-
-  // deleteConstructionById(constructionId: string): void {
-  //   this.arrConstruction = this.arrConstruction.filter(construction => construction._id !== constructionId);
-  // }
 
   // //Funciones para las ciudades
 

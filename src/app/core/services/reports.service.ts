@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Report } from '../interfaces/report.interface';
-import { ReportsDB } from 'src/app/db/reports.db';
+// import { ReportsDB } from 'src/app/db/reports.db';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
@@ -19,10 +19,11 @@ export class ReportsService {
   //   return this.arrReports;
   // }
 
-  // getReportById(reportId: string): Report {
-  //   const reportFound = this.arrReports.find(report => report._id === reportId);
-  //   return reportFound ? { ...reportFound } : { _id: "", title: "", date: new Date(), description: "", type: "", }
-  // };
+  getReportById(reportId: string) {
+    return firstValueFrom(
+      this.HttpClient.get<Report>(`${this.url}/${reportId}`)
+    )
+  };
 
   createReport(pReport: Report) {
     console.log(pReport)
@@ -31,13 +32,11 @@ export class ReportsService {
     );
   }
 
-  // updateReportById(reportId: string, formUpdate: Report): void {
-  //   const reportIndex = this.arrReports.findIndex(report => report._id === reportId);
-
-  //   if (reportIndex !== -1) {
-  //     this.arrReports[reportIndex] = { ...this.arrReports[reportIndex], ...formUpdate };
-  //   }
-  // }
+  updateReportById(reportId: string, formUpdate: Report) {
+    return firstValueFrom(
+      this.HttpClient.put<Report>(`${this.url}/${reportId}`, formUpdate)
+    )
+  }
 
   //Funciones para las ciudades
   // getTypes(): string[] {

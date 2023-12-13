@@ -10,6 +10,7 @@ import { ConstructionsService } from 'src/app/core/services/constructions.servic
 export class ConstructionsComponent implements OnInit {
 
   arrConstructions!: Construction[];
+  arrConstructionTypes: string[] = []
 
   constructionsService = inject(ConstructionsService)
   botonActivo: boolean = true;
@@ -17,33 +18,23 @@ export class ConstructionsComponent implements OnInit {
 
   constructor(){}
 
-
-
-
-
-
-  // arrConstructionTypes: string[] = []
-
-
   async ngOnInit() {
     this.arrConstructions = await this.constructionsService.getAllConstructions();
     console.log(this.arrConstructions)
       // this.arrConstructions = this.constructionsService.getAll();
       this.arrCities = this.getCities();
       console.log(this.arrCities)
-      // this.arrConstructionTypes = this.constructionsService.getConstructionTypes();
-
-
-    }
-
-    // onClickDelete($event: string) {
-      //   const response = this.constructionsService.deleteConstructionById($event)
-      //   this.arrConstructions = this.constructionsService.getAll();
-      // }
+      this.arrConstructionTypes = this.getConstructionTypes();
+  }
 
 
 
-  // //Aqui empiezan los fitros
+  getConstructionTypes(): string[] {
+    const constructionsUnordered = [...new Set(this.arrConstructions.map(construction => construction.construction_type))];
+    const constructionsOrdered = constructionsUnordered.sort((a, b) => a.localeCompare(b));
+    return constructionsOrdered;
+  }
+
   getCities() {
     console.log(this.arrConstructions)
     const constructionsUnordered = [...new Set(this.arrConstructions.map(construction => construction.city))];
@@ -56,27 +47,53 @@ export class ConstructionsComponent implements OnInit {
     return this.arrConstructions.filter(construction => construction.city === pCity)
   }
 
-  onChangeCity($event: any) {
-    // this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAllConstructions() : this.constructionsService.filterByCity($event.target.value);
+  async onChangeCity($event: any) {
+    try {
+      if(!$event.target.value){
+        this.arrConstructions = await this.constructionsService.getAllConstructions();
+      }else{
+        const response = await this.constructionsService.getConstructionsByCity($event.target.value)
+        this.arrConstructions = response;
+
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
   };
 
-  // onChangeConstructionType($event: any) {
-  //   this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAll() : this.constructionsService.filterByConstructionType($event.target.value);
-  // };
+  async onChangeConstructionType($event: any) {
+    try {
+      if(!$event.target.value){
+        this.arrConstructions = await this.constructionsService.getAllConstructions();
+      }else{
+      const response = await this.constructionsService.getConstructionByType($event.target.value);
+      this.arrConstructions = response;
+      }
+    } catch (error) {
+      console.log(error)
+    }
 
-  // onChangeName($event: any) {
-  //   const ascendente = $event.target.value === "A-Z";
-  //   this.arrConstructions = this.constructionsService.orderByName(ascendente);
-  //   //si el value no corresponde, la funcion ejectua en orden descendente
-  // }
+  };
 
-  // onChangeAssignmentDate($event: any) {
-  //   const ascendente = $event.target.value === "reciente";
-  //   this.arrConstructions = this.constructionsService.orderByAssignmentDate(ascendente);
-  // } //si el value no corresponde, la funcion ejectua en orden descendente
+  async onChangeName($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderName($event.target.value)
+    this.arrConstructions = response;
+    //si el value no corresponde, la funcion ejectua en orden descendente
+  }
 
-  // onChangeDeadline($event: any) {
-  //   const ascendente = $event.target.value === "reciente";
-  //   this.arrConstructions = this.constructionsService.orderByDeadline(ascendente);
-  // } //si el value no corresponde, la funcion ejectua en orden descendente
+  async onChangeAssignmentDate($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderDate($event.target.value)
+    this.arrConstructions = response;
+  } //si el value no corresponde, la funcion ejectua en orden descendente
+
+  async onChangeDeadline($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderDeadline($event.target.value)
+    this.arrConstructions = response;
+  } //si el value no corresponde, la funcion ejectua en orden descendente
+
+  // onClickDelete($event: string) {
+      //   const response = this.constructionsService.deleteConstructionById($event)
+      //   this.arrConstructions = this.constructionsService.getAll();
+      // }
 }

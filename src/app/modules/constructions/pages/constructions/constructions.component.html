@@ -16,10 +16,10 @@
 
                 <div class="col-5">
                     <label class="pe-3 pb-2">Tipo de construcción</label>
-                    <!-- <select (change)="onChangeConstructionType($event)">
-                        <option value="">Seleccionar</option>
+                    <select (change)="onChangeConstructionType($event)">
+                        <option value="">Todos</option>
                         <option *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}</option>
-                    </select> -->
+                    </select>
                 </div>
             </div>
         </div>
@@ -29,25 +29,25 @@
                 <h4 class="col-2">Ordenar:</h4>
                 <div class="col-3">
                     <label class="pe-3 pb-2">Nombre</label>
-                    <!-- <select (change)="onChangeName($event)">
-                        <option value="A-Z">De la A a la Z</option>
-                        <option value="Z-A">De la Z a la A</option>
-                    </select> -->
+                    <select (change)="onChangeName($event)">
+                        <option value="asc">De la A a la Z</option>
+                        <option value="desc">De la Z a la A</option>
+                    </select>
                 </div>
 
                 <div class="col-3">
                     <label class="pe-3 pb-2">Creación</label>
-                    <!-- <select (change)="onChangeAssignmentDate($event)">
-                        <option value="reciente">Más reciente</option>
-                        <option value="antiguo">Más antigua</option>
-                    </select> -->
+                    <select (change)="onChangeAssignmentDate($event)">
+                        <option value="desc">Más reciente</option>
+                        <option value="asc">Más antigua</option>
+                    </select>
                 </div>
                 <div class="col-3">
                     <label class="pe-3 pb-2">Finalización</label>
-                    <!-- <select (change)="onChangeDeadline($event)">
-                        <option value="reciente">Más reciente</option>
-                        <option value="antiguo">Más antigua</option>
-                    </select> -->
+                    <select (change)="onChangeDeadline($event)">
+                        <option value="asc">Más próxima</option>
+                        <option value="desc">Más lejana</option>
+                    </select>
                 </div>
             </div>
         </div>

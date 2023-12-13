@@ -1,5 +1,5 @@
 export interface User {
-    _id: string;
+    id: string;
     name: string;
     surname: string;
     dni: string;
@@ -10,5 +10,7 @@ export interface User {
     active: boolean;
     job: string;
     city: string,
+    Construction_id?: number,
     image: string,
+
 }

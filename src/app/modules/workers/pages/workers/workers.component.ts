@@ -18,19 +18,31 @@ export class WorkersComponent {
 
   botonActivo: boolean = true;
 
-  ngOnInit() {
-    this.getAllWorkers()
+  async ngOnInit() {
+    await this.getAllWorkers()
     // this.arrWorkers = this.workersService.getAll();
-    // this.arrCities = this.workersService.getCities();
+    this.arrCities = this.getCities();
+    console.log(this.arrCities)
     // this.arrJobs = this.workersService.getJobs();
     // this.arrRoles = this.workersService.getRoles();
+  }
+
+
+  getCities(): string[] {
+    const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.city))];
+    console.log(workersUnordered)
+    const workersOrdered = workersUnordered.sort((a, b) => a.localeCompare(b));
+    return workersOrdered;
+  }
+
+  filterByCity(pCity: string): User[] {
+    return this.arrWorkers.filter(worker => worker.city === pCity)
   }
 
   async getAllWorkers(){
     const response = await this.workersService.getAll();
     this.arrWorkers = response;
   }
-
   // onClickDelete($event: string) {
   //   const response = this.workersService.deleteWorkerById($event)
   //   this.arrWorkers = this.workersService.getAll();
@@ -38,9 +50,10 @@ export class WorkersComponent {
 
   // //Aqui empiezan los fitros
 
-  // onChangeCity($event: any) {
-  //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByCity($event.target.value);
-  // };
+  async onChangeCity($event: any) {
+    const response = await this.workersService.getWorkersByCity($event.target.value);
+    this.arrWorkers = response
+  };
 
   // onChangeRole($event: any) {
   //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByRole($event.target.value);

@@ -57,7 +57,7 @@
                 <p><span><i class="fa-solid fa-calendar-days"></i> FECHA:</span> {{report.date | date:'dd-MM-yyyy'}}
                 </p>
             </div>
-            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/reports','edit', report._id]">Editar
+            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/reports','edit', report.id]">Editar
                 reporte
             </button>
         </article>

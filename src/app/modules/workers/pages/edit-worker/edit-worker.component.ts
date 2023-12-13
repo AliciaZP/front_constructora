@@ -40,20 +40,23 @@ export class EditWorkerComponent {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(async params => {
       this.workerId = params['workerId']
-      const response = this.workersService.getWorkerById(this.workerId)
+      const response = await this.workersService.getWorkerById(this.workerId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { name, surname, dni, phone, email, password, role, active, job, city, image } = response
-      this.editWorker.setValue({ name, surname, dni, phone, email, password, role, active, job, city, image })
+      const { name, surname, dni, phone, email, password, role, active, job, city, Construction_id ,image } = response
+      this.editWorker.setValue({ name, surname, dni, phone, email, password, role, active, job, city,Construction_id, image })
     })
   }
-  onSubmit() {
-    if (this.editWorker.valid) {
-      this.workersService.updateWorkerById(this.workerId, this.editWorker.value);
-      this.router.navigate(['/workers']);
-    } else {
-      console.log('error');
+  async onSubmit() {
+    try {
+
+        await this.workersService.updateWorkerById(this.workerId, this.editWorker.value);
+        this.router.navigate(['/workers']);
+
+
+    } catch (error) {
+      console.log(error);
     }
   };
 

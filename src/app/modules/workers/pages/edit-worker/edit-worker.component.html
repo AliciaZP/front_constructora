@@ -85,7 +85,7 @@
             <label>Rol:</label>
             <select formControlName='role'>
                 <option value="admin">Admin</option>
-                <option value="user">Operario</option>
+                <option value="worker">Operario</option>
             </select>
             <p class="error" *ngIf="checkError('role','required')">
                 El rol es obligatorio.</p>
@@ -95,8 +95,8 @@
         <div class="m-5">
             <label>Activo:</label>
             <select formControlName='active'>
-                <option value="true" selected>Sí</option>
-                <option value="false">No</option>
+                <option value="0" selected>Sí</option>
+                <option value="1">No</option>
             </select>
             <p class="error" *ngIf="checkError('active','required')">
                 El estado es obligatorio.</p>
@@ -108,7 +108,7 @@
 
     </form>
 </section>
-<!-- 
+<!--
     _id: string;
     name: string;
     surname: string;

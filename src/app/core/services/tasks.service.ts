@@ -36,7 +36,7 @@ export class TasksService {
     }
   }
 
-  //Funciones para los filtros 
+  //Funciones para los filtros
   getTypes() {
   }
 

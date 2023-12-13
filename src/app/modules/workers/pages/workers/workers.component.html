@@ -4,11 +4,11 @@
         <div class="col-6">
             <div class="mb-3">
                 <label>Selecciona la ciudad</label>
-                <!-- <select (change)="onChangeCity($event)">
+                <select (change)="onChangeCity($event)">
                     <option value="">Todas las ciudades</option>
                     <option *ngFor="let city of arrCities" [value]="city">{{city}}
                     </option>
-                </select> -->
+                </select>
             </div>
             <div class="mb-3">
                 <label>Selecciona el rol</label>
@@ -62,7 +62,7 @@
                         <p class="mb-3">DNI: {{worker.dni}}</p>
                         <p class="mb-3">Permisos: {{worker.role}}</p>
                         <div class="pb-3">
-                            <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker._id]">
+                            <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
                                 Editar Operario
                             </button>
                             <!-- <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario -->

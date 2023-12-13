@@ -33,10 +33,10 @@ export class IdConstructionComponent {
   }
 
 
-  // onClickDelete($event: string) {
-  //   this.constructionsService.deleteConstructionById($event)
-  //   this.arrConstructions = this.constructionsService.getAll();
-  //   this.router.navigate(['/constructions']);
-  // }
+  async onClickDelete($event: string) {
+    this.constructionsService.deleteConstructionById($event)
+    this.arrConstructions = await this.constructionsService.getAllConstructions();
+    this.router.navigate(['/constructions']);
+  }
 
 }

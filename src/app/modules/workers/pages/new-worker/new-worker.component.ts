@@ -21,13 +21,13 @@ export class NewWorkerComponent {
       Validators.maxLength(45)]),
       surname: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(70)]),
-      dni: new FormControl(null, [Validators.required, this.dniValidator]),
+      dni: new FormControl(null, [Validators.required]),
       phone: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(12)]),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)]),
       password: new FormControl(null, [Validators.required, this.passwordValidator]),
       role: new FormControl(null, Validators.required),
-      active: new FormControl(null, Validators.required),
+      active: new FormControl(null),
       job: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(70)]),
       city: new FormControl(null, [Validators.required, Validators.minLength(3),
@@ -43,6 +43,7 @@ export class NewWorkerComponent {
         await this.workersService.createWorker(this.newWorker.value);
         this.router.navigate(['/workers']);
       } else {
+        console.log('error');
       }
     } catch (error) {
       console.log(error);
