@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front_constructora';
+
+  router = inject(Router)
+
+  isAuthRoute(): boolean {
+    //Con esto obtenemos la ruta actual en la que estamos.
+    const currentRoute = this.router.url;
+
+    // Confirma que la ruta es la que se llama así:
+    return currentRoute === '/auth';
+  }
+
+
+
 }

@@ -2,6 +2,9 @@
     background-color: rgb(234, 234, 234)
 }
 
+.back {
+    cursor: pointer;
+}
 
 h1 {
     font-size: 3.5rem;
