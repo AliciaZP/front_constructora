@@ -54,10 +54,11 @@
             </div>
         </div>
         <section class="row">
-          <div [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]" class="col-4 border" *ngFor="let worker of arrWorkers">
+          <div class="col-4 border" *ngFor="let worker of arrWorkers">
 
             <app-card-workers [workers]="worker"></app-card-workers>
-            <div class="btn btn-danger">Asignar tareas</div>
+            <div [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]" class="btn btn-danger">Asignar tarea</div>
+            <div [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]" class="btn btn-danger">Tareas asignadas</div>
           </div>
         </section>
         <section id="admin-area" class="p-3">
@@ -70,7 +71,7 @@
                     <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/constructions','construction', 'reports', constructionSelected.id]">
                             <i class="fa-regular fa-file-lines pe-3"></i> Ver reportes
                         </button></li>
-                    <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/workers']">
+                    <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/workers' ]">
                             <i class="fa-solid fa-user-plus pe-3"></i> Asignar operarios
                         </button></li>
                     <li class="px-2"><button class="mb-3" *ngIf="botonActivo"

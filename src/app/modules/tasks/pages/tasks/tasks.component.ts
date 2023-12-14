@@ -18,11 +18,23 @@ export class TasksComponent {
   reportSelected!: Task
   botonActivo: boolean = true;
   activatedRoute = inject(ActivatedRoute)
-
+  constructionId: number = 0;
+  userId: number = 0;
 
   ngOnInit() {
-    this.arrTasks = this.tasksService.getAll();
+    this.arrTasks;
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      this.constructionId = params.constructionId;
+      this.userId = params.userId;
+      const response = await this.tasksService.getTaskByCWId(this.userId, this.constructionId);
+      this.arrTasks = response;
+
+
+    })
   }
+
+
+
 
   //Aqui empiezan los fitros
   onChangePriority($event: any) {
