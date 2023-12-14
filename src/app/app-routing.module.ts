@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
+import { ErrorComponent } from './shared/components/error/error.component';
 
 const routes: Routes = [
 
@@ -27,7 +28,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
-
+  { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/home' },
 
 ];
