@@ -35,13 +35,12 @@
                     <option value="desc">De la Z a la A</option>
                 </select>
             </div>
-            <!-- <div class="mb-3">
-                <label>Ordenar por apellido del Operario</label>
-                <select (change)="onChangeSurname($event)">
-                    <option value="A-Z">De la A a la Z</option>
-                    <option value="Z-A">De la Z a la A</option>
-                </select>
-            </div> -->
+            <div class="col-sm-1">
+              <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/workers','new']">
+                  AÑADIR OPERARIO
+              </button>
+          </div>
+
         </div>
 
 
@@ -76,3 +75,4 @@
         </div>
     </div>
 </section>
+
