@@ -28,8 +28,9 @@
     gap: 1rem;
 }
 
-h3 {
+h4 {
     font-weight: bolder;
+    font-size: var(--fontsize-h4);
 }
 
 .bottom {
