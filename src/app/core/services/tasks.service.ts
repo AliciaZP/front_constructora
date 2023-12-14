@@ -15,9 +15,8 @@ export class TasksService {
     return this.arrTasks;
   }
 
-  getTaskById(taskId: string): Task {
-    const taskFound = this.arrTasks.find(task => task.id === taskId);
-    return taskFound ? { ...taskFound } : { id: "", title: "", description: "", deadline: new Date(), assignment_date: new Date(), priority: "" }
+  getTaskById(taskId: string) {
+
   };
 
   createTask(pTask: Task) {
