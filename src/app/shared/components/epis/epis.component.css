@@ -27,9 +27,7 @@
 
 .logo {
     text-align: left;
-    position: fixed;
-    bottom: 10px;
-    left: 20px;
+    margin-top: 180px;
 }
 
 .logo hr {
