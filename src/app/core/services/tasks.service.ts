@@ -27,12 +27,7 @@ export class TasksService {
   };
 
   createTask(pTask: Task) {
-    const TasksDB = localStorage.getItem('array_newTasks');
-    if (TasksDB) {
-      this.arrTasks = JSON.parse(TasksDB);
-    }
-    this.arrTasks.push(pTask);
-    localStorage.setItem('array_newTasks', JSON.stringify(this.arrTasks));
+
   }
 
   updateTaskById(taskId: string, formUpdate: Task): void {
