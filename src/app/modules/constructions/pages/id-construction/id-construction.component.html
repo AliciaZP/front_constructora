@@ -60,8 +60,12 @@
                 </button>
 
                 <ul class="dropdown-menu">
-                    <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/home']">
+                    <li class="px-2"> <button class="mb-3" *ngIf="botonActivo"
+                            [routerLink]="['/constructions','construction', 'reports', constructionSelected._id]">
                             <i class="fa-regular fa-file-lines pe-3"></i> Ver reportes
+                        </button></li>
+                    <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/workers']">
+                            <i class="fa-solid fa-user-plus pe-3"></i> Asignar operarios
                         </button></li>
                     <li class="px-2"><button class="mb-3" *ngIf="botonActivo"
                             [routerLink]="['/constructions','edit', constructionSelected._id]">

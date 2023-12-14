@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
+import { OfficesComponent } from './shared/components/offices/offices.component';
 
 const routes: Routes = [
 
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent },
+  { path: 'offices', component: OfficesComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),

@@ -3,7 +3,7 @@
     <i class="fa-solid fa-arrow-left "></i>
     <h4 class="d-inline back" [routerLink]="['/home']"> volver a la Home</h4>
     <div id="filtros" class="my-4 p-1 row">
-        <div class="col-6">
+        <div class="col-5">
             <div class="row">
                 <h4 class="col-2">Filtrar:</h4>
                 <div class="col-3">
@@ -52,7 +52,14 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-1">
+            <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/constructions','new']">
+                AÑADIR OBRA
+            </button>
+        </div>
+
     </div>
+
 
     <!--     <search-bar></search-bar> -->
 
