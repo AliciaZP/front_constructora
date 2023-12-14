@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
+import { EpisComponent } from './shared/components/epis/epis.component';
 import { OfficesComponent } from './shared/components/offices/offices.component';
 import { ErrorComponent } from './shared/components/error/error.component';
 
@@ -9,6 +10,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent },
+
+  { path: 'epis', component: EpisComponent },
+
   { path: 'offices', component: OfficesComponent },
   {
     path: 'constructions',

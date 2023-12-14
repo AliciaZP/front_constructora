@@ -40,26 +40,3 @@ Solar vacio:
     EQUIPO TECNICO: arquitecto, arquitecto tecnico o aparejador--> son los encargados de ver si la obra va bien en tiempo y costes y estan en todo momento en la obra --> se les conoce como direccion facultativa
 
 
-
-en el espacio del operario poner en las eepis los dos tipos que hay individual y colectivos
-individuales:   - Casco
-                - Chaleco
-                - botas
-                - guantes
-                - Cascos para no oir ruidos
-                - arnes, cinturones de seguridad
-                - Gafas de proteccion
-                - Mascarillas
-colectivos:
-Barandillas, pasarelas y escaleras.
-Andamios y redes antiácidas.
-Sistemas de ventilación.
-Barreras de protección acústicas.
-Vallado perimetral de zonas de trabajo.
-Marquesinas contra caída de objetos.
-Extintores de incendios.
-Medios húmedos en ambientes polvorientos.
-Carcasa de protección de motores o piezas en continuo movimiento.
-Señalizaciones e indicativos.
-Barreras de protección térmicas en centros de trabajo.
-

@@ -1,3 +1,5 @@
+/*imagenes home*/
+
 #projects .photos {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -5,7 +7,6 @@
     grid-gap: 10px;
     padding: 20px;
 }
-
 
 #projects .contenedor {
     margin: 10px;
@@ -24,7 +25,6 @@
     background-image: url("https://www.alejandrospinola.es/s/img/emotionheader.jpg?1604599110.940px.360px");
     background-size: cover;
     background-position: center center;
-
     overflow: hidden;
     width: 100%;
     grid-column: span 1;
@@ -38,7 +38,6 @@
     background-position: center center;
     overflow: hidden;
     width: 100%;
-
     grid-column: span 1;
     grid-row: span 1;
 }
@@ -49,7 +48,6 @@
     background-position: center center;
     overflow: hidden;
     width: 100%;
-
     grid-column: span 1;
     grid-row: span 1;
 }
@@ -62,7 +60,7 @@
     position: absolute;
     bottom: 1.25rem;
     left: 0.60rem;
-    font-size: 2rem;
+    font-size: var(--fontsize-h3);
     font-weight: 500;
     transition: 1s;
     opacity: 0;
@@ -75,6 +73,32 @@
     opacity: 1;
 }
 
+h3 {
+    color: var(--color-main);
+    font-weight: var(--fontweight-h3);
+    font-size: var(--fontsize-h3);
+    margin: 0.625rem;
+}
+
+/* botones de la derecha de la card*/
+ul li button {
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*calendario*/
 iframe {
     width: 100%;
     height: 32.8125rem;
