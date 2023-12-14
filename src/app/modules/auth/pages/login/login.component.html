@@ -1,35 +1,32 @@
-<div id="wrapper" class="row">
-
-    <section class="left col-5 p-5">
+<div id="wrapper">
+    <section class="left p-5">
         <h2>Portal del empleado</h2>
         <div class="logo">
-            <h1>SGAL <span>Construcciones</span></h1>
+            <h1 class="pb-1">SGAL</h1>
+            <h3>Construcciones</h3>
         </div>
     </section>
 
-    <section class="right col-7 row">
-
-        <div class="bar col-1"></div>
-
-        <form id="form-login" class="col-11">
-            <h3 class="mb-4">ACCESO USUARIOS </h3>
-            <div class="mb-4">
-                <label class="mb-2">Email:</label>
-                <input class="input" type="Email" formControlName='email' placeholder="Inserta aquí tu email">
-                <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
-
-            </div>
-            <div class="mb-4">
-                <label class="mb-2">Contraseña: </label>
-                <input class="input" type="password" formControlName='password'
-                    placeholder="Inserta aquí tu contraseña">
-                <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
-            </div>
-            <div class="pt-2">
-                <input class="button" type="submit" value="Iniciar sesión">
-            </div>
-        </form>
-
+    <section class="right">
+        <div class="right2">
+            <div class="bar"></div>
+            <form id="form-login">
+                <h3 class="mb-4">ACCESO USUARIOS</h3>
+                <div class="mb-4">
+                    <label class="mb-2">Email:</label>
+                    <input class="input" type="Email" formControlName='email' placeholder="Inserta aquí tu email">
+                    <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
+                </div>
+                <div class="mb-4">
+                    <label class="mb-2">Contraseña: </label>
+                    <input class="input" type="password" formControlName='password'
+                        placeholder="Inserta aquí tu contraseña">
+                    <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
+                </div>
+                <div class="pt-3">
+                    <input class="button" type="submit" value="Iniciar sesión">
+                </div>
+            </form>
+        </div>
     </section>
-
 </div>
