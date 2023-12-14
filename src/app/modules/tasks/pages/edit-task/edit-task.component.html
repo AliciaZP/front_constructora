@@ -1,4 +1,4 @@
-<!-- <section id="form-editReport">
+<section id="form-editReport">
 
     <h2 class="m-5">EDITAR TAREA </h2>
     <form [formGroup]='editTask' (ngSubmit)="onSubmit()">
@@ -23,13 +23,13 @@
 
         <div class="m-5">
             <label>Fecha de entrega:</label>
-            <input type="text" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
+            <input type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
             <p class="error" *ngIf="checkError('deadline','required')">
                 La fecha de entrega obligatoria.</p>
         </div>
         <div class="m-5">
             <label>Fecha de asignación:</label>
-            <input type="text" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
+            <input type="date" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
             <p class="error" *ngIf="checkError('assignment_date','required')">
                 La fecha de asignación obligatoria.</p>
         </div>
@@ -54,4 +54,4 @@
 
     </form>
 
-</section> -->
+</section>

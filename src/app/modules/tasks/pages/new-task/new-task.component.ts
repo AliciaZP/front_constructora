@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TasksService } from 'src/app/core/services/tasks.service';
 
 @Component({
@@ -10,11 +10,23 @@ import { TasksService } from 'src/app/core/services/tasks.service';
 })
 export class NewTaskComponent {
 
-
+  activatedRoute = inject(ActivatedRoute);
+  constructionId: number = 0;
+  userId: number = 0;
   newTask: FormGroup;
   tasksService = inject(TasksService)
 
   router = inject(Router)
+
+  ngOnInit(){
+    this.activatedRoute.params.subscribe((params: any) => {
+      this.constructionId = parseInt(params.constructionId);
+      this.userId = parseInt(params.userId);
+    });
+
+    this.newTask.get('Constructions_id')?.setValue( this.constructionId);
+    this.newTask.get('users_id')?.setValue( this.userId);
+  }
 
   constructor() {
     this.newTask = new FormGroup({
@@ -24,15 +36,23 @@ export class NewTaskComponent {
       deadline: new FormControl(),
       assignment_date: new FormControl(),
       priority: new FormControl(),
+      Constructions_id: new FormControl(),
+      users_id: new FormControl()
     })
   }
 
-  onSubmit() {
-    if (this.newTask.valid) {
-      this.tasksService.createTask(this.newTask.value);
-      this.router.navigate(['/tasks']);
-    } else {
-      console.log('error');
+  async onSubmit() {
+    try {
+      if (this.newTask.valid) {
+        const response = await this.tasksService.createTask(this.newTask.value);
+        console.log(response)
+        this.router.navigate(['/tasks', 'task', this.userId, this.constructionId]);
+      } else {
+        console.log('error');
+      }
+
+    } catch (error) {
+
     }
   };
 

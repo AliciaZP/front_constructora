@@ -11,45 +11,58 @@ import { TasksService } from 'src/app/core/services/tasks.service';
 export class EditTaskComponent {
 
 
-  // editTask: FormGroup;
-  // taskId: string = '';
-  // tasksService = inject(TasksService)
+  editTask: FormGroup;
+  taskId: string = '';
+  userId: string = '';
+  constructionId: string = '';
+  tasksService = inject(TasksService)
 
-  // router = inject(Router)
-  // activatedRoute = inject(ActivatedRoute)
+  router = inject(Router)
+  activatedRoute = inject(ActivatedRoute)
 
-  // constructor() {
-  //   this.editTask = new FormGroup({
-  //     title: new FormControl(),
-  //     description: new FormControl(),
-  //     deadline: new FormControl(),
-  //     assignment_date: new FormControl(),
-  //     priority: new FormControl(),
-  //   })
-  // }
+  constructor() {
+    this.editTask = new FormGroup({
+      title: new FormControl(),
+      description: new FormControl(),
+      deadline: new FormControl(),
+      assignment_date: new FormControl(),
+      priority: new FormControl(),
+      Constructions_id: new FormControl(),
+      users_id: new FormControl()
+    })
+  }
 
-  // ngOnInit() {
-  //   this.activatedRoute.params.subscribe(params => {
-  //     this.taskId = params['taskId']
-  //     const response = this.tasksService.getTaskById(this.taskId)
-  //     //hay que pasarle un objeto con los mismo campos que definimos en el form group
-  //     const { title, description, deadline, assignment_date, priority } = response
-  //     this.editTask.setValue({ title, description, deadline, assignment_date, priority })
-  //   })
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async params => {
+      this.taskId = params['taskId']
+      this.userId = params['userId']
+      this.constructionId = params['constructionId']
+      const response = await this.tasksService.getTaskById(this.taskId)
+      //hay que pasarle un objeto con los mismo campos que definimos en el form group
+      const { title, description, deadline, assignment_date, priority, Constructions_id, users_id } = response
+      this.editTask.setValue({ title, description, deadline, assignment_date, priority, Constructions_id, users_id})
+
+    })
+
+  }
+  async onSubmit() {
+    try {
+      if (this.editTask.valid) {
+        const response = await this.tasksService.updateTaskById(this.taskId, this.editTask.value);
+        console.log(response)
+        this.router.navigate([`/tasks`,'task', this.userId, this.constructionId]);
+        // task/:userId/:constructionId
+      } else {
+        console.log('error');
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
 
-  // }
-  // onSubmit() {
-  //   if (this.editTask.valid) {
-  //     this.tasksService.updateTaskById(this.taskId, this.editTask.value);
-  //     this.router.navigate([`/tasks`]);
-  //   } else {
-  //     console.log('error');
-  //   }
-  // };
-
-
-  // checkError(controlName: string, errorName: string) {
-  //   return this.editTask.get(controlName)?.hasError(errorName) && this.editTask.get(controlName)?.touched;
-  // };
+  checkError(controlName: string, errorName: string) {
+    return this.editTask.get(controlName)?.hasError(errorName) && this.editTask.get(controlName)?.touched;
+  };
 }

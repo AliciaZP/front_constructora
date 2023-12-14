@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { TasksDB } from 'src/app/db/tasks.db';
+// import { TasksDB } from 'src/app/db/tasks.db';
 import { Task } from '../interfaces/task.interface';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
@@ -14,11 +14,19 @@ export class TasksService {
 
   constructor() { }
 
-  private arrTasks: Task[] = [...TasksDB]
+  // private arrTasks: Task[] = [...TasksDB]
 
-  getAll() {
-    return this.arrTasks;
+  async getAll(userId: string) {
+    return firstValueFrom(
+      this.httpClient.get<Task[]>(`${this.url}/user/${userId}`)
+    )
   }
+
+  getTaskById(taskId: string) {
+    return firstValueFrom(
+      this.httpClient.get<Task>(`${this.url}/${taskId})`)
+    )
+  };
 
   getTaskByCWId(userId: number, constructionId: number) {
     return firstValueFrom(
@@ -27,14 +35,15 @@ export class TasksService {
   };
 
   createTask(pTask: Task) {
-
+    return firstValueFrom(
+      this.httpClient.post<Task>(`${this.url}/new`, pTask)
+    )
   }
 
-  updateTaskById(taskId: string, formUpdate: Task): void {
-    const taskIndex = this.arrTasks.findIndex(task => task.id === taskId);
-    if (taskIndex !== -1) {
-      this.arrTasks[taskIndex] = { ...this.arrTasks[taskIndex], ...formUpdate };
-    }
+  updateTaskById(taskId: string, formUpdate: Task) {
+    return firstValueFrom(
+      this.httpClient.put<Task>(`${this.url}/${taskId}`, formUpdate )
+    )
   }
 
   //Funciones para los filtros
