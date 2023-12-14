@@ -4,25 +4,12 @@ img {
     display: block;
 
     padding: 0.625rem;
-    background: rgb(112, 12, 20);
-    background: linear-gradient(90deg, rgba(112, 12, 20, 1) 0%, rgba(128, 61, 74, 1) 39%, rgba(206, 203, 203, 1) 100%);
+    background: var(--color-main);
+    background: linear-gradient(90deg, var(--color-main) 0%, rgb(215, 123, 142) 39%, rgb(222, 220, 220) 100%);
 
 }
 
-.contenedor h2 {
-    color: var(--color-main);
-    font-weight: 700;
-    font-size: 100%;
-    margin: 10px;
-}
-
-h3 {
-    font-weight: 700;
-    font-size: 100%;
-
-}
-
-article.card {
+.contenedor article.card {
 
     background-color: white;
     padding: 0.125rem;
@@ -43,10 +30,4 @@ article.card {
         }
 
     }
-}
-
-.iconos {
-    background-color: var(--color-main);
-    color: white;
-
 }

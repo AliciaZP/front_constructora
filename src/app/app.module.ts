@@ -9,13 +9,11 @@ import { ReportsComponent } from './modules/reports/pages/reports/reports.compon
 import { EditReportComponent } from './modules/reports/pages/edit-report/edit-report.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     ReportsComponent,
-    EditReportComponent,
+    EditReportComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
