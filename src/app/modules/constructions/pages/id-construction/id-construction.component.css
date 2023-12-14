@@ -113,9 +113,9 @@ iframe {
 /* Estilos del area privada */
 #admin-area {
     position: fixed;
-    top: 10px;
+    top: 10rem;
     /* Ajusta la distancia desde la parte inferior según tus necesidades */
-    right: 10px;
+    right: 2rem;
     background-color: var(--color-second);
 }
 
