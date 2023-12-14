@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { EpisComponent } from './components/epis/epis.component';
 import { OfficesComponent } from './components/offices/offices.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -23,7 +24,8 @@ import { OfficesComponent } from './components/offices/offices.component';
     CardWorkersComponent,
     SearchBarComponent,
     EpisComponent,
-    OfficesComponent
+    OfficesComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
