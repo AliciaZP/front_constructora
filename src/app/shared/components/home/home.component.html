@@ -2,8 +2,9 @@
     <nav-bar></nav-bar>
 </header>
 
-<!-- header -->
-<main>
+<!--inicio del main-->
+
+<main class="mx-5 mt-5">
     <section id="projects">
         <div class="contenedor row">
             <div class="photos col-8">
@@ -16,7 +17,6 @@
                 <article>
                     <h3>Promociones SGAL 2024</h3>
                 </article>
-
             </div>
             <div class="col-4">
                 <iframe
@@ -26,28 +26,48 @@
         </div>
     </section>
     <section>
-        <div class="row">
+        <div class="row align-items-center">
+            <h3>MI AREA PRIVADA</h3>
             <app-card-workers class="col-5"></app-card-workers>
-            <div class="botones col-7">
-                <ul class="row">
-                    <li class="col-3">Obras <i class="fa-solid fa-city"></i></li>
-                    <li class="col-3">Operarios <i class="fa-solid fa-person-digging"></i></li>
-                    <li class="col-3">Asignación <i class="fa-solid fa-list-check"></i></li>
-                    <li class="col-3">Reportes <i class="fa-regular fa-message"></i></li>
-                    <li class="col-3">Perfil <i class="fa-regular fa-address-card"></i></li>
-                    <li class="col-3">Formación <i class="fa-solid fa-graduation-cap"></i></li>
-                    <li class="col-3">Permisos <i class="fa-regular fa-calendar"></i></li>
-                    <li class="col-3">Docs <i class="fa-solid fa-file-contract"></i></li>
+            <div class="ps-4 botones col-7">
+                <ul class="d-flex">
+                    <li class="p-2" [routerLink]="['/constructions']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button></li>
+                    <li class="p-2" [routerLink]="['/workers']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-person-digging"></i>Operarios</button></li>
+                    <li class="p-2" [routerLink]="['/']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
+                    </li>
+                    <li class="p-2" [routerLink]="['/epis']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-helmet-safety"></i>EPis</button>
+                    </li>
                 </ul>
+                <ul class="d-flex">
+                    <li class="p-2" [routerLink]="['/']"><button><i
+                                class="d-block mb-2 fs-2 fa-regular fa-address-card"></i>Perfil</button>
+                    </li>
+                    <li class="p-2" [routerLink]="['/']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-graduation-cap"></i>Formación</button></li>
+                    <li class="p-2" [routerLink]="['/']"><button><i
+                                class="d-block mb-2 fs-2 fa-regular fa-calendar"></i>Permisos</button>
+                    </li>
+                    <li class="p-2" [routerLink]="['/']"><button><i
+                                class="d-block mb-2 fs-2 fa-solid fa-file-contract"></i>Docs</button>
+                    </li>
+
+                </ul>
+
+
             </div>
         </div>
     </section>
 
-
-
 </main>
+<!-- fin del main -->
 
-<!-- fin del header -->
+<!--inicio del footer-->
+
 <footer>
     <app-footer></app-footer>
 </footer>
+<!-- fin del footer -->
