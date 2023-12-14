@@ -23,7 +23,7 @@ export class WorkersComponent {
     // this.arrWorkers = this.workersService.getAll();
     this.arrCities = this.getCities();
     console.log(this.arrCities)
-    // this.arrJobs = this.workersService.getJobs();
+    this.arrJobs = this.getJobs();
     // this.arrRoles = this.workersService.getRoles();
   }
 
@@ -39,6 +39,16 @@ export class WorkersComponent {
     return this.arrWorkers.filter(worker => worker.city === pCity)
   }
 
+  getJobs(): string[] {
+    const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.job))];
+    const workersOrdered = workersUnordered.sort((a, b) => a.localeCompare(b));
+    return workersOrdered;
+  }
+
+  filterByJob(pJob: string): User[] {
+    return this.arrWorkers.filter(worker => worker.job === pJob)
+  }
+
   async getAllWorkers(){
     const response = await this.workersService.getAll();
     this.arrWorkers = response;
@@ -51,22 +61,35 @@ export class WorkersComponent {
   // //Aqui empiezan los fitros
 
   async onChangeCity($event: any) {
-    const response = await this.workersService.getWorkersByCity($event.target.value);
-    this.arrWorkers = response
+    if(!$event.target.value){
+      this.arrWorkers = await this.workersService.getAll()
+    }else {
+      const response = await this.workersService.getWorkersByCity($event.target.value);
+      this.arrWorkers = response
+
+    }
   };
 
   // onChangeRole($event: any) {
   //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByRole($event.target.value);
   // };
-  // onChangeJob($event: any) {
-  //   this.arrWorkers = $event.target.value === "" ? this.workersService.getAll() : this.workersService.filterByJob($event.target.value);
-  // };
+  async onChangeJob($event: any) {
+    if(!$event.target.value){
+      this.arrWorkers = await this.workersService.getAll()
+    }else {
+    const response = await this.workersService.getWorkersByJob($event.target.value);
+    this.arrWorkers = response
+    }
+  };
 
-  // onChangeName($event: any) {
-  //   const ascendente = $event.target.value === "A-Z";
-  //   this.arrWorkers = this.workersService.orderByName(ascendente);
-  //   //si el value no corresponde, la funcion ejectua en orden descendente
-  // }
+  async onChangeName($event: any) {
+    if(!$event.target.value){
+      this.arrWorkers = await this.workersService.getAll()
+    }else {
+    const response = await this.workersService.getWorkersByOrderSurname($event.target.value);
+    this.arrWorkers = response
+    }
+  }
 
   // onChangeSurname($event: any) {
   //   const ascendente = $event.target.value === "A-Z";
