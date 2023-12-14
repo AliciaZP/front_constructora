@@ -1,0 +1,42 @@
+h2 {
+    color: var(--color-second);
+    font-size: var(--fontsize-h2);
+    font-weight: var(--fontweight-h2);
+}
+
+h3 {
+    color: var(--color-main);
+    font-weight: var(--fontweight-h3);
+    font-size: var(--fontsize-h3);
+}
+
+
+h4 {
+    font-size: var(--fontsize-h4);
+    font-weight: 600;
+}
+
+span {
+    font-weight: 600;
+}
+
+i {
+    color: var(--color-main);
+}
+
+.sedes {
+    display: flex;
+    justify-content: baseline;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+article {
+    border: 1px solid var(--color-third);
+    background-color: var(--color-white);
+
+    &:hover {
+        border: 1px solid var(--color-main);
+        background-color: rgb(234, 234, 234);
+    }
+}

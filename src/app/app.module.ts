@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { ReportsComponent } from './modules/reports/pages/reports/reports.component';
 import { EditReportComponent } from './modules/reports/pages/edit-report/edit-report.component';
+import { TasksComponent } from './modules/tasks/pages/tasks/tasks.component';
+import { NewTaskComponent } from './modules/tasks/pages/new-task/new-task.component';
+import { EditTaskComponent } from './modules/tasks/pages/edit-task/edit-task.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportsComponent,
-    EditReportComponent
+    EditReportComponent,
+    TasksComponent,
+    NewTaskComponent,
+    EditTaskComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

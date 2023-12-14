@@ -1,3 +1,11 @@
+<header *ngIf="!isAuthRoute()">
+    <nav-bar></nav-bar>
+</header>
+
 <main>
     <router-outlet></router-outlet>
 </main>
+
+<footer *ngIf="!isAuthRoute()">
+    <app-footer></app-footer>
+</footer>

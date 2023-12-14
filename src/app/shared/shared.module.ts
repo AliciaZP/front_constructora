@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { EpisComponent } from './components/epis/epis.component';
+import { OfficesComponent } from './components/offices/offices.component';
 
 
 
@@ -21,7 +22,8 @@ import { EpisComponent } from './components/epis/epis.component';
     ErrorComponent,
     CardWorkersComponent,
     SearchBarComponent,
-    EpisComponent
+    EpisComponent,
+    OfficesComponent
   ],
   imports: [
     CommonModule,
