@@ -50,6 +50,7 @@ export class WorkersComponent {
   }
 
   async getAllWorkers(){
+
     const response = await this.workersService.getAll();
     this.arrWorkers = response;
   }

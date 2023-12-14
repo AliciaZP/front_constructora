@@ -7,11 +7,13 @@
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
                     <label class="pe-3 pb-2"><span>Tipo de reporte:</span></label>
-                    <!-- <select class="custom-select" (change)="onChangeType($event)">
-                        <option class="custom-option" value="">Todos</option>
-                        <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}}
-                        </option>
-                    </select> -->
+                    <select class="custom-select" (change)="onChangeType($event)">
+                      <option class="custom-option" value="">Todos</option>
+                      <option class="custom-option" value="incidencias">Incidencias</option>
+                      <option class="custom-option" value="actualizacion">Actualización</option>
+                      <!-- <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}} -->
+                        <!-- </option> -->
+                    </select>
                 </div>
             </div>
         </div>
@@ -21,10 +23,10 @@
                 <h4 class="mb-2 pt-3">Ordenar:</h4>
                 <div>
                     <label class="pe-3 pb-2"><span>Fecha de creación:</span></label>
-                    <!-- <select class="custom-select" (change)="onChangeDate($event)">
-                        <option class="custom-option" value="reciente">Más reciente</option>
-                        <option class="custom-option" value="antiguo">Más antigua</option>
-                    </select> -->
+                    <select class="custom-select" (change)="onChangeDate($event)">
+                        <option class="custom-option" value="desc">Más reciente</option>
+                        <option class="custom-option" value="asc">Más antigua</option>
+                    </select>
                 </div>
             </div>
         </div>

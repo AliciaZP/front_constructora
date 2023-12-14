@@ -38,6 +38,19 @@ export class ReportsService {
     )
   }
 
+  getReportsOrderedByDate(date: string, constructionId: number) {
+    return firstValueFrom(
+      this.HttpClient.get<Report[]>(`${this.url}/date/${constructionId}/${date}`)
+    )
+  }
+
+  getReportsByType(type: string, constructionId: number) {
+    return firstValueFrom(
+      this.HttpClient.get<Report[]>(`${this.url}/type/${type}/${constructionId}`)
+    )
+  }
+
+
   //Funciones para las ciudades
   // getTypes(): string[] {
   //   const reportsUnordered = [...new Set(this.arrReports.map(report => report.type))];

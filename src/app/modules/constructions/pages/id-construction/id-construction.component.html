@@ -54,9 +54,10 @@
             </div>
         </div>
         <section class="row">
-          <div class="col-4" *ngFor="let worker of arrWorkers">
-            <app-card-workers [workers]="worker"></app-card-workers>
+          <div [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]" class="col-4 border" *ngFor="let worker of arrWorkers">
 
+            <app-card-workers [workers]="worker"></app-card-workers>
+            <div class="btn btn-danger">Asignar tareas</div>
           </div>
         </section>
         <section id="admin-area" class="p-3">

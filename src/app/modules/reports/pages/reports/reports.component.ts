@@ -13,9 +13,10 @@ import { ReportsService } from 'src/app/core/services/reports.service';
 export class ReportsComponent {
 
   reportsService = inject(ReportsService)
-  constructionsService = inject(ConstructionsService)
+  constructionsService = inject(ConstructionsService);
 
-  arrReports!: any;
+
+  arrReports!: any[];
   arrTypes: string[] = []
 
   reportSelected!: Report
@@ -34,24 +35,49 @@ export class ReportsComponent {
       this.constructionId = params.constructionId;
       const response = await this.constructionsService.getConstructionWithReports(params.constructionId);
       const { reports } = response;
-      this.arrReports = reports;
+      this.arrReports = reports!;
 
-      console.log(response.reports)
     })
 
   }
 
+  // getTypes() {
+  //   const reportsUnordered = [...new Set(this.arrReports.map(report => report.type))];
+  //   const reportsOrdered = reportsUnordered.sort((a, b) => a.localeCompare(b));
+  //   return reportsOrdered;
+  // }
+
+  // filterByType(pType: string) {
+  //   return this.arrReports.filter(construction => construction.type === pType)
+  // }
+
   //Aqui empiezan los fitros
 
-  // onChangeType($event: any) {
-  //   this.arrReports = $event.target.value === "" ? this.reportsService.getAll() : this.reportsService.filterByType($event.target.value);
-  // };
+  async onChangeType($event: any) {
+    try {
+      if(!$event.target.value){
+        const response = await this.constructionsService.getConstructionWithReports(this.constructionId);
+        const { reports } = response;
+        this.arrReports = reports!
+      }else{
+        const response = await this.reportsService.getReportsByType( $event.target.value, this.constructionId );
+        this.arrReports = response;
+
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
-  // onChangeDate($event: any) {
-  //   const ascendente = $event.target.value === "reciente";
-  //   this.arrReports = this.reportsService.orderByDate(ascendente);
-  // };
+  async onChangeDate($event: any) {
+    try {
+      const response = await this.reportsService.getReportsOrderedByDate( $event.target.value, this.constructionId );
+      this.arrReports = response;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 }
 
