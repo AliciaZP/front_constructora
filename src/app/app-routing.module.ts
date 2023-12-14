@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
+import { EpisComponent } from './shared/components/epis/epis.component';
 
 const routes: Routes = [
 
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent },
+
+  { path: 'epis', component: EpisComponent },
+
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
