@@ -9,6 +9,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { EpisComponent } from './components/epis/epis.component';
+import { OfficesComponent } from './components/offices/offices.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -19,7 +22,10 @@ import { RouterLink } from '@angular/router';
     FooterComponent,
     ErrorComponent,
     CardWorkersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    EpisComponent,
+    OfficesComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

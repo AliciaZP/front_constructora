@@ -12,8 +12,6 @@ import { NewTaskComponent } from './modules/tasks/pages/new-task/new-task.compon
 import { EditTaskComponent } from './modules/tasks/pages/edit-task/edit-task.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

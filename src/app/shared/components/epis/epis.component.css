@@ -1,0 +1,94 @@
+.left {
+    background-color: var(--color-main);
+    width: 40%;
+    height: auto;
+    text-align: center;
+}
+
+.epi {
+    position: fixed;
+    top: 15.25rem;
+    left: 11.25rem;
+    font-size: 2rem;
+}
+
+.right {
+    background-color: white;
+    padding-left: 4rem;
+}
+
+.left h2 {
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 2rem;
+    margin-bottom: 0.625rem;
+}
+
+.logo {
+    text-align: left;
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+}
+
+.logo hr {
+    color: white;
+}
+
+.logo h3 {
+    color: white;
+}
+
+hr {
+    color: var(--color-main);
+}
+
+h2 {
+    color: white;
+    font-size: 1.5rem;
+    color: var(--color-main);
+
+}
+
+h3 {
+    color: var(--color-main);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+ul li {
+    list-style: inside;
+}
+
+
+b {
+    font-weight: bold;
+    color: var(--color-main);
+}
+
+span {
+    font-weight: bold;
+    color: var(--color-main);
+}
+
+.span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+img {
+    margin-top: 10px;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.back {
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-main);
+}
