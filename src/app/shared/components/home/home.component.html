@@ -22,16 +22,17 @@
     <section>
         <div class="row align-items-center">
             <h3>MI AREA PRIVADA</h3>
-            <app-card-workers class="col-5"></app-card-workers>
+            <app-card-workers [workers]="userLogged" class="col-5"></app-card-workers>
             <div class="ps-4 botones col-7">
                 <ul class="d-flex">
                     <li class="p-2" [routerLink]="['/constructions']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button></li>
                     <li class="p-2" [routerLink]="['/workers']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-person-digging"></i>Operarios</button></li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2" [routerLink]="['/tasks', 'user', 'task', userLogged.id]"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
                     </li>
+                    <!-- user/task/:userId -->
                     <li class="p-2" [routerLink]="['/epis']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-helmet-safety"></i>EPis</button>
                     </li>

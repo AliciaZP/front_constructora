@@ -1,6 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Construction } from 'src/app/core/interfaces/construction.interfaces';
+import { LogUser } from 'src/app/core/interfaces/logUser.interface';
+import { User } from 'src/app/core/interfaces/user.interface';
 import { ConstructionsService } from 'src/app/core/services/constructions.service';
+import { TokenService } from 'src/app/core/services/token.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'constructions',
@@ -16,6 +20,11 @@ export class ConstructionsComponent implements OnInit {
   botonActivo: boolean = true;
   arrCities: any[] = []
 
+  tokenService = inject(TokenService);
+  userService = inject(UsersService);
+  userLogged!: User;
+  user!: any;
+
   constructor(){}
 
   async ngOnInit() {
@@ -25,6 +34,15 @@ export class ConstructionsComponent implements OnInit {
       this.arrCities = this.getCities();
       console.log(this.arrCities)
       this.arrConstructionTypes = this.getConstructionTypes();
+
+
+
+
+    this.user = this.tokenService.decodeToken()
+    console.log(this.user)
+
+    this.userLogged = await this.userService.getUserLogged()
+    console.log(this.userLogged)
   }
 
 
