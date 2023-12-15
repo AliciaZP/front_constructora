@@ -88,6 +88,11 @@ ul li button {
     border-radius: 5px;
     width: 100px;
     height: 100px;
+
+    &:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+    }
 }
 
 

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
 import { EpisComponent } from './shared/components/epis/epis.component';
 import { OfficesComponent } from './shared/components/offices/offices.component';
+import { NewsComponent } from './shared/components/news/news.component';
 
 const routes: Routes = [
 
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'epis', component: EpisComponent },
 
   { path: 'offices', component: OfficesComponent },
+
+  { path: 'news', component: NewsComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),

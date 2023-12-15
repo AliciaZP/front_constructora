@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { EpisComponent } from './components/epis/epis.component';
 import { OfficesComponent } from './components/offices/offices.component';
+import { NewsComponent } from './components/news/news.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 
@@ -23,7 +25,9 @@ import { OfficesComponent } from './components/offices/offices.component';
     CardWorkersComponent,
     SearchBarComponent,
     EpisComponent,
-    OfficesComponent
+    OfficesComponent,
+    NewsComponent,
+    CalendarComponent
   ],
   imports: [
     CommonModule,
