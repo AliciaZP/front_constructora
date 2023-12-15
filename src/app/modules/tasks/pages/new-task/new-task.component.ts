@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TasksService } from 'src/app/core/services/tasks.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-task',
@@ -44,19 +45,34 @@ export class NewTaskComponent {
   async onSubmit() {
     try {
       if (this.newTask.valid) {
-        const response = await this.tasksService.createTask(this.newTask.value);
-        console.log(response)
-        this.router.navigate(['/tasks', 'task', this.userId, this.constructionId]);
+        await this.tasksService.createTask(this.newTask.value);
+        Swal.fire({
+          icon: 'success',
+          title: 'Tarea creada correctamente',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#008000',
+          color: 'white',
+          background: '#0f0f0f',
+        }).then(() => {
+          this.router.navigate(['/tasks', 'task', this.userId, this.constructionId]);
+        });
       } else {
         console.log('error');
+        Swal.fire({
+          icon: 'error',
+          title: 'Datos erróneos',
+          text: 'Por favor, completa todos los campos de la tarea de forma correcta.',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#af1e2d',
+          color: 'white',
+          background: '#0f0f0f',
+        });
       }
 
     } catch (error) {
-
-    }
-  };
-
-
+      console.log(error);
+  }
+  }
   checkError(controlName: string, errorName: string) {
     return this.newTask.get(controlName)?.hasError(errorName) && this.newTask.get(controlName)?.touched;
   };

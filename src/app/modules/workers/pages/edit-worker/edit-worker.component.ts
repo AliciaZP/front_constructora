@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WorkersService } from 'src/app/core/services/workers.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'edit-worker',
@@ -24,7 +25,7 @@ export class EditWorkerComponent {
       Validators.maxLength(45)]),
       surname: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(70)]),
-      dni: new FormControl(null, [Validators.required, this.dniValidator]),
+      dni: new FormControl(null, Validators.required),
       phone: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(12)]),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)]),
@@ -49,16 +50,45 @@ export class EditWorkerComponent {
     })
   }
   async onSubmit() {
-    try {
-
-        await this.workersService.updateWorkerById(this.workerId, this.editWorker.value);
-        this.router.navigate(['/workers']);
-
-
-    } catch (error) {
-      console.log(error);
+    if (this.editWorker.valid) {
+      try {
+        this.workersService.updateWorkerById(this.workerId, this.editWorker.value);
+        Swal.fire({
+          icon: 'success',
+          title: 'operario editado correctamente',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#008000',
+          color: 'white',
+          background: '#0f0f0f',
+        }).then(() => {
+          this.router.navigate(['/workers'])
+        });
+      } catch (error) {
+        console.log('error');
+      }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Datos editados erróneos',
+        text: 'Por favor, completa todos los campos del operario de forma correcta.',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#af1e2d',
+        color: 'white',
+        background: '#0f0f0f',
+      });
     }
-  };
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
   checkError(controlName: string, errorName: string) {
@@ -66,25 +96,25 @@ export class EditWorkerComponent {
   };
 
 
-  dniValidator(control: AbstractControl) {
-    const value = control.value;
-    const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
+  /*   dniValidator(control: AbstractControl) {
+      const value = control.value;
+      const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
 
-    if (/^\d{8}[a-zA-Z]$/.test(value)) {
-      const numero = value.substring(0, value.length - 1); //sacar numero sin letra
-      const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
-      const resto = numero % 23; //sacar el resto
-      const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
+      if (/^\d{8}[a-zA-Z]$/.test(value)) {
+        const numero = value.substring(0, value.length - 1); //sacar numero sin letra
+        const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
+        const resto = numero % 23; //sacar el resto
+        const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
 
-      if (letra != letraSeleccionada!.toUpperCase()) {
-        return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
+        if (letra != letraSeleccionada!.toUpperCase()) {
+          return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
+        } else {
+          return null //('Dni correcto');
+        }
       } else {
-        return null //('Dni correcto');
+        return { dnivalidator: 'Dni erroneo, formato no válido' }
       }
-    } else {
-      return { dnivalidator: 'Dni erroneo, formato no válido' }
-    }
-  }
+    } */
 
 
   passwordValidator(control: AbstractControl) {

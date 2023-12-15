@@ -60,20 +60,20 @@ export class NewWorkerComponent {
         await this.workersService.createWorker(this.newWorker.value);
         Swal.fire({
           icon: 'success',
-          title: 'Obra creada correctamente',
+          title: 'Operario creado correctamente',
           confirmButtonText: 'Aceptar',
           confirmButtonColor: '#008000',
           color: 'white',
           background: '#0f0f0f',
         }).then(() => {
-          this.router.navigate(['/constructions']);
+          this.router.navigate(['/workers']);
         });
       } else {
         console.log('error');
         Swal.fire({
           icon: 'error',
           title: 'Datos erróneos',
-          text: 'Por favor, completa todos los campos de la obra de forma correcta.',
+          text: 'Por favor, completa todos los campos del operario de forma correcta.',
           confirmButtonText: 'Aceptar',
           confirmButtonColor: '#af1e2d',
           color: 'white',

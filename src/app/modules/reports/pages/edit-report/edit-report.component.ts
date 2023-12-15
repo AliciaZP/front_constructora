@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReportsService } from 'src/app/core/services/reports.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'edit-report',
@@ -38,22 +39,38 @@ export class EditReportComponent {
       const { title, description, date, type } = response
       this.editReport.setValue({ title, description, date, type })
     })
-
-
   }
+
   async onSubmit() {
-    try {
-      if (this.editReport.valid) {
+    if (this.editReport.valid) {
+      try {
         this.reportsService.updateReportById(this.reportId, this.editReport.value);
-        this.router.navigate([`/reports`]);
-      } else {
+        Swal.fire({
+          icon: 'success',
+          title: 'Reporte editado correctamente',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#008000',
+          color: 'white',
+          background: '#0f0f0f',
+        }).then(() => {
+          this.router.navigate([`/constructions`]);
+          /*       this.router.navigate([`/constructions/construction/reports/${this.constructionId}`]) */
+        });
+      } catch (error) {
         console.log('error');
       }
-    } catch (error) {
-      console.log(error)
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Datos editados erróneos',
+        text: 'Por favor, completa todos los campos del reporte de forma correcta.',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#af1e2d',
+        color: 'white',
+        background: '#0f0f0f',
+      });
     }
-  };
-
+  }
 
   checkError(controlName: string, errorName: string) {
     return this.editReport.get(controlName)?.hasError(errorName) && this.editReport.get(controlName)?.touched;
