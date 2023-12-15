@@ -40,7 +40,6 @@ select {
 }
 
 article {
-
     width: 250px;
     border: 1px solid var(--color-third);
     box-shadow: 5px 5px 0px var(--color-third);

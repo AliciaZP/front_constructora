@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WorkersService } from 'src/app/core/services/workers.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'new-worker',
@@ -35,48 +36,91 @@ export class NewWorkerComponent {
       image: new FormControl(null, Validators.required)
     })
   }
+  /* 
+    async onSubmit() {
+      try {
+  
+        if (this.newWorker.valid) {
+          await this.workersService.createWorker(this.newWorker.value);
+          this.router.navigate(['/workers']);
+        } else {
+          console.log('error');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+  
+    };
+   */
+
 
   async onSubmit() {
     try {
-
       if (this.newWorker.valid) {
         await this.workersService.createWorker(this.newWorker.value);
-        this.router.navigate(['/workers']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Obra creada correctamente',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#008000',
+          color: 'white',
+          background: '#0f0f0f',
+        }).then(() => {
+          this.router.navigate(['/constructions']);
+        });
       } else {
         console.log('error');
+        Swal.fire({
+          icon: 'error',
+          title: 'Datos erróneos',
+          text: 'Por favor, completa todos los campos de la obra de forma correcta.',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#af1e2d',
+          color: 'white',
+          background: '#0f0f0f',
+        })
       }
     } catch (error) {
       console.log(error);
     }
+  }
 
-  };
+
+
+
+
+
+
+
+
+
 
 
   checkError(controlName: string, errorName: string) {
     return this.newWorker.get(controlName)?.hasError(errorName) && this.newWorker.get(controlName)?.touched;
   };
 
-
-  dniValidator(control: AbstractControl) {
-    const value = control.value;
-    const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
-
-    if (/^\d{8}[a-zA-Z]$/.test(value)) {
-      const numero = value.substring(0, value.length - 1); //sacar numero sin letra
-      const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
-      const resto = numero % 23; //sacar el resto
-      const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
-
-      if (letra != letraSeleccionada!.toUpperCase()) {
-        return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
+  /* 
+    dniValidator(control: AbstractControl) {
+      const value = control.value;
+      const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
+  
+      if (/^\d{8}[a-zA-Z]$/.test(value)) {
+        const numero = value.substring(0, value.length - 1); //sacar numero sin letra
+        const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
+        const resto = numero % 23; //sacar el resto
+        const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
+  
+        if (letra != letraSeleccionada!.toUpperCase()) {
+          return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
+        } else {
+          return null //('Dni correcto');
+        }
       } else {
-        return null //('Dni correcto');
+        return { dnivalidator: 'Dni erroneo, formato no válido' }
       }
-    } else {
-      return { dnivalidator: 'Dni erroneo, formato no válido' }
     }
-  }
-
+   */
 
   passwordValidator(control: AbstractControl) {
     const value = control.value;

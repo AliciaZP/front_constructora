@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Construction } from 'src/app/core/interfaces/construction.interfaces';
 import { ConstructionsService } from 'src/app/core/services/constructions.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'id-construction',
@@ -28,15 +29,37 @@ export class IdConstructionComponent {
       this.constructionSelected = response
       const { workers } = this.constructionSelected;
       this.arrWorkers = workers;
-
     })
   }
 
-
   async onClickDelete($event: string) {
-    this.constructionsService.deleteConstructionById($event)
-    this.arrConstructions = await this.constructionsService.getAllConstructions();
-    this.router.navigate(['/constructions']);
-  }
+    const result = await Swal.fire({
+      title: "Eliminar obra",
+      text: "¿Quieres borrada esta obra?",
+      icon: "warning",
+      color: 'white',
+      background: '#0f0f0f',
+      showCancelButton: true,
+      confirmButtonColor: "#af1e2d",
+      cancelButtonColor: "#a3a8a3",
+      confirmButtonText: "Borrar",
+      cancelButtonText: "Cancelar",
+    });
 
+    if (result.isConfirmed) {
+      await this.constructionsService.deleteConstructionById($event);
+      this.arrConstructions = await this.constructionsService.getAllConstructions();
+      Swal.fire({
+        title: "Obra eliminada",
+        text: "La obra seleccionada ha sido borrada",
+        icon: "success",
+        color: 'white',
+        background: '#0f0f0f',
+        confirmButtonColor: "#af1e2d",
+        confirmButtonText: "Aceptar",
+      }).then(() => {
+        this.router.navigate(['/constructions']);
+      });
+    }
+  }
 }

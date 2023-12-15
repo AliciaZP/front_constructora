@@ -19,11 +19,14 @@ h3 {
 }
 
 p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 span {
+    font-size: 1.1rem;
     font-weight: var(--fontweight-h3);
+    font-family: var(--font-secondary);
+
 }
 
 .icons {
@@ -31,6 +34,10 @@ span {
     justify-content: space-between;
     align-items: center;
     gap: 2rem
+}
+
+i {
+    font-size: 1.5rem;
 }
 
 .social {

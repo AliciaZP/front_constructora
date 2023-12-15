@@ -17,6 +17,11 @@ export class LoginComponent {
   router = inject(Router);
   // tokenService = inject(TokenService);
 
+
+  passwordVisible = false;
+  password = '';
+
+
   constructor() {
     this.newLogin = new FormGroup({
       email: new FormControl(null, Validators.required),
@@ -42,5 +47,9 @@ export class LoginComponent {
     return this.newLogin.get(controlName)?.hasError(errorName) && this.newLogin.get(controlName)?.touched;
   }
 
-
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 }
+
+

@@ -1,57 +1,84 @@
+#wrapper {
+    display: flex;
+}
+
+/* Lado izquierdo*/
+
 .left {
     background-color: var(--color-main);
-    width: 40%;
+    width: 40vw;
     height: 100vh;
     text-align: center;
+    color: white;
 }
 
-.right {
-    background-color: white;
-    padding-left: 4rem;
-}
 
-.logo {
+.sgal-logo {
     text-align: left;
 }
 
-#form-login {
-    margin-top: 17rem;
-}
-
 h1 {
-    color: white;
-    font-size: 3.5rem;
-    padding-top: 22rem;
-    font-weight: 800;
-    line-height: 2rem;
-}
-
-label {
-    font-weight: 500;
-}
-
-span {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: calc(var(--fontsize-h2) * 2);
+    font-weight: var(--fontweight-h2);
+    position: absolute;
+    bottom: 5rem;
+    left: 2rem;
 }
 
 h2 {
-    color: white;
-    font-size: 1.5rem;
+    font-size: var(--fontsize-h2);
 }
 
-h3 {
+.left h3 {
+    font-family: var(--font-secondary);
+    font-size: calc(var(--fontsize-h2) * 1.5);
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+
+/* Lado derecho */
+.right {
+    background-color: white;
+    width: 60vw;
+    padding-left: 4rem;
+    height: 100vh;
+}
+
+.right2 {
+    position: absolute;
+    bottom: 5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.right h3 {
     color: var(--color-main);
-    font-size: 1.5rem;
+    font-size: var(--fontsize-h2);
     font-weight: 700;
+
+}
+
+.bar {
+    display: inline;
+    width: 2rem;
+    height: 17rem;
+    border-right: 5px solid var(--color-main);
+}
+
+label {
+    font-size: var(--fontsize-h3);
+    font-weight: 500;
+    font-family: var(--font-secondary);
 }
 
 .input {
     display: block;
-    width: 350px;
+    width: 30rem;
     font-size: 0.8rem;
     border: 1px solid var(--color-third);
-    padding: 0.5rem;
+    padding: 1rem;
     box-shadow: 10px 10px 0px var(--color-third);
 }
 
@@ -67,22 +94,31 @@ input::placeholder {
 }
 
 .button {
-    margin-left: 15.8rem;
-    padding: 0.5rem;
+    margin-left: 20.5rem;
+    padding: 1rem;
     border: none;
     color: white;
     background-color: var(--color-second);
-    font-size: 0.8rem;
+    font-size: var(--fontsize-h4);
 
     &:hover {
         background-color: var(--color-main);
+        border: none;
     }
 }
 
+.pass {
+    display: inline;
+    position: absolute;
+    bottom: 6.7rem;
+    right: 1rem;
+}
 
-.bar {
-    margin-top: 17rem;
-    width: 1px;
-    height: 13rem;
-    border-right: 5px solid var(--color-main)
+#togglePassword {
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
