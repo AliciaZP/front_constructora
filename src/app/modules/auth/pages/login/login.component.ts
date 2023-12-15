@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  newLogin: FormGroup;
 
+  newLogin: FormGroup;
   router = inject(Router)
+  passwordVisible = false;
+  password = '';
+
 
   constructor() {
     this.newLogin = new FormGroup({
@@ -32,9 +35,6 @@ export class LoginComponent {
   checkError(controlName: string, errorName: string) {
     return this.newLogin.get(controlName)?.hasError(errorName) && this.newLogin.get(controlName)?.touched;
   }
-
-  passwordVisible = false;
-  password = '';
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;

@@ -15,11 +15,33 @@
 
 h1 {
     font-size: var(--fontsize-h2);
+    font-weight: var(--fontweight-h2);
 }
 
 h2 {
     font-size: var(--fontsize-h3);
 }
+
+h3 {
+    font-size: var(--fontsize-h3);
+}
+
+span {
+    font-size: 2rem;
+    font-family: var(--font-secondary);
+}
+
+.left h3 {
+    font-family: var(--font-secondary);
+    font-size: calc(var(--fontsize-h2) * 1.5);
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+
+
+
 
 .icons {
     cursor: pointer;
