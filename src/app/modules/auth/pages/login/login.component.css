@@ -48,6 +48,7 @@ h2 {
     position: relative;
 }
 
+
 .right h3 {
     color: var(--color-main);
     font-size: calc(var(--fontsize-h3)*1.2);
@@ -108,6 +109,12 @@ input::placeholder {
     margin-top: 2rem;
 }
 
+.error {
+    font-size: calc(var(--fontsize-h4)/1.5);
+    color: var(--color-main);
+    font-style: italic;
+}
+
 /* Ojito ver constraseñas */
 .pass {
     display: inline;
@@ -125,6 +132,11 @@ input::placeholder {
     transform: translateY(-50%);
 }
 
+.pass.error-mode {
+    position: absolute;
+    bottom: 2.8rem;
+    right: 1rem;
+}
 
 /* mediaqueries */
 

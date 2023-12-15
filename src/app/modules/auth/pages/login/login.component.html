@@ -16,17 +16,18 @@
                 <div class="mb-4">
                     <label class="right3 mb-2">Email:</label>
                     <input class="input" type="Email" formControlName='email' placeholder="Inserta aquí tu email">
-                    <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
+                    <p class="error pt-3" *ngIf="checkError('email','required')">El email es obligatorio.</p>
                 </div>
                 <div class="right4 mb-4">
                     <label class="mb-2">Contraseña: </label>
                     <input [type]="passwordVisible ? 'text' : 'password'" [(ngModel)]="password" class="input"
                         type="password" formControlName='password' placeholder="Inserta aquí tu contraseña">
-                    <span class="pass" (click)="togglePasswordVisibility()">
+                    <span class="pass" [ngClass]="{ 'error-mode': checkError('password', 'required') }"
+                        (click)="togglePasswordVisibility()">
                         <i *ngIf="passwordVisible" class="fas fa-eye"></i>
                         <i *ngIf="!passwordVisible" class="fas fa-eye-slash"></i>
                     </span>
-                    <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
+                    <p class="error pt-3" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
                 </div>
                 <div class="button-flex pt-3">
                     <input class="button" type="submit" value="Iniciar sesión">
