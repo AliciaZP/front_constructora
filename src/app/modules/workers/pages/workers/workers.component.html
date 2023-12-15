@@ -36,10 +36,10 @@
                 </select>
             </div>
             <div class="col-sm-1">
-              <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/workers','new']">
-                  AÑADIR OPERARIO
-              </button>
-          </div>
+                <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/workers','new']">
+                    AÑADIR OPERARIO
+                </button>
+            </div>
 
         </div>
 
@@ -66,8 +66,9 @@
                             <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
                                 Editar Operario
                             </button>
-                            <!-- <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario -->
-                            <!-- </button> -->
+                            <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker.id)">Borrar Operario
+                            </button>
+
                         </div>
                     </div>
                 </div>
@@ -75,4 +76,3 @@
         </div>
     </div>
 </section>
-
