@@ -33,5 +33,12 @@ export class LoginComponent {
     return this.newLogin.get(controlName)?.hasError(errorName) && this.newLogin.get(controlName)?.touched;
   }
 
+  passwordVisible = false;
+  password = '';
 
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 }
+
+

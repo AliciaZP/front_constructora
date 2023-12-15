@@ -1,7 +1,6 @@
 <div id="wrapper">
     <section class="left p-5">
-        <h2
-            class="animate__animated animate__animate__animated animate__fadeInLeft animate__delay-2s animate__delay-2s">
+        <h2 class="animate__animated animate__animate__animated animate__fadeInLeft animate__delay-1s">
             Portal del empleado</h2>
         <div class="logo">
             <h1 class="pb-1 animate__animated animate__fadeInLeft animate__delay-1s">SGAL</h1>
@@ -10,7 +9,7 @@
     </section>
 
     <section class="right">
-        <div class="right2 animate__animated animate__fadeInRight animate__delay-2s">
+        <div class="right2 animate__animated animate__fadeInRight animate__delay-1s">
             <div class="bar"></div>
             <form id="form-login">
                 <h3 class="mb-4">ACCESO USUARIOS</h3>
@@ -21,8 +20,12 @@
                 </div>
                 <div class="mb-4">
                     <label class="mb-2">Contraseña: </label>
-                    <input class="input" type="password" formControlName='password'
-                        placeholder="Inserta aquí tu contraseña">
+                    <input [type]="passwordVisible ? 'text' : 'password'" [(ngModel)]="password" class="input"
+                        type="password" formControlName='password' placeholder="Inserta aquí tu contraseña">
+                    <span class="pass" (click)="togglePasswordVisibility()">
+                        <i *ngIf="passwordVisible" class="fas fa-eye-slash"></i>
+                        <i *ngIf="!passwordVisible" class="fas fa-eye"></i>
+                    </span>
                     <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
                 </div>
                 <div class="pt-3">
