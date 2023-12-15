@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'epis', component: EpisComponent },
 
   { path: 'offices', component: OfficesComponent },
-  { path: 'aboutus', component: AboutUsComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
