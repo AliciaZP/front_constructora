@@ -11,7 +11,7 @@
 
         <div class="bar col-1"></div>
 
-        <form id="form-login" class="col-11">
+        <form [formGroup]="newLogin" (ngSubmit)="onSubmit()" id="form-login" class="col-11">
             <h3 class="mb-4">ACCESO USUARIOS </h3>
             <div class="mb-4">
                 <label class="mb-2">Email:</label>
