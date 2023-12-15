@@ -11,7 +11,7 @@
     <section class="right">
         <div class="right2 animate__animated animate__fadeInRight animate__delay-1s">
             <div class="bar"></div>
-            <form id="form-login">
+            <form [formGroup]="newLogin" (ngSubmit)="onSubmit()" id="form-login">
                 <h3 class="mb-4">ACCESO USUARIOS</h3>
                 <div class="mb-4">
                     <label class="mb-2">Email:</label>

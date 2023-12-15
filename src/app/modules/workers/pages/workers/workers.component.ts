@@ -9,7 +9,8 @@ import { WorkersService } from 'src/app/core/services/workers.service';
 })
 export class WorkersComponent {
 
-  workersService = inject(WorkersService)
+  workersService = inject(WorkersService);
+  constructionId: number = 0;
 
   arrWorkers: User[] = []
   arrCities: string[] = []
@@ -24,9 +25,18 @@ export class WorkersComponent {
     this.arrCities = this.getCities();
     console.log(this.arrCities)
     this.arrJobs = this.getJobs();
+    if(localStorage.getItem('Construction_id')){
+      this.constructionId = Number(localStorage.getItem('Construction_id'))
+      console.log(this.constructionId)
+    }
+
     // this.arrRoles = this.workersService.getRoles();
   }
 
+
+  onClick( workerId: string){
+    console.log( workerId, this.constructionId );
+  }
 
   getCities(): string[] {
     const workersUnordered = [...new Set(this.arrWorkers.map(worker => worker.city))];

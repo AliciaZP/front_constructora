@@ -66,6 +66,9 @@
                             <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
                                 Editar Operario
                             </button>
+                            <button class="p-2" *ngIf="botonActivo"  (click)="onClick(worker.id)">
+                                Asignar Operario
+                            </button>
                             <!-- <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker._id)">Borrar Operario -->
                             <!-- </button> -->
                         </div>

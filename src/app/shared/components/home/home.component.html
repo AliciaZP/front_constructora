@@ -23,30 +23,31 @@
         <div class="row align-items-center">
             <h3>MI AREA PRIVADA</h3>
             <app-card-workers [workers]="userLogged" class="col-5"></app-card-workers>
-            <div class="ps-4 botones col-7">
+            <div class="col-1"></div>
+            <div class="ps-4 botones col-6">
                 <ul class="d-flex">
-                    <li class="p-2" [routerLink]="['/constructions']"><button><i
+                    <li class="col-3 p-2" *ngIf="userLogged.role == 'admin'"  [routerLink]="['/constructions']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button></li>
-                    <li class="p-2" [routerLink]="['/workers']"><button><i
+                    <li class="col-3 p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/workers']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-person-digging"></i>Operarios</button></li>
-                    <li class="p-2" [routerLink]="['/tasks', 'user', 'task', userLogged.id]"><button><i
+                    <li class="col-3 p-2" [routerLink]="['/tasks', 'user', 'task', userLogged.id]"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
                     </li>
                     <!-- user/task/:userId -->
-                    <li class="p-2" [routerLink]="['/epis']"><button><i
+                    <li class="col-3 p-2" [routerLink]="['/epis']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-helmet-safety"></i>EPis</button>
                     </li>
-                </ul>
-                <ul class="d-flex">
-                    <li class="p-2" [routerLink]="['/']"><button><i
+
+
+                    <li class="col-3 p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-address-card"></i>Perfil</button>
                     </li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="col-3 p-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-graduation-cap"></i>Formación</button></li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="col-3 p-2" *ngIf="userLogged.role == 'admin'"  [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-calendar"></i>Permisos</button>
                     </li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="col-3 p-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-file-contract"></i>Docs</button>
                     </li>
 

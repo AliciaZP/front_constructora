@@ -10,7 +10,7 @@ export interface User {
     active: boolean;
     job: string;
     city: string,
-    Construction_id?: number,
+    Constructions_id?: number,
     image: string,
 
 }

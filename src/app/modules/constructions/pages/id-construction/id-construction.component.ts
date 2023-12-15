@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Construction } from 'src/app/core/interfaces/construction.interfaces';
+import { User } from 'src/app/core/interfaces/user.interface';
 import { ConstructionsService } from 'src/app/core/services/constructions.service';
+import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,15 +20,20 @@ export class IdConstructionComponent {
   router = inject(Router)
   botonActivo: boolean = true;
   arrWorkers!: any;
+  usersService = inject(UsersService);
+  userLogged!: User;
+
 
 
   async ngOnInit() {
     this.arrConstructions = await this.constructionsService.getAllConstructions();
     // const { workers } = this.constructionSelected;
+    this.userLogged = await this.usersService.getUserLogged();
     this.activatedRoute.params.subscribe(async (params) => {
 
       const response = await this.constructionsService.getConstructionById(params['constructionId']);
       this.constructionSelected = response
+      localStorage.setItem('Construction_id', this.constructionSelected.id);
       const { workers } = this.constructionSelected;
       this.arrWorkers = workers;
     })
