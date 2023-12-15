@@ -32,7 +32,6 @@ export class IdConstructionComponent {
     })
   }
 
-
   async onClickDelete($event: string) {
     const result = await Swal.fire({
       title: "Eliminar obra",
