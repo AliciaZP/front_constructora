@@ -1,82 +1,87 @@
 <section class="m-5">
-    <h2 class="mb-5">LISTADO DE OPERARIOS</h2>
-    <!-- <i class="fa-solid fa-arrow-left mb-5"></i> -->
-    <!-- <h4 class="d-inline back " [routerLink]="['/home']"> volver a la Home</h4> -->
-    <div id="filtros" class="mb-5" class="row">
-        <div class="col-6">
-            <div class="mb-3">
-                <label>Selecciona la ciudad</label>
-                <select (change)="onChangeCity($event)">
-                    <option value="">Todas las ciudades</option>
-                    <option *ngFor="let city of arrCities" [value]="city">{{city}}
-                    </option>
-                </select>
-            </div>
-            <!-- <div class="mb-3">
-                <label>Selecciona el rol</label>
-                <select (change)="onChangeRole($event)">
-                    <option value="">Todos los roles</option>
-                    <option *ngFor="let role of arrRoles" [value]="role">{{role}}</option>
-                </select>
-            </div> -->
-            <div class="mb-3">
-                <label>Selecciona el puesto</label>
-                <select (change)="onChangeJob($event)">
-                    <option value="">Todos los puestos</option>
-                    <option *ngFor="let job of arrJobs" [value]="job">{{job}}</option>
-                </select>
+    <h2 class="mb-4">NUESTROS OPERARIOS</h2>
+
+    <div id="filtros" class="m-1 row">
+        <div class="col-sm-3">
+            <div>
+                <h4 class="mb-2 pt-3">Filtrar:</h4>
+                <div>
+                    <label class="pe-3 pb-2"><span>Selecciona la ciudad:</span></label>
+                    <select class="custom-select" (change)="onChangeCity($event)">
+                        <option class="custom-option" value="">Todas</option>
+                        <option class="custom-option" *ngFor="let city of arrCities" [value]="city">{{city}}
+                        </option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="col-6">
-            <div class="mb-3">
-                <label>Ordenar por apellido</label>
-                <select (change)="onChangeName($event)">
-                    <option value="asc">De la A a la Z</option>
-                    <option value="desc">De la Z a la A</option>
-                </select>
+        <div class="col-sm-3">
+            <div>
+                <h4 class="mb-2 pt-3">Filtrar:</h4>
+                <div>
+                    <label class="pe-3 pb-2"><span>Selecciona el puesto:</span></label>
+                    <select class="custom-select" (change)="onChangeJob($event)">
+                        <option class="custom-option" value="">Todos</option>
+                        <option class="custom-option" *ngFor="let job of arrJobs" [value]="job">{{job}}</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-4">
+            <div class="pb-2">
+                <h4 class="mb-2 pt-3">Ordenar:</h4>
+                <div>
+                    <label class="pe-3 pb-2"><span>Ordenar por apellido:</span></label>
+                    <select class="custom-select" (change)="onChangeName($event)">
+                        <option class="custom-option" value="asc">De la A a la Z</option>
+                        <option class="custom-option" value="desc">De la Z a la A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div>
                 <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/workers','new']">
-                    AÑADIR OPERARIO
+                    CREAR NUEVO OPERARIO
                 </button>
             </div>
-
-        </div>
-
-
-        <div class="my-5">
-            <article class="mb-5"  *ngFor="let worker of arrWorkers">
-                <div   class="row">
-                    <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
-                    <div class="col-3">
-                        <figure class="mb-2">
-                            <img [src]="worker.image" alt="imagen del post">
-                        </figure>
-                        <p class="mb-3">{{worker.job}} en {{worker.city}}</p>
-                    </div>
-                    <div class="col-1"></div>
-                    <div class="col-7">
-
-                        <p class="mb-3">Teléfono: {{worker.phone}}</p>
-                        <p class="mb-3">Email: {{worker.email}}</p>
-                        <p class="mb-3">Contraseña: {{worker.password}}</p>
-                        <p class="mb-3">DNI: {{worker.dni}}</p>
-                        <p class="mb-3">Permisos: {{worker.role}}</p>
-                        <div class="pb-3">
-                            <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
-                                Editar Operario
-                            </button>
-                            <button *ngIf="worker.active == false" class="p-2"  (click)="onClick(worker.id)">
-                                Asignar Operario
-                            </button>
-
-                            <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker.id)">Borrar Operario
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-            </article>
         </div>
     </div>
+
+    <div class="my-5 flex-container">
+        <article class="mb-2" *ngFor="let worker of arrWorkers">
+
+            <div *ngIf="botonActivo">
+                <figure c>
+                    <img [src]="worker.image" alt="imagen del operario">
+                </figure>
+                <div class="p-2">
+                    <h3 class="pt-5 pb-2">{{worker.name}} {{worker.surname}}</h3>
+                    <small>{{worker.job}} en {{worker.city}}</small>
+                    <div class="px-3">
+                        <p class="pb-2"><span>Teléfono:</span></p>
+                        <p class="pb-2">{{worker.phone}}</p>
+                        <p class="pb-2"><span>Email:</span></p>
+                        <p>{{worker.email}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-3 butttons">
+                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
+                    Editar Operario
+                </button>
+                <button class="p-2" *ngIf="worker.active == false" (click)="onClick(worker.id)">
+                    Asignar Operario
+                </button>
+                <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker.id)">Borrar
+                    Operario
+                </button>
+            </div>
+        </article>
+    </div>
+
+
+
 </section>

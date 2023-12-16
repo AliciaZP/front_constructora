@@ -1,20 +1,38 @@
-h3 {
-    font-size: 2rem;
-}
-
-img {
-    width: 300px;
-    height: auto;
-    border-radius: 20px;
-}
-
 h2 {
-    font-size: 2.5rem;
-
+    color: var(--color-second);
+    font-size: var(--fontsize-h2);
+    font-weight: var(--fontweight-h2);
 }
 
-.back {
-    cursor: pointer;
+
+/* listado de operarios */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+article {
+    width: 250px;
+    border: 2px solid var(--color-third);
+
+    &:hover {
+        border: 2px solid var(--color-main);
+        transform: scale(1.1);
+    }
+}
+
+figure {
+    position: relative;
+}
+
+h3 {
+    color: var(--color-second);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.5rem;
 }
 
 h4 {
@@ -23,15 +41,25 @@ h4 {
     color: var(--color-main);
 }
 
+p {
+    font-size: 0.9rem;
+}
+
+span {
+    font-weight: var(--fontweight-h2);
+}
+
 /* filtros */
 #filtros {
     background-color: rgb(234, 234, 234);
+
 }
 
 #filtros h4 {
     color: var(--color-main);
     font-size: var(--fontsize-h4);
     font-weight: var(--fontweight-h4);
+    font-family: var(--font-secondary);
 }
 
 .custom-select {
@@ -54,16 +82,25 @@ h4 {
 /* boton de Añadir reporte */
 
 .new-button {
-    color: white;
+    color: var(--color-white);
     background-color: var(--color-second);
     border: none;
-    padding: 1rem;
-    font-weight: 700;
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: calc(var(--fontsize-h4)/1.5);
     line-height: var(--font-lineheight);
     border-radius: 10px;
+    width: 9rem;
 
     &:hover {
         background-color: var(--color-main);
     }
 
+}
+
+/* REVISAR */
+
+figure {
+    height: 200px;
+    position: relative;
 }
