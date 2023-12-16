@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,7 +17,7 @@ export class EditConstructionComponent {
   editConstruction: FormGroup;
   constructionId: number = 0;
   constructionsService = inject(ConstructionsService)
-
+  location = inject(Location)
   router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
 
@@ -88,7 +89,9 @@ export class EditConstructionComponent {
       });
     }
   }
-
+  goBack(){
+    this.location.back();
+  }
 
 
 

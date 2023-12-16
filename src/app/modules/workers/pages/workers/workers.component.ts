@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/user.interface';
 import { WorkersService } from 'src/app/core/services/workers.service';
@@ -13,6 +13,8 @@ export class WorkersComponent {
 
   workersService = inject(WorkersService);
   constructionId: number = 0;
+  changeDetector = inject(ChangeDetectorRef);
+  zone = inject(NgZone);
 
   arrWorkers: User[] = []
   arrCities: string[] = []
@@ -39,8 +41,38 @@ export class WorkersComponent {
   }
 
 
-  onClick( workerId: string){
+  async onClick( workerId: any){
+    try {
+      const response = await this.workersService.addWorkerToConstruction(workerId, {
+        active: 1,
+        Constructions_id: this.constructionId
+      });
+
+
+
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Operario asignado a esta obra, correctamente',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#008000',
+        color: 'white',
+        background: '#0f0f0f',
+      })
+
+      this.reloadCurrentRoute()
+    } catch (error) {
+
+    }
     console.log( workerId, this.constructionId );
+  }
+
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+
+    this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
   getCities(): string[] {

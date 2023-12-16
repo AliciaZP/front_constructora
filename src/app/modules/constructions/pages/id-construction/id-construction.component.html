@@ -1,7 +1,7 @@
 <section class="m-5">
     <div class="back">
         <i class="fa-solid fa-arrow-left "></i>
-        <h4 class="d-inline" [routerLink]="['/constructions']"> volver a la lista</h4>
+        <h4 class="d-inline" (click)="goBack()"> Atrás</h4>
     </div>
     <article *ngIf="constructionSelected">
         <div class="flex-container">
@@ -59,6 +59,7 @@
             <app-card-workers [workers]="worker"></app-card-workers>
             <div [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]" class="btn btn-danger">Asignar tarea</div>
             <div [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]" class="btn btn-danger">Tareas asignadas</div>
+            <div (click)="onClickRetirar(worker.id)" class="btn btn-danger">Retirar de la obra</div>
           </div>
         </section>
         <section  *ngIf="userLogged.role == 'admin'" id="admin-area" class="p-3">

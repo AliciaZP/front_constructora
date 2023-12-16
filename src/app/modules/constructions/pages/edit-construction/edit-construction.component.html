@@ -1,5 +1,8 @@
 <section id="form-editconstruction">
-
+    <div class="back ms-4 mt-3">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Atrás</h4>
+    </div>
     <h2 class="m-5">EDITAR OBRA </h2>
     <form [formGroup]='editConstruction' (ngSubmit)="onSubmit()">
 

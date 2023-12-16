@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Construction } from 'src/app/core/interfaces/construction.interfaces';
@@ -14,7 +15,7 @@ export class ReportsComponent {
 
   reportsService = inject(ReportsService)
   constructionsService = inject(ConstructionsService);
-
+  location = inject(Location);
 
   arrReports!: any[];
   arrTypes: string[] = []
@@ -39,6 +40,10 @@ export class ReportsComponent {
 
     })
 
+  }
+
+  goBack(){
+    this.location.back();
   }
 
   // getTypes() {

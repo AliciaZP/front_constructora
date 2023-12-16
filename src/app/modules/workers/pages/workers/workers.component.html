@@ -1,7 +1,7 @@
 <section class="m-5">
     <h2 class="mb-5">LISTADO DE OPERARIOS</h2>
-    <i class="fa-solid fa-arrow-left mb-5"></i>
-    <h4 class="d-inline back " [routerLink]="['/home']"> volver a la Home</h4>
+    <!-- <i class="fa-solid fa-arrow-left mb-5"></i> -->
+    <!-- <h4 class="d-inline back " [routerLink]="['/home']"> volver a la Home</h4> -->
     <div id="filtros" class="mb-5" class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -45,8 +45,8 @@
 
 
         <div class="my-5">
-            <article class="mb-5" *ngFor="let worker of arrWorkers">
-                <div class="row">
+            <article class="mb-5"  *ngFor="let worker of arrWorkers">
+                <div   class="row">
                     <h3 class="mb-3">{{worker.name}} {{worker.surname}}</h3>
                     <div class="col-3">
                         <figure class="mb-2">
@@ -66,7 +66,7 @@
                             <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
                                 Editar Operario
                             </button>
-                            <button class="p-2" *ngIf="botonActivo"  (click)="onClick(worker.id)">
+                            <button *ngIf="worker.active == false" class="p-2"  (click)="onClick(worker.id)">
                                 Asignar Operario
                             </button>
 

@@ -6,7 +6,7 @@
             <ul class="icons">
                 <li><i class="fa-solid fa-bell fa-xs"></i></li>
                 <li><i class="fa-solid fa-gear"></i></li>
-                <li><i class="fa-solid fa-power-off"></i></li>
+                <li (click)="onClickLogoff()" ><i class="fa-solid fa-power-off"></i></li>
             </ul>
         </div>
     </nav>
@@ -15,7 +15,7 @@
             <ul class="nav-links ">
                 <li [routerLink]="['/home']">HOME</li>
                 <li *ngIf="userLogged.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
-                <li [routerLink]="['/constructions', 'construction', userLogged.Constructions_id]">MI OBRA</li>
+                <li *ngIf="userLogged.role == 'worker'" [routerLink]="['/constructions', 'construction', userLogged.Constructions_id]">MI OBRA</li>
                 <li *ngIf="userLogged.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
                 <li [routerLink]="['/offices']">SEDES</li>
                 <li [routerLink]="['/error']">NOTICIAS</li>

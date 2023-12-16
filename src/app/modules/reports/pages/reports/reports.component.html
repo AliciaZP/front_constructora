@@ -1,4 +1,8 @@
 <section class="mx-5 mt-5">
+    <div class="back btn ms-4 mt-3 mb-3">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Atrás</h4>
+    </div>
     <h2 class="mb-4">LISTADO DE REPORTES</h2>
 
     <div id="filtros" class="m-1 row">
@@ -8,10 +12,10 @@
                 <div>
                     <label class="pe-3 pb-2"><span>Tipo de reporte:</span></label>
                     <select class="custom-select" (change)="onChangeType($event)">
-                      <option class="custom-option" value="">Todos</option>
-                      <option class="custom-option" value="incidencias">Incidencias</option>
-                      <option class="custom-option" value="actualizacion">Actualización</option>
-                      <!-- <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}} -->
+                        <option class="custom-option" value="">Todos</option>
+                        <option class="custom-option" value="incidencias">Incidencias</option>
+                        <option class="custom-option" value="actualizacion">Actualización</option>
+                        <!-- <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}} -->
                         <!-- </option> -->
                     </select>
                 </div>

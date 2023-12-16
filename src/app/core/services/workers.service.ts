@@ -61,6 +61,12 @@ export class WorkersService {
     )
   }
 
+  addWorkerToConstruction(constructionId: number, body: any){
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.url}/construction/${constructionId}`,body )
+    )
+  }
+
   //Funciones para los filtros
 
   //Funciones para las ciudades
