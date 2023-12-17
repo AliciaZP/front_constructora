@@ -120,6 +120,7 @@ span {
 }
 
 .worker-button {
+    padding: 0.1rem 1.5rem;
     color: var(--color-white);
     background-color: var(--color-second);
     border: 2px solid var(--color-third);
