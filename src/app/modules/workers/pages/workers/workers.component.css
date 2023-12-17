@@ -5,6 +5,13 @@ h2 {
 }
 
 /* listado de operarios */
+
+.flex-h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
 .flex-container {
     display: flex;
     justify-content: center;
@@ -16,23 +23,27 @@ h2 {
 .flex-container2 {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background-color: var(--color-second)
+    align-items: top;
+    background-color: var(--color-second);
+
 }
 
 article {
-    width: 530px;
-
+    width: 550px;
     color: white;
 }
 
+figure {
+    display: inline-block;
+}
+
 .data-cover {
+    display: inline-block;
     border-left: 5px solid var(--color-main);
 }
 
 img {
-    width: 200px;
+    width: 250px;
 }
 
 h3 {
@@ -40,6 +51,7 @@ h3 {
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.5rem;
+    display: inline-block;
 }
 
 h4 {
@@ -111,15 +123,25 @@ small {
     }
 }
 
+#filtros span {
+    font-weight: var(--fontweight-h2);
+    color: var(--color-second);
+}
+
 /* boton de editar*/
 
 .admin {
-    color: var(--color-second);
+    color: var(--color-third);
     font-size: 2rem;
+
 
     &:hover {
         color: var(--color-main);
     }
+}
+
+.icon {
+    display: inline-block;
 }
 
 button {
@@ -138,5 +160,3 @@ button {
         background-color: var(--color-main);
     }
 }
-
-/* REVISAR */

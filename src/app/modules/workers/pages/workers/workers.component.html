@@ -2,7 +2,7 @@
     <h2 class="mb-4">NUESTROS OPERARIOS</h2>
 
     <div id="filtros" class="m-1 row">
-        <div class="col-sm-3">
+        <div class="col-sm-3 pb-3">
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
@@ -51,28 +51,13 @@
     </div>
 
     <div class="my-5 flex-container">
-
         <article class="mb-2" *ngFor="let worker of arrWorkers">
-            <h3 class="pb-2">{{worker.name}} {{worker.surname}}</h3>
-            <div class="flex-container2" *ngIf="botonActivo">
-                <figure>
-                    <img [src]="worker.image" alt="imagen del operario">
-                </figure>
 
-                <div class="mt-3 p-2 data-cover">
-                    <small>{{worker.job}} en {{worker.city}}</small>
-                    <div class="data pt-5">
-                        <ul class="ps-3">
-                            <li class="pb-2"><span>Teléfono:</span></li>
-                            <p class="pb-3">{{worker.phone}}</p>
-                            <li class="pb-2"><span>Email:</span></li>
-                            <p>{{worker.email}}</p>
-                        </ul>
-                    </div>
-                </div>
+            <div class="flex-h3 pb-2">
+                <h3>{{worker.name}} {{worker.surname}}</h3>
 
-                <div class="dropdown">
-                    <i class="fa-regular fa-pen-to-square admin" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <div class="dropdown icon">
+                    <i class="fa-solid fa-pen-to-square admin" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li class="px-2"><button class="" *ngIf="botonActivo"
                                 [routerLink]="['/workers','edit', worker.id]">
@@ -87,6 +72,25 @@
                                 Asignar Operario
                             </button> </li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="flex-container2">
+                <figure>
+                    <img [src]="worker.image" alt="imagen del operario">
+                </figure>
+                <div class="p-4">
+                    <div class="data-cover p-2">
+                        <small>{{worker.job}} en {{worker.city}}</small>
+                        <div class="data pt-5">
+                            <ul class="ps-3">
+                                <li class="pb-2"><span>Teléfono:</span></li>
+                                <p class="pb-4">{{worker.phone}}</p>
+                                <li class="pb-2"><span>Email:</span></li>
+                                <p>{{worker.email}}</p>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
