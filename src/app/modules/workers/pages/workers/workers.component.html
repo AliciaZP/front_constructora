@@ -43,7 +43,7 @@
 
         <div class="col-sm-2">
             <div>
-                <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/workers','new']">
+                <button class="my-3 button-filter " *ngIf="botonActivo" [routerLink]="['/workers','new']">
                     CREAR NUEVO OPERARIO
                 </button>
             </div>
@@ -51,33 +51,43 @@
     </div>
 
     <div class="my-5 flex-container">
-        <article class="mb-2" *ngFor="let worker of arrWorkers">
 
-            <div *ngIf="botonActivo">
-                <figure c>
+        <article class="mb-2" *ngFor="let worker of arrWorkers">
+            <h3 class="pb-2">{{worker.name}} {{worker.surname}}</h3>
+            <div class="flex-container2" *ngIf="botonActivo">
+                <figure>
                     <img [src]="worker.image" alt="imagen del operario">
                 </figure>
-                <div class="p-2">
-                    <h3 class="pt-5 pb-2">{{worker.name}} {{worker.surname}}</h3>
+
+                <div class="mt-3 p-2 data-cover">
                     <small>{{worker.job}} en {{worker.city}}</small>
-                    <div class="px-3">
-                        <p class="pb-2"><span>Teléfono:</span></p>
-                        <p class="pb-2">{{worker.phone}}</p>
-                        <p class="pb-2"><span>Email:</span></p>
-                        <p>{{worker.email}}</p>
+                    <div class="data pt-5">
+                        <ul class="ps-3">
+                            <li class="pb-2"><span>Teléfono:</span></li>
+                            <p class="pb-3">{{worker.phone}}</p>
+                            <li class="pb-2"><span>Email:</span></li>
+                            <p>{{worker.email}}</p>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="pt-3 butttons">
-                <button class="p-2" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
-                    Editar Operario
-                </button>
-                <button class="p-2" *ngIf="worker.active == false" (click)="onClick(worker.id)">
-                    Asignar Operario
-                </button>
-                <button class="p-2" *ngIf="botonActivo" (click)="onClickDelete(worker.id)">Borrar
-                    Operario
-                </button>
+
+                <div class="dropdown">
+                    <i class="fa-regular fa-pen-to-square admin" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu">
+                        <li class="px-2"><button class="" *ngIf="botonActivo"
+                                [routerLink]="['/workers','edit', worker.id]">
+                                Editar Operario
+                            </button></li>
+                        <li class="px-2"><button class="p-2" *ngIf="botonActivo"
+                                (click)="onClickDelete(worker.id)">Borrar
+                                Operario
+                            </button></li>
+                        <li class="px-2"><button class="border-bottom-0 p-2" *ngIf="worker.active == false"
+                                (click)="onClick(worker.id)">
+                                Asignar Operario
+                            </button> </li>
+                    </ul>
+                </div>
             </div>
         </article>
     </div>
