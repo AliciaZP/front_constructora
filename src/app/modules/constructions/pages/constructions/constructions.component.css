@@ -68,6 +68,8 @@ article {
 
 .city {
     color: var(--color-main);
+    font-family: var(--font-secondary);
+    font-size: var(--fontsize-h3);
 }
 
 figure {
@@ -119,8 +121,12 @@ button {
     font-family: var(--font-secondary);
 }
 
-.custom-select {
+label {
+    display: block;
+}
 
+.custom-select {
+    display: block;
     color: var(--color-second);
     background-color: white;
     padding: 3px;
@@ -162,9 +168,17 @@ button {
 
 
 @media(min-width: 62.5rem) {
+    label {
+        display: block;
+    }
+
+    select {
+        display: block;
+    }
+
 
     button {
-        margin-left: 5rem;
+
         display: block;
         color: var(--color-second);
         background-color: var(--color-white);
@@ -183,6 +197,14 @@ button {
 }
 
 @media(min-width: 87.5rem) {
+    label {
+        display: block;
+    }
+
+    select {
+        display: block;
+    }
+
 
     .custom-select {
         display: inline;
@@ -193,7 +215,7 @@ button {
     }
 
     button {
-        margin-left: 10rem;
+        margin-left: 3rem;
         display: block;
         color: var(--color-second);
         background-color: var(--color-white);
