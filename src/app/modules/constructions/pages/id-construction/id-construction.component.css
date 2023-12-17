@@ -115,14 +115,38 @@ span {
     font-family: var(--font-secondary);
 }
 
+.worker-buttonflex {
+    display: flex;
+}
+
 .worker-button {
     color: var(--color-white);
     background-color: var(--color-second);
+    border: 2px solid var(--color-third);
+    border-top: none;
+    font-weight: var(--fontweight-h3);
+    font-size: 0.9rem;
 
     &:hover {
+        color: var(--color-second);
+        background-color: var(--color-third);
+    }
+}
+
+.worker-button2 {
+    color: var(--color-white);
+    background-color: var(--color-second);
+    border: 2px solid var(--color-third);
+    border-top: none;
+    font-weight: var(--fontweight-h3);
+    font-size: 0.9rem;
+
+    &:hover {
+        color: var(--color-second);
         background-color: var(--color-main);
     }
 }
+
 
 
 /* Estilos del area privada */

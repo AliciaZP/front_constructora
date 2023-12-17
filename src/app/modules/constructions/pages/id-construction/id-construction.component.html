@@ -50,21 +50,24 @@
         </div>
 
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
-            <h3 class="mb-3">Operarios asignados:</h3>
-
-            <div class="col-4 border" *ngFor="let worker of arrWorkers">
+            <h3 class="mb-4">Operarios asignados:</h3>
+            <div class="pb-4 col-lg-4 " *ngFor="let worker of arrWorkers">
                 <app-card-workers [workers]="worker"></app-card-workers>
+                <div class="worker-buttonflex">
+                    <button [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]"
+                        class="worker-button">Tareas
+                        asignadas</button>
 
-                <button [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]"
-                    class="worker-button">Asignar
-                    tarea</button>
+                    <button [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]"
+                        class="worker-button">Asignar
+                        tarea</button>
 
-                <button [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]"
-                    class="worker-button">Tareas
-                    asignadas</button>
-
-                <button (click)="onClickRetirar(worker.id)" class="worker-button">Retirar de la obra</button>
+                    <button (click)="onClickRetirar(worker.id)" class="worker-button2">Retirar de la obra</button>
+                </div>
             </div>
+
+
+
         </section>
         <section *ngIf="userLogged.role == 'admin'" id="admin-area">
             <div class="dropdown">

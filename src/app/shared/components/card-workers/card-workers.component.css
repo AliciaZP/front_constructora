@@ -2,19 +2,24 @@ img {
     width: 100%;
     height: auto;
     display: block;
-
     padding: 0.625rem;
-    background: var(--color-main);
-    background: linear-gradient(90deg, var(--color-main) 0%, rgb(215, 123, 142) 39%, rgb(222, 220, 220) 100%);
+    background: linear-gradient(90deg, var(--color-main) 0%, rgb(215, 123, 142) 25%, rgb(222, 220, 220) 100%);
 
 }
 
-.contenedor article.card {
+.card-container {
+    border: 2px solid var(--color-third);
+}
 
-    background-color: white;
+
+article {
+    border: none;
+    background-color: var(--color-white);
+    border-radius: 0;
+}
+
+.card-container article.card {
     padding: 0.125rem;
-    border: 0.25rem solid var(--color-main);
-    box-shadow: 0.3125rem 0.125rem 1.25rem var(color-second);
     margin: 10px;
 
     & .flex {
