@@ -105,3 +105,108 @@ button {
         background-color: var(--color-main);
     }
 }
+
+/* filtros */
+#filtros {
+    background-color: rgb(234, 234, 234);
+
+}
+
+#filtros h4 {
+    color: var(--color-main);
+    font-size: var(--fontsize-h4);
+    font-weight: var(--fontweight-h4);
+    font-family: var(--font-secondary);
+}
+
+.custom-select {
+
+    color: var(--color-second);
+    background-color: white;
+    padding: 3px;
+    border: 1px solid var(--color-second);
+}
+
+.custom-option {
+    color: var(--color-second);
+    background-color: white;
+}
+
+.custom-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.button-filter {
+    color: var(--color-white);
+    background-color: var(--color-second);
+    border: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: calc(var(--fontsize-h4)/1.5);
+    line-height: var(--font-lineheight);
+    width: 9rem;
+
+    &:hover {
+        background-color: var(--color-main);
+    }
+}
+
+#filtros span {
+    font-weight: var(--fontweight-h2);
+    color: var(--color-second);
+}
+
+
+@media(min-width: 48rem) {}
+
+
+@media(min-width: 62.5rem) {
+
+    button {
+        margin-left: 5rem;
+        display: block;
+        color: var(--color-second);
+        background-color: var(--color-white);
+        border: none;
+        border-bottom: 1px solid var(--color-main);
+        padding: 0.5rem;
+        font-weight: 600;
+        font-size: calc(var(--fontsize-h4)/1.5);
+        line-height: var(--font-lineheight);
+        width: 8rem;
+
+        &:hover {
+            background-color: var(--color-main);
+        }
+    }
+}
+
+@media(min-width: 87.5rem) {
+
+    .custom-select {
+        display: inline;
+        color: var(--color-second);
+        background-color: white;
+        padding: 3px;
+        border: 1px solid var(--color-second);
+    }
+
+    button {
+        margin-left: 10rem;
+        display: block;
+        color: var(--color-second);
+        background-color: var(--color-white);
+        border: none;
+        border-bottom: 1px solid var(--color-main);
+        padding: 0.5rem;
+        font-weight: 600;
+        font-size: calc(var(--fontsize-h4)/1.5);
+        line-height: var(--font-lineheight);
+        width: 8rem;
+
+        &:hover {
+            background-color: var(--color-main);
+        }
+    }
+}

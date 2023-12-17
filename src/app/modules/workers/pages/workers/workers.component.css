@@ -60,6 +60,8 @@ span {
 small {
     color: var(--color-main);
     font-weight: var(--fontweight-h2);
+    font-family: var(--font-secondary);
+    font-size: var(--fontsize-h4);
 }
 
 .data li {
@@ -242,6 +244,8 @@ button {
     small {
         color: var(--color-main);
         font-weight: var(--fontweight-h2);
+        font-family: var(--font-secondary);
+        font-size: var(--fontsize-h4);
     }
 
     .data li {
