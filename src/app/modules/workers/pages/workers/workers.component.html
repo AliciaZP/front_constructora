@@ -58,20 +58,17 @@
 
                 <div class="dropdown icon">
                     <i class="fa-solid fa-pen-to-square admin" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                    <ul class="dropdown-menu">
-                        <li class="px-2"><button class="" *ngIf="botonActivo"
-                                [routerLink]="['/workers','edit', worker.id]">
-                                Editar Operario
-                            </button></li>
-                        <li class="px-2"><button class="p-2" *ngIf="botonActivo"
-                                (click)="onClickDelete(worker.id)">Borrar
-                                Operario
-                            </button></li>
-                        <li class="px-2"><button class="border-bottom-0 p-2" *ngIf="worker.active == false"
-                                (click)="onClick(worker.id)">
-                                Asignar Operario
-                            </button> </li>
-                    </ul>
+                    <div class="dropdown-menu dropdown-menu-end m-3">
+                        <button class="worker-button" *ngIf="botonActivo" [routerLink]="['/workers','edit', worker.id]">
+                            Editar Operario
+                        </button>
+                        <button class="worker-button" *ngIf="botonActivo" (click)="onClickDelete(worker.id)">Borrar
+                            Operario
+                        </button>
+                        <button class="worker-button" *ngIf="worker.active == false" (click)="onClick(worker.id)">
+                            Asignar Operario
+                        </button>
+                    </div>
                 </div>
             </div>
 
