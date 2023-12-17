@@ -5,7 +5,7 @@
     </div>
     <article *ngIf="constructionSelected">
         <div>
-            <h2 class="mb-5">{{constructionSelected.name}}</h2>
+            <h2 class="mb-5 mt-3">{{constructionSelected.name}}</h2>
             <div class="flex-container">
                 <div>
                     <figure>
@@ -18,12 +18,12 @@
                         </div>
                     </figure>
                 </div>
-                <div class="construction-info ">
-                    <p class="c-info mb-3 pe-5 d-inline"><i
+                <div class="construction-info mt-3 ">
+                    <p class="c-info mb-3 pe-5"><i
                             class="fa-solid fa-location-crosshairs pe-2"></i>{{constructionSelected.city}}</p>
-                    <p class="c-info mb-3 d-inline"><i
+                    <p class="c-info mb-3"><i
                             class="fa-solid fa-building pe-2"></i>{{constructionSelected.construction_type}}</p>
-                    <p class="mt-4 description">{{constructionSelected.description}}</p>
+                    <p class="my-4 description">{{constructionSelected.description}}</p>
                 </div>
 
             </div>
@@ -51,9 +51,9 @@
 
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
             <h3 class="mb-4">Operarios asignados:</h3>
-            <div class="pb-4 col-lg-4 " *ngFor="let worker of arrWorkers">
+            <div class="mb-5 worker-flex" *ngFor="let worker of arrWorkers">
                 <app-card-workers [workers]="worker"></app-card-workers>
-                <div class="worker-buttonflex">
+                <div>
                     <button [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]"
                         class="worker-button">Tareas
                         asignadas</button>

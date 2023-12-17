@@ -34,11 +34,11 @@ h2 {
 }
 
 .c-info {
-    font-weight: var(--fontweight-h3)
+    font-weight: var(--fontweight-h3);
 }
 
 img {
-    width: 500px;
+    width: 300px;
 }
 
 .asigned {
@@ -115,12 +115,21 @@ span {
     font-family: var(--font-secondary);
 }
 
-.worker-buttonflex {
+.worker-flex {
     display: flex;
 }
 
+
+
+.worker-buttonflex {
+    display: flex;
+    justify-content: start;
+}
+
 .worker-button {
-    padding: 0.1rem 1.5rem;
+    width: 200px;
+    height: 70px;
+    display: block;
     color: var(--color-white);
     background-color: var(--color-second);
     border: 2px solid var(--color-third);
@@ -135,10 +144,14 @@ span {
 }
 
 .worker-button2 {
+    width: 200px;
+    height: 100px;
+    display: block;
     color: var(--color-white);
     background-color: var(--color-second);
     border: 2px solid var(--color-third);
     border-top: none;
+    border-bottom: none;
     font-weight: var(--fontweight-h3);
     font-size: 0.9rem;
 
@@ -204,5 +217,462 @@ button {
 
     &:hover {
         background-color: var(--color-main)
+    }
+}
+
+
+/* mediaqueries */
+
+@media(min-width: 48rem) {
+
+    /* enlace volver */
+    .back {
+        cursor: pointer;
+    }
+
+    .back h4 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--color-second);
+
+        &:hover {
+            color: var(--color-main);
+        }
+    }
+
+    /* obra */
+
+
+    h2 {
+        font-size: calc(var(--fontsize-h2)*1.2);
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: var(--font-secondary);
+        text-align: center;
+    }
+
+    .description {
+        line-height: 1.8rem;
+    }
+
+    .construction-info i {
+        font-size: 1.5rem;
+        color: var(--color-main)
+    }
+
+    .c-info {
+        font-weight: var(--fontweight-h3);
+        display: inline;
+    }
+
+    img {
+        width: 500px;
+    }
+
+    .asigned {
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        padding: 0.5rem;
+        background-color: var(--color-second);
+        color: white;
+    }
+
+
+    .deadline {
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        padding: 0.5rem;
+        background-color: var(--color-main);
+        color: white;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        flex-wrap: wrap;
+    }
+
+    .construction-info {
+        width: 700px;
+    }
+
+    .construction-info p:nth-child(-n+2) {
+        font-size: 1.3rem;
+        color: var(--color-second);
+    }
+
+
+    /* Estilos mapa */
+    .bloque-2 {
+        border: 1px solid black;
+        background-color: rgb(234, 234, 234);
+    }
+
+    iframe {
+        border-radius: 10px;
+    }
+
+    span {
+        font-weight: 600,
+    }
+
+    .map-info span {
+        font-size: 1.2rem;
+    }
+
+    .map-info i {
+        font-size: 1.3rem;
+        color: var(--color-main);
+    }
+
+    .map-info h3 {
+        font-size: 1.7rem;
+        color: var(--color-main);
+    }
+
+
+
+    /* Zona de operarios*/
+    #worker-area h3 {
+        font-size: var(--fontsize-h2);
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: var(--font-secondary);
+    }
+
+    .worker-flex {
+        display: flex;
+    }
+
+
+
+    .worker-buttonflex {
+        display: flex;
+        justify-content: start;
+    }
+
+    .worker-button {
+        width: 200px;
+        height: 70px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-third);
+        }
+    }
+
+    .worker-button2 {
+        width: 200px;
+        height: 100px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        border-bottom: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-main);
+        }
+    }
+
+
+
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 10rem;
+        right: 2rem;
+    }
+
+    #admin-area h3 {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 700;
+    }
+
+    #admin-area i {
+        font-size: 2rem;
+        color: var(--color-second);
+    }
+
+    .admin {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    button {
+        border: none;
+        padding: 1.2rem;
+        color: var(--color-second);
+        background-color: var(--color-third);
+
+        &:hover {
+            background-color: var(--color-second);
+
+        }
+    }
+
+    .dropdown-menu {
+        width: 250px;
+        border-radius: none;
+        border: 1px solid black;
+    }
+
+    .dropdown-menu button {
+
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        font-weight: 600;
+        color: var(--color-second);
+        background-color: white;
+        padding: 1rem;
+
+        &:hover {
+            background-color: var(--color-main)
+        }
+    }
+}
+
+@media(min-width: 62.5rem) {}
+
+@media(min-width: 87.5rem) {
+
+    /* enlace volver */
+    .back {
+        cursor: pointer;
+    }
+
+    .back h4 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--color-second);
+
+        &:hover {
+            color: var(--color-main);
+        }
+    }
+
+    /* obra */
+
+
+    h2 {
+        font-size: calc(var(--fontsize-h2)*1.2);
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: var(--font-secondary);
+        text-align: center;
+    }
+
+    .description {
+        line-height: 1.8rem;
+    }
+
+    .construction-info i {
+        font-size: 1.5rem;
+        color: var(--color-main)
+    }
+
+    .c-info {
+        font-weight: var(--fontweight-h3);
+        display: inline;
+    }
+
+    img {
+        width: 500px;
+    }
+
+    .asigned {
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        padding: 0.5rem;
+        background-color: var(--color-second);
+        color: white;
+    }
+
+
+    .deadline {
+        text-align: center;
+        display: inline-block;
+        width: 250px;
+        padding: 0.5rem;
+        background-color: var(--color-main);
+        color: white;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        flex-wrap: wrap;
+    }
+
+    .construction-info {
+        width: 700px;
+    }
+
+    .construction-info p:nth-child(-n+2) {
+        font-size: 1.3rem;
+        color: var(--color-second);
+    }
+
+
+    /* Estilos mapa */
+    .bloque-2 {
+        border: 1px solid black;
+        background-color: rgb(234, 234, 234);
+    }
+
+    iframe {
+        border-radius: 10px;
+    }
+
+    span {
+        font-weight: 600,
+    }
+
+    .map-info span {
+        font-size: 1.2rem;
+    }
+
+    .map-info i {
+        font-size: 1.3rem;
+        color: var(--color-main);
+    }
+
+    .map-info h3 {
+        font-size: 1.7rem;
+        color: var(--color-main);
+    }
+
+
+
+    /* Zona de operarios*/
+    #worker-area h3 {
+        font-size: var(--fontsize-h2);
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: var(--font-secondary);
+    }
+
+    .worker-flex {
+        display: flex;
+    }
+
+
+
+    .worker-buttonflex {
+        display: flex;
+        justify-content: start;
+    }
+
+    .worker-button {
+        width: 200px;
+        height: 70px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-third);
+        }
+    }
+
+    .worker-button2 {
+        width: 200px;
+        height: 100px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        border-bottom: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-main);
+        }
+    }
+
+
+
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 10rem;
+        right: 2rem;
+    }
+
+    #admin-area h3 {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 700;
+    }
+
+    #admin-area i {
+        font-size: 2rem;
+        color: var(--color-second);
+    }
+
+    .admin {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    button {
+        border: none;
+        padding: 1.2rem;
+        color: var(--color-second);
+        background-color: var(--color-third);
+
+        &:hover {
+            background-color: var(--color-second);
+
+        }
+    }
+
+    .dropdown-menu {
+        width: 250px;
+        border-radius: none;
+        border: 1px solid black;
+    }
+
+    .dropdown-menu button {
+
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        font-weight: 600;
+        color: var(--color-second);
+        background-color: white;
+        padding: 1rem;
+
+        &:hover {
+            background-color: var(--color-main)
+        }
     }
 }
