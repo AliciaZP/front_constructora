@@ -1,3 +1,11 @@
-.fondo {
-    height: 100vh;
+.map-style {
+    border-left: 12px solid var(--color-main);
+    position: relative;
+}
+
+select {
+    display: block;
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
 }

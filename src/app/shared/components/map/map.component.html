@@ -1,10 +1,16 @@
-<div class="fondo m-5">
-    <google-map width="50vw" height="50vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId"
-        (mapClick)="onMapClick($event)">
-
-        <map-marker [position]="myPosition" [options]="myMarkerOptions"></map-marker>
-
-        <map-marker *ngFor="let position of arrPositions; let i = index" [position]="position"
-            [options]="myMarkerOptions" (mapClick)="onMarkerClick($event, i)"></map-marker>
+<div class="map-style">
+    <google-map width="90vw" height="80vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId">
+        <map-marker *ngFor="let construction of constructions; let i = index" [position]="{
+        lat: construction.lat,
+        lng: construction.lng, 
+        }" [options]="{icon: generateIcon(construction)}"></map-marker>
     </google-map>
+
+
+    <select name="select" (change)="onChangeType($event)">
+        <option value="hybrid">Híbrido</option>
+        <option value="terrain">Geográfico</option>
+        <option value="roadmap">Carreteras</option>
+        <option value="satellite">Satélite</option>
+    </select>
 </div>
