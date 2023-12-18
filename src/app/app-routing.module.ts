@@ -6,6 +6,7 @@ import { OfficesComponent } from './shared/components/offices/offices.component'
 import { ErrorComponent } from './shared/components/error/error.component';
 import { AboutUsComponent } from './shared/components/about-us/about-us.component';
 
+
 const routes: Routes = [
 
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'epis', component: EpisComponent },
 
   { path: 'offices', component: OfficesComponent },
-  { path: 'aboutus', component: AboutUsComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
@@ -36,7 +37,6 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
-
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/home' },
 
