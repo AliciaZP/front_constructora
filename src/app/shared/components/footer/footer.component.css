@@ -3,9 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-second);
-    color: var(--color-white);
+
     display: flex;
+}
+
+.top{
+  background-color: var(--color-second);
+    color: var(--color-white);
 }
 
 .contact {
@@ -79,4 +83,29 @@ i {
     justify-content: space-between;
     align-items: center;
     gap: 7rem;
+}
+
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+}
+
+.footer-bottom {
+  flex-direction: column;
+}
+
+  .contact{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icons{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

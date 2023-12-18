@@ -69,9 +69,17 @@ i {
     display: flex;
     justify-content: space-around;
     padding: 1rem;
+
+}
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links li {
+    padding: 0 20px;
     cursor: pointer;
     color: var(--color-white);
     font-size: var(--fontsize-h4);
@@ -80,4 +88,36 @@ i {
     &:hover {
         color: var(--color-main);
     }
+}
+
+
+@media (max-width: 768px) {
+  .nav-links{
+    flex-direction: column;
+    & li{
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .nav-columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    & .icons{
+      margin-top: 50px;
+    }
+    /* & h1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+    & h3{
+      display: none;
+    }
+  }
 }
