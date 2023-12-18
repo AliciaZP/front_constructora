@@ -3,9 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-second);
-    color: var(--color-white);
+
     display: flex;
+}
+
+.top{
+  background-color: var(--color-second);
+    color: var(--color-white);
 }
 
 .contact {
@@ -19,11 +23,14 @@ h3 {
 }
 
 p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 span {
+    font-size: 1.1rem;
     font-weight: var(--fontweight-h3);
+    font-family: var(--font-secondary);
+
 }
 
 .icons {
@@ -31,6 +38,10 @@ span {
     justify-content: space-between;
     align-items: center;
     gap: 2rem
+}
+
+i {
+    font-size: 1.5rem;
 }
 
 .social {
@@ -72,4 +83,29 @@ span {
     justify-content: space-between;
     align-items: center;
     gap: 7rem;
+}
+
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+}
+
+.footer-bottom {
+  flex-direction: column;
+}
+
+  .contact{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icons{
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

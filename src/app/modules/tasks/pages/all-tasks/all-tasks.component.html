@@ -1,5 +1,5 @@
 <section class="mx-5 mt-5">
-    <h2 class="mb-4">LISTADO DE TAREAS</h2>
+    <h2 class="mb-4">Listado de tareas {{worker.name}}</h2>
 
     <div id="filtros" class="m-1 row">
         <div class="col-sm-5">
@@ -71,7 +71,8 @@
                     date:'dd-MM-yyyy'}}
                 </p>
             </div>
-            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/tasks','edit', task.id, task.users_id, task.Constructions_id]">Editar
+            <button class="mb-4 edit" *ngIf="botonActivo"
+                [routerLink]="['/tasks','edit', task.id, task.users_id, task.Constructions_id]">Editar
                 Tarea
             </button>
         </article>

@@ -1,7 +1,8 @@
 export interface Report {
-    _id: string,
+    id: string,
     title: string,
     date: Date;
     description: string,
     type: string,
+    Constructions_id?: number
 }

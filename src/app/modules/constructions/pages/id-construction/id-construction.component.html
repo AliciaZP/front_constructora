@@ -1,34 +1,29 @@
 <section class="m-5">
     <div class="back">
         <i class="fa-solid fa-arrow-left "></i>
-        <h4 class="d-inline" [routerLink]="['/constructions']"> volver a la lista</h4>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
     <article *ngIf="constructionSelected">
-        <div class="flex-container">
-            <h2 class="mb-3">{{constructionSelected.name}}</h2>
-            <div class="row mb-5 bloque-1">
-
-                <div class="col-5">
+        <div>
+            <h2 class="mb-5 mt-3">{{constructionSelected.name}}</h2>
+            <div class="flex-container">
+                <div>
                     <figure>
                         <img [src]="constructionSelected.image" alt="imagen de la obra">
                         <div class="dates">
-                            <p class="mb-1"></p>
-                            <p class="mb-3"><span>Inicio: </span>{{constructionSelected.assignment_date |
+                            <p class="mb-3 asigned"><span>Inicio: </span>{{constructionSelected.assignment_date |
                                 date:'dd-MM-yyyy'}}</p>
-                            <p class="mb-1"></p>
-                            <p class="mb-3"><span>Final: </span>{{constructionSelected.deadline |
+                            <p class="mb-3 deadline"><span>Finalización: </span>{{constructionSelected.deadline |
                                 date:'dd-MM-yyyy'}}</p>
                         </div>
                     </figure>
-
                 </div>
-
-                <div class="construction-info col-7">
-                    <p class="mb-3 pe-5 d-inline"><i
+                <div class="construction-info mt-3 ">
+                    <p class="c-info mb-3 pe-5"><i
                             class="fa-solid fa-location-crosshairs pe-2"></i>{{constructionSelected.city}}</p>
-                    <p class="mb-3 d-inline"><i
+                    <p class="c-info mb-3"><i
                             class="fa-solid fa-building pe-2"></i>{{constructionSelected.construction_type}}</p>
-                    <p class="mt-5 description">{{constructionSelected.description}}</p>
+                    <p class="my-4 description">{{constructionSelected.description}}</p>
                 </div>
 
             </div>
@@ -36,7 +31,7 @@
         <div class="row mb-5 p-4 bloque-2">
             <div class="map col-8"> <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.434274473101!2d-3.6896295!3d40.465656599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422910ef6fc339%3A0xe4a84655e86fb1da!2sPl.%20Castilla%2C%2028046%20Madrid!5e0!3m2!1ses!2ses!4v1701977615577!5m2!1ses!2ses"
-                    width="900" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="map-info col-4">
@@ -53,25 +48,46 @@
 
             </div>
         </div>
-        <section id="admin-area" class="p-3">
-            <div class="dropdown px-2">
+
+        <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
+            <h3 class="mb-4">Operarios asignados:</h3>
+            <div class="mb-5 worker-flex" *ngFor="let worker of arrWorkers">
+                <app-card-workers [workers]="worker"></app-card-workers>
+                <div>
+                    <button [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]"
+                        class="worker-button">Tareas
+                        asignadas</button>
+
+                    <button [routerLink]="['/tasks','new', worker.id, worker.Constructions_id]"
+                        class="worker-button">Asignar
+                        tarea</button>
+
+                    <button (click)="onClickRetirar(worker.id)" class="worker-button2">Retirar de la obra</button>
+                </div>
+            </div>
+
+
+
+        </section>
+        <section *ngIf="userLogged.role == 'admin'" id="admin-area">
+            <div class="dropdown">
                 <button class="admin dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Área privada
                 </button>
 
                 <ul class="dropdown-menu">
                     <li class="px-2"> <button class="mb-3" *ngIf="botonActivo"
-                            [routerLink]="['/constructions','construction', 'reports', constructionSelected._id]">
+                            [routerLink]="['/constructions','construction', 'reports', constructionSelected.id]">
                             <i class="fa-regular fa-file-lines pe-3"></i> Ver reportes
                         </button></li>
                     <li class="px-2"> <button class="mb-3" *ngIf="botonActivo" [routerLink]="['/workers']">
                             <i class="fa-solid fa-user-plus"></i> Asignar operarios
                         </button></li>
                     <li class="px-2"><button class="mb-3" *ngIf="botonActivo"
-                            [routerLink]="['/constructions','edit', constructionSelected._id]">
+                            [routerLink]="['/constructions','edit', constructionSelected.id]">
                             <i class="fa-solid fa-pen-to-square pe-3"></i>Editar Obra
                         </button></li>
-                    <li class="px-2"> <button *ngIf="botonActivo" (click)="onClickDelete(constructionSelected._id)"><i
+                    <li class="px-2"> <button *ngIf="botonActivo" (click)="onClickDelete(constructionSelected.id)"><i
                                 class="fa-solid fa-trash-can pe-3"></i>Borrar Obra
                         </button></li>
                 </ul>

@@ -1,3 +1,18 @@
+
+
+### Asignacion de trabajadores a la obra.
+Idea 1
+- Flujo de trabajo, desde la ventana obraId añadir una opcion para añadir operarios, que nos lleve a la pagina de trabajadores y que ahí se busquen los trabajadores que necesite y los asigne mediante un boton, que automaticamente le asigne el Construction_id. Luego en la pagina de Construction aparezcan los trabajadores asignados y pinchando en ellos se le asignen tareas que automaticamente tengan el id del trabajador seleccionado y el id de construccion.
+
+-Se necesita una ruta que desde la pagina de trabajadores consiga el id de la obra, y que desde la pagina de tareas se consiga el id del trabajador y de la construcion.
+
+
+
+
+
+
+
+
 # FrontConstructora
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.

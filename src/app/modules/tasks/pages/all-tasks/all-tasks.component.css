@@ -1,0 +1,127 @@
+/* cabecera de la sección */
+h2 {
+  color: var(--color-second);
+  font-size: var(--fontsize-h2);
+  font-weight: var(--fontweight-h2);
+}
+
+/* filtros */
+#filtros {
+  background-color: rgb(234, 234, 234);
+}
+
+#filtros h4 {
+  color: var(--color-main);
+  font-size: var(--fontsize-h4);
+  font-weight: var(--fontweight-h4);
+}
+
+.custom-select {
+  color: var(--color-second);
+  background-color: white;
+  padding: 3px;
+  border: 1px solid var(--color-second);
+}
+
+.custom-option {
+  color: var(--color-second);
+  background-color: white;
+}
+
+.custom-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* boton de Añadir reporte */
+
+.new-button {
+  color: white;
+  background-color: var(--color-second);
+  border: none;
+  padding: 1rem;
+  font-weight: 700;
+  line-height: var(--font-lineheight);
+  border-radius: 10px;
+
+  &:hover {
+      background-color: var(--color-main);
+  }
+
+}
+
+/* listado de reports */
+h3 {
+  color: var(--color-main);
+  font-weight: var(--fontweight-h3);
+  font-size: var(--fontsize-h3);
+  line-height: var(----font-lineheight);
+}
+
+h4 {
+  font-size: var(--fontsize-h4);
+  font-weight: 600;
+}
+
+i {
+  color: var(--color-third);
+}
+
+article {
+  border: 1px solid var(--color-third);
+  box-shadow: 5px 5px 0px var(--color-third);
+
+  &:hover {
+      border: 1px solid var(--color-main);
+      box-shadow: 5px 5px 0px var(--color-main);
+  }
+}
+
+span {
+  font-weight: 600;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: var(--font-lineheight);
+}
+
+/* desplegable */
+
+.custom-button {
+  background-color: rgb(234, 234, 234);
+}
+
+.custom-button:focus {
+  box-shadow: none;
+}
+
+.custom-button:active,
+.custom-button.active {
+  background-color: white;
+  border-color: white;
+}
+
+/* boton de editar */
+article button.edit {
+
+  color: white;
+  background-color: var(--color-second);
+  border: none;
+  width: 100px;
+  padding: 0.5rem;
+  font-weight: 500;
+
+  &:hover {
+      background-color: var(--color-main);
+  }
+}
+
+/* color según tipo de reporte */
+.red-title {
+  color: var(--color-main);
+}
+
+.black-title {
+  color: var(--color-second);
+}

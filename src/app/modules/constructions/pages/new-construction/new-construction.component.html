@@ -79,18 +79,18 @@
 
         <div class="m-5">
             <label>Fecha de asignación:</label>
-            <input type="text" formControlName='deadline' placeholder="Inserta aquí la fecha de creacion">
+            <input type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de creacion">
             <p class="error" *ngIf="checkError('deadline','required')">
                 La fecha de creación obligatoria.</p>
         </div>
 
         <div class="m-5">
             <label>Fecha de finalización:</label>
-            <input type="text" formControlName='assignment_date' placeholder="Inserta aquí la fecha de finalizacion">
+            <input type="date" formControlName='assignment_date' placeholder="Inserta aquí la fecha de finalizacion">
             <p class="error" *ngIf="checkError('assignment_date','required')">La fecha de finalización obligatoria.</p>
         </div>
 
-        <!--         <div>
+        <!--                 <div>
             <label>Mapa:</label>
             <input type="text" placeholder="Aquí iría el mapa para la lat y lng">
             <p class="error" *ngIf="checkError('name','required')">El

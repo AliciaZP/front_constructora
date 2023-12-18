@@ -1,31 +1,42 @@
 <header>
     <nav class="nav-top">
         <div class="nav-columns mx-5">
-            <h1>SGAL HOME</h1>
+
+            <h1>SGAL <span>Construcciones</span></h1>
+
+
             <h3>Portal del Empleado</h3>
             <ul class="icons">
                 <li><i class="fa-solid fa-bell fa-xs"></i></li>
                 <li><i class="fa-solid fa-gear"></i></li>
-                <li><i class="fa-regular fa-circle-user"></i></li>
+                <li (click)="onClickLogoff()" ><i class="fa-solid fa-power-off"></i></li>
             </ul>
         </div>
     </nav>
-    <nav class="nav-bottom">
-        <div class="wrapper-nav-links mx-5">
+    <nav class="nav-bottom navbar navbar-expand-lg ">
+        <div class=" wrapper-nav-links mx-5 container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <div class="centrar"> -->
+          <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
             <ul class="nav-links ">
-                <li [routerLink]="['/home']">HOME</li>
-                <li [routerLink]="['/constructions']">OBRAS</li>
-                <li [routerLink]="['/workers']">USUARIOS</li>
-                <li [routerLink]="['/offices']">SEDES</li>
-                <li [routerLink]="['/error']">NOTICIAS</li>
-                <li [routerLink]="['/error']">NOSOTROS</li>
+                <li class="nav-item" [routerLink]="['/home']">HOME</li>
+                <li class="nav-item" *ngIf="userLogged.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
+                <li class="nav-item" *ngIf="userLogged.role == 'worker'" [routerLink]="['/constructions', 'construction', userLogged.Constructions_id]">MI OBRA</li>
+                <li class="nav-item" *ngIf="userLogged.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
+                <li class="nav-item" [routerLink]="['/offices']">SEDES</li>
+                <li class="nav-item" [routerLink]="['/error']">NOTICIAS</li>
+                <li class="nav-item" [routerLink]="['/error']">NOSOTROS</li>
             </ul>
+          </div>
+        <!-- </div> -->
         </div>
     </nav>
 </header>
 
 
-<!-- 
+<!--
     ALI: ESTO DE LOS DESPLEGABLES LO DEJO COMENTADO POR SI LO NECESITAMOS MAS ADELANTE
     <div class="dropdown">
     <li class="dropdown-toggle text-white" type="button" id="dropdownMenuDark" data-bs-toggle="dropdown"
@@ -35,5 +46,39 @@
     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
         <li><a class="dropdown-item" href="#">En Curso</a></li>
         <li><a class="dropdown-item" href="#">Finalizadas</a></li>
-    </ul> 
+    </ul>
 </div>-->
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SGAL <span>Construcciones</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" [routerLink]="['/home']">HOME</li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav> -->

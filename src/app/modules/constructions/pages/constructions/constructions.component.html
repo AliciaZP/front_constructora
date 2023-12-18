@@ -1,72 +1,80 @@
 <section class="m-5">
-    <h2 class="mb-5">LISTADO DE OBRAS</h2>
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline back" [routerLink]="['/home']"> volver a la Home</h4>
-    <div id="filtros" class="my-4 p-1 row">
-        <div class="col-5">
-            <div class="row">
-                <h4 class="col-2">Filtrar:</h4>
-                <div class="col-3">
-                    <label class="pe-3 pb-2">Ubicación</label>
-                    <select (change)="onChangeCity($event)">
-                        <option value="">España</option>
-                        <option *ngFor="let city of arrCities" [value]="city">{{city}}
-                        </option>
-                    </select>
-                </div>
+    <h2 class="mb-4">NUESTRAS OBRAS</h2>
 
-                <div class="col-5">
-                    <label class="pe-3 pb-2">Tipo de construcción</label>
-                    <select (change)="onChangeConstructionType($event)">
-                        <option value="">Seleccionar</option>
-                        <option *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}</option>
-                    </select>
-                </div>
+    <div id="filtros" class="m-1 row">
+
+        <div class="col-md-2 pb-3">
+            <h4 class="mb-2 pt-3">Filtrar:</h4>
+            <div>
+                <label class="pe-3 pb-2"><span>Ubicación</span></label>
+                <select class="custom-select" (change)="onChangeCity($event)">
+                    <option class="custom-option" value="">España</option>
+                    <option class="custom-option" *ngFor="let city of arrCities" [value]="city">{{city}}
+                    </option>
+                </select>
             </div>
         </div>
 
-        <div class="col-6">
-            <div class="row">
-                <h4 class="col-2">Ordenar:</h4>
-                <div class="col-3">
-                    <label class="pe-3 pb-2">Nombre</label>
-                    <select (change)="onChangeName($event)">
-                        <option value="A-Z">De la A a la Z</option>
-                        <option value="Z-A">De la Z a la A</option>
-                    </select>
-                </div>
-
-                <div class="col-3">
-                    <label class="pe-3 pb-2">Creación</label>
-                    <select (change)="onChangeAssignmentDate($event)">
-                        <option value="reciente">Más reciente</option>
-                        <option value="antiguo">Más antigua</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <label class="pe-3 pb-2">Finalización</label>
-                    <select (change)="onChangeDeadline($event)">
-                        <option value="reciente">Más reciente</option>
-                        <option value="antiguo">Más antigua</option>
-                    </select>
-                </div>
+        <div class="col-lg-2">
+            <h4 class="mb-2 pt-3">Filtrar:</h4>
+            <div>
+                <label class="pe-3 pb-2"><span>Construcción:</span></label>
+                <select class="custom-select" (change)="onChangeConstructionType($event)">
+                    <option class="custom-option" value="">Todos</option>
+                    <option class="custom-option" *ngFor="let type of arrConstructionTypes" [value]="type">{{type}}
+                    </option>
+                </select>
             </div>
         </div>
-        <div class="col-sm-1">
-            <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/constructions','new']">
-                AÑADIR OBRA
-            </button>
+
+        <div class="pb-2 col-lg-2">
+            <h4 class="mb-2 pt-3">Ordenar:</h4>
+            <div>
+                <label class="pe-3 pb-2"><span>Nombre:</span></label>
+                <select class="custom-select" (change)="onChangeName($event)">
+                    <option class="custom-option" value="asc">De la A a la Z</option>
+                    <option class="custom-option" value="desc">De la Z a la A</option>
+                </select>
+            </div>
         </div>
 
+        <div class="pb-2 col-lg-2">
+            <h4 class="mb-2 pt-3 ">Ordenar:</h4>
+            <div>
+                <label class="pe-3 pb-2"><span>Inicio:</span></label>
+                <select class="custom-select" (change)="onChangeAssignmentDate($event)">
+                    <option class="custom-option" value="asc">Más reciente</option>
+                    <option class="custom-option" value="desc">Más antigua</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pb-2 col-lg-2">
+            <h4 class="mb-2 pt-3 ">Ordenar:</h4>
+            <div>
+                <label class="pe-3 pb-2"><span>Finalización:</span></label>
+                <select class="custom-select" (change)="onChangeDeadline($event)">
+                    <option class="custom-option" value="asc">Más próxima</option>
+                    <option class="custom-option" value="desc">Más lejana</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-1">
+            <div>
+                <button class="my-3 button-filter " *ngIf="botonActivo" [routerLink]="['/constructions','new']">
+                    AÑADIR OBRA
+                </button>
+            </div>
+        </div>
     </div>
-
 
     <!--     <search-bar></search-bar> -->
 
     <div class="my-5 flex-container">
         <article class="mb-2" *ngFor="let construction of arrConstructions">
             <div class="article-clickable" *ngIf="botonActivo"
-                [routerLink]="['/constructions','construction', construction._id]">
+                [routerLink]="['/constructions','construction', construction.id]">
                 <figure>
                     <img [src]="construction.image" alt="imagen de la obra">
                     <small>{{construction.construction_type}}</small>
@@ -75,19 +83,11 @@
                     <h3 class="mb-3">{{construction.name}}</h3>
                     <p class="mb-3"><span class="city">{{construction.city}}</span>
                     </p>
+                    <p class="mb-3"><span>Inicio:</span> {{construction.assignment_date| date:'dd-MM-yyyy'}}</p>
                     <p class="mb-3"><span>Finalización:</span> {{construction.deadline | date:'dd-MM-yyyy'}}</p>
                 </div>
             </div>
         </article>
     </div>
-    <!-- ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK
-    <div class="paginado">
-        <button class="anterior" (click)="modifyPage(false)" [disabled]="page === 1">
-            Anterior
-        </button>
-        <button class="siguiente" (click)="modifyPage(true)" [disabled]="page === totalPages">
-            Siguiente
-        </button>
-    </div> -->
 
 </section>

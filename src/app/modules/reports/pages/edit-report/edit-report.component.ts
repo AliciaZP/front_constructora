@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReportsService } from 'src/app/core/services/reports.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'edit-report',
@@ -30,25 +31,46 @@ export class EditReportComponent {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(async params => {
       this.reportId = params['reportId']
-      const response = this.reportsService.getReportById(this.reportId)
+      console.log(this.reportId)
+      const response = await this.reportsService.getReportById(this.reportId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
       const { title, description, date, type } = response
       this.editReport.setValue({ title, description, date, type })
     })
-
-
   }
-  onSubmit() {
-    if (this.editReport.valid) {
-      this.reportsService.updateReportById(this.reportId, this.editReport.value);
-      this.router.navigate([`/reports`]);
-    } else {
-      console.log('error');
-    }
-  };
 
+  async onSubmit() {
+    if (this.editReport.valid) {
+      try {
+        this.reportsService.updateReportById(this.reportId, this.editReport.value);
+        Swal.fire({
+          icon: 'success',
+          title: 'Reporte editado correctamente',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#008000',
+          color: 'white',
+          background: '#0f0f0f',
+        }).then(() => {
+          this.router.navigate([`/constructions`]);
+          /*       this.router.navigate([`/constructions/construction/reports/${this.constructionId}`]) */
+        });
+      } catch (error) {
+        console.log('error');
+      }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Datos editados erróneos',
+        text: 'Por favor, completa todos los campos del reporte de forma correcta.',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#af1e2d',
+        color: 'white',
+        background: '#0f0f0f',
+      });
+    }
+  }
 
   checkError(controlName: string, errorName: string) {
     return this.editReport.get(controlName)?.hasError(errorName) && this.editReport.get(controlName)?.touched;
