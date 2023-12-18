@@ -5,6 +5,7 @@ import { EpisComponent } from './shared/components/epis/epis.component';
 import { OfficesComponent } from './shared/components/offices/offices.component';
 import { ErrorComponent } from './shared/components/error/error.component';
 import { AboutUsComponent } from './shared/components/about-us/about-us.component';
+import { MapComponent } from './shared/components/map/map.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 
   { path: 'offices', component: OfficesComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'map', component: MapComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),

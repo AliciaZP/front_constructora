@@ -35,7 +35,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
-    GoogleMapsModule
+    GoogleMapsModule,
 
   ],
   exports: [
