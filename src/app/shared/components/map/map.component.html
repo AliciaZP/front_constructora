@@ -1,12 +1,8 @@
-<div class="fondo">
-    <google-map width="100vw" height="50vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId"
+<div class="fondo m-5">
+    <google-map width="50vw" height="50vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId"
         (mapClick)="onMapClick($event)">
 
-        <map-marker [position]="{lat:40, lng:-3}"></map-marker>
-
         <map-marker [position]="myPosition" [options]="myMarkerOptions"></map-marker>
-
-        <map-marker [position]="markerPositionClicked"></map-marker>
 
         <map-marker *ngFor="let position of arrPositions; let i = index" [position]="position"
             [options]="myMarkerOptions" (mapClick)="onMarkerClick($event, i)"></map-marker>

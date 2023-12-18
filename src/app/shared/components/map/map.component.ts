@@ -9,11 +9,10 @@ import { Component } from '@angular/core';
 export class MapComponent {
 
   center: google.maps.LatLngLiteral;
-  zoom: number = 5;
+  zoom: number = 17;
   mapTypeId: google.maps.MapTypeId = google.maps.MapTypeId.HYBRID;
   myPosition!: google.maps.LatLngLiteral;
   myMarkerOptions: google.maps.MarkerOptions;
-  markerPositionClicked: google.maps.LatLng;
   arrPositions: google.maps.LatLng[] = [];
 
   constructor() {
@@ -22,12 +21,19 @@ export class MapComponent {
       lng: -0.360415,
     };
     this.myMarkerOptions = {
-      animation: google.maps.Animation.BOUNCE,
-      draggable: true,
+      /* 
+            animation: google.maps.Animation.BOUNCE, // Animación del marcador (puedes usar DROP en lugar de BOUNCE)
+            draggable: true, // Permite arrastrar el marcador
+            icon: 'path/to/custom/icon.png', // Ruta a una imagen personalizada para el icono del marcador
+            label: 'A', // Etiqueta del marcador (puede ser un carácter o una cadena)
+            title: 'Mi Marcador', // Título del marcador que se muestra al pasar el ratón sobre él
+            opacity: 0.7, // Opacidad del marcador (valor entre 0 y 1)
+            visible: true, // Indica si el marcador es visible
+            zIndex: 100, // Índice de apilamiento del marcador
+            // Más opciones específicas del marcador: https://developers.google.com/maps/documentation/javascript/markers#marker_options
+         */
     }
-    this.markerPositionClicked = new google.maps.LatLng(39.452887, -0.360415)
   }
-
 
   ngAfterViewInit() {
     navigator.geolocation.getCurrentPosition(position => {
