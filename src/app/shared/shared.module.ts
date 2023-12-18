@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 import { EpisComponent } from './components/epis/epis.component';
 import { OfficesComponent } from './components/offices/offices.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -25,13 +27,15 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     SearchBarComponent,
     EpisComponent,
     OfficesComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterLink
+    RouterLink,
+    GoogleMapsModule
 
   ],
   exports: [
@@ -40,7 +44,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     FooterComponent,
     ErrorComponent,
     CardWorkersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MapComponent
+
   ]
 })
 export class SharedModule { }
