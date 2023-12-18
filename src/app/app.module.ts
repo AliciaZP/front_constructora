@@ -20,7 +20,8 @@ import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor
     EditReportComponent,
     TasksComponent,
     NewTaskComponent,
-    EditTaskComponent,
+    EditTaskComponent
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },

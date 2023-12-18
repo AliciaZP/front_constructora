@@ -17,6 +17,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
+
 @NgModule({
   declarations: [
     NavBarComponent,
@@ -29,7 +30,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     OfficesComponent,
     NewsComponent,
     CalendarComponent,
-    AboutUsComponent
+    AboutUsComponent,
+
   ],
   imports: [
     CommonModule,
