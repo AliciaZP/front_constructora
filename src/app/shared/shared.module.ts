@@ -14,6 +14,8 @@ import { OfficesComponent } from './components/offices/offices.component';
 import { NewsComponent } from './components/news/news.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -31,13 +33,14 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     NewsComponent,
     CalendarComponent,
     AboutUsComponent,
-
+    MapComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterLink
+    RouterLink,
+    GoogleMapsModule
 
   ],
   exports: [
@@ -46,7 +49,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     FooterComponent,
     ErrorComponent,
     CardWorkersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MapComponent
+
   ]
 })
 export class SharedModule { }
