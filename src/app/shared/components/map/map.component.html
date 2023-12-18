@@ -1,16 +1,17 @@
-<google-map width="40vw" height="10vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId"
-    (mapClick)="onMapClick($event)">
+<div class="fondo">
+    <google-map width="100vw" height="50vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId"
+        (mapClick)="onMapClick($event)">
 
-    <map-marker [position]="{lat:40, lng:-3}"></map-marker>
+        <map-marker [position]="{lat:40, lng:-3}"></map-marker>
 
-    <map-marker [position]="myPosition" [options]="myMarkerOptions"></map-marker>
+        <map-marker [position]="myPosition" [options]="myMarkerOptions"></map-marker>
 
-    <map-marker [position]="markerPositionClicked"></map-marker>
+        <map-marker [position]="markerPositionClicked"></map-marker>
 
-    <map-marker *ngFor="let position of arrPositions; let i = index" [position]="position" [options]="myMarkerOptions"
-        (mapClick)="onMarkerClick($event, i)"></map-marker>
-</google-map>
-
+        <map-marker *ngFor="let position of arrPositions; let i = index" [position]="position"
+            [options]="myMarkerOptions" (mapClick)="onMarkerClick($event, i)"></map-marker>
+    </google-map>
+</div>
 
 <!-- 
 <h3 class="pb-4">{{construction.lat}} {{construction.lng}}</h3> -->

@@ -28,6 +28,7 @@ export class MapComponent {
     this.markerPositionClicked = new google.maps.LatLng(39.452887, -0.360415)
   }
 
+
   ngAfterViewInit() {
     navigator.geolocation.getCurrentPosition(position => {
       console.log(position);

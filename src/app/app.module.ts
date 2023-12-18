@@ -11,6 +11,7 @@ import { TasksComponent } from './modules/tasks/pages/tasks/tasks.component';
 import { NewTaskComponent } from './modules/tasks/pages/new-task/new-task.component';
 import { EditTaskComponent } from './modules/tasks/pages/edit-task/edit-task.component';
 import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    GoogleMapsModule
   ]
 })
 export class AppModule { }

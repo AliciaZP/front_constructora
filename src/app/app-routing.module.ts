@@ -13,12 +13,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
   { path: 'home', component: HomeComponent },
-
+  { path: 'map', component: MapComponent },
   { path: 'epis', component: EpisComponent },
 
   { path: 'offices', component: OfficesComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'map', component: MapComponent },
+
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
