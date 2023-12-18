@@ -14,8 +14,11 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    color: var(--color-second);
+    font-size: var(--fontsize-h2);
+    font-weight: var(--fontweight-h2);
 }
+
 
 h3 {
     color: var(--color-second);
@@ -65,6 +68,8 @@ article {
 
 .city {
     color: var(--color-main);
+    font-family: var(--font-secondary);
+    font-size: var(--fontsize-h3);
 }
 
 figure {
@@ -100,5 +105,130 @@ button {
 
     &:hover {
         background-color: var(--color-main);
+    }
+}
+
+/* filtros */
+#filtros {
+    background-color: rgb(234, 234, 234);
+
+}
+
+#filtros h4 {
+    color: var(--color-main);
+    font-size: var(--fontsize-h4);
+    font-weight: var(--fontweight-h4);
+    font-family: var(--font-secondary);
+}
+
+label {
+    display: block;
+}
+
+.custom-select {
+    display: block;
+    color: var(--color-second);
+    background-color: white;
+    padding: 3px;
+    border: 1px solid var(--color-second);
+}
+
+.custom-option {
+    color: var(--color-second);
+    background-color: white;
+}
+
+.custom-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.button-filter {
+    color: var(--color-white);
+    background-color: var(--color-second);
+    border: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: calc(var(--fontsize-h4)/1.5);
+    line-height: var(--font-lineheight);
+    width: 9rem;
+
+    &:hover {
+        background-color: var(--color-main);
+    }
+}
+
+#filtros span {
+    font-weight: var(--fontweight-h2);
+    color: var(--color-second);
+}
+
+
+@media(min-width: 48rem) {}
+
+
+@media(min-width: 62.5rem) {
+    label {
+        display: block;
+    }
+
+    select {
+        display: block;
+    }
+
+
+    button {
+
+        display: block;
+        color: var(--color-second);
+        background-color: var(--color-white);
+        border: none;
+        border-bottom: 1px solid var(--color-main);
+        padding: 0.5rem;
+        font-weight: 600;
+        font-size: calc(var(--fontsize-h4)/1.5);
+        line-height: var(--font-lineheight);
+        width: 8rem;
+
+        &:hover {
+            background-color: var(--color-main);
+        }
+    }
+}
+
+@media(min-width: 87.5rem) {
+    label {
+        display: block;
+    }
+
+    select {
+        display: block;
+    }
+
+
+    .custom-select {
+        display: inline;
+        color: var(--color-second);
+        background-color: white;
+        padding: 3px;
+        border: 1px solid var(--color-second);
+    }
+
+    button {
+        margin-left: 3rem;
+        display: block;
+        color: var(--color-second);
+        background-color: var(--color-white);
+        border: none;
+        border-bottom: 1px solid var(--color-main);
+        padding: 0.5rem;
+        font-weight: 600;
+        font-size: calc(var(--fontsize-h4)/1.5);
+        line-height: var(--font-lineheight);
+        width: 8rem;
+
+        &:hover {
+            background-color: var(--color-main);
+        }
     }
 }

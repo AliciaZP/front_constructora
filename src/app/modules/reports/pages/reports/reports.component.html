@@ -37,10 +37,11 @@
 
         <div class="col-sm-2">
             <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/reports','new', constructionId]">
-                AÑADIR REPORTE
+                CREAR NUEVO REPORTE
             </button>
         </div>
     </div>
+
     <div class="my-4">
         <article class="mb-4 m-1 accordion accordion-flush" *ngFor="let report of arrReports; let i = index">
             <h3 class="accordion-header" [id]="'flush-heading-' + i">
