@@ -41,6 +41,7 @@ export class IdConstructionComponent {
       const { workers } = this.constructionSelected;
       this.arrWorkers = workers;
     })
+
   }
 
   async onClickDelete($event: string) {

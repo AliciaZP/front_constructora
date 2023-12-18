@@ -96,6 +96,8 @@ export class WorkersComponent {
     return this.arrWorkers.filter(worker => worker.job === pJob)
   }
 
+
+
   async getAllWorkers() {
 
     const response = await this.workersService.getAll();
@@ -161,6 +163,14 @@ export class WorkersComponent {
       this.arrWorkers = await this.workersService.getAll()
     } else {
       const response = await this.workersService.getWorkersByOrderSurname($event.target.value);
+      this.arrWorkers = response
+    }
+  }
+  async onChangeActive($event: any) {
+    if (!$event.target.value) {
+      this.arrWorkers = await this.workersService.getAll()
+    } else {
+      const response = await this.workersService.getWorkersByActive($event.target.value);
       this.arrWorkers = response
     }
   }

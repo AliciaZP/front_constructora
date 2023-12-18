@@ -60,6 +60,11 @@ export class WorkersService {
       this.httpClient.get<User[]>(`${this.url}/job/${job}`)
     )
   }
+  getWorkersByActive( active: number ){
+    return firstValueFrom(
+      this.httpClient.get<User[]>(`${this.url}/active/${active}`)
+    )
+  }
 
   addWorkerToConstruction(constructionId: number, body: any){
     return firstValueFrom(
