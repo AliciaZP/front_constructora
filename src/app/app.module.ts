@@ -21,7 +21,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     EditReportComponent,
     TasksComponent,
     NewTaskComponent,
-    EditTaskComponent,
+    EditTaskComponent
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
