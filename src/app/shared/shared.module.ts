@@ -16,10 +16,6 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-<<<<<<< HEAD
-=======
-
->>>>>>> rebase
 
 
 
