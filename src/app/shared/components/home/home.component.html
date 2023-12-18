@@ -14,17 +14,15 @@
                 </article>
             </div>
             <div class="col-lg-4">
-                <iframe
-                    src="https://calendar.google.com/calendar/embed?src=e771f066462e47c9a9d8d4e0f18b3192e855bf116af5d1f96b0e0e6736d6c5ec%40group.calendar.google.com&ctz=Europe%2FMadrid"
-                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                <app-calendar></app-calendar>
             </div>
         </div>
     </section>
     <section id="private-area" class="pb-4">
         <div class="row align-items-center">
             <h3 class="pb-4">MI AREA PRIVADA</h3>
-            <app-card-workers [workers]="userLogged" class="col-lg-6"></app-card-workers>
-            <div class="botones col-lg-6">
+            <app-card-workers [workers]="userLogged" class="col-xl-4"></app-card-workers>
+            <div class="botones col-xl-4">
                 <ul class="d-flex">
                   <li class="p-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">
                         <button><i class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button>

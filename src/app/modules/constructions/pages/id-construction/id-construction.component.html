@@ -7,17 +7,17 @@
         <div>
             <h2 class="mb-5 mt-3">{{constructionSelected.name}}</h2>
             <div class="flex-container">
-                <div>
-                    <figure>
-                        <img [src]="constructionSelected.image" alt="imagen de la obra">
-                        <div class="dates">
-                            <p class="mb-3 asigned"><span>Inicio: </span>{{constructionSelected.assignment_date |
-                                date:'dd-MM-yyyy'}}</p>
-                            <p class="mb-3 deadline"><span>Finalización: </span>{{constructionSelected.deadline |
-                                date:'dd-MM-yyyy'}}</p>
-                        </div>
-                    </figure>
-                </div>
+
+                <figure>
+                    <img [src]="constructionSelected.image" alt="imagen de la obra">
+                    <div class="dates">
+                        <p class="mb-3 asigned"><span>Inicio: </span>{{constructionSelected.assignment_date |
+                            date:'dd-MM-yyyy'}}</p>
+                        <p class="mb-3 deadline"><span>Finalización: </span>{{constructionSelected.deadline |
+                            date:'dd-MM-yyyy'}}</p>
+                    </div>
+                </figure>
+
                 <div class="construction-info mt-3 ">
                     <p class="c-info mb-3 pe-5"><i
                             class="fa-solid fa-location-crosshairs pe-2"></i>{{constructionSelected.city}}</p>
@@ -29,25 +29,23 @@
             </div>
         </div>
         <div class="row mb-5 p-4 bloque-2">
-            <div class="map col-8"> <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.434274473101!2d-3.6896295!3d40.465656599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422910ef6fc339%3A0xe4a84655e86fb1da!2sPl.%20Castilla%2C%2028046%20Madrid!5e0!3m2!1ses!2ses!4v1701977615577!5m2!1ses!2ses"
-                    width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="map-info col-4">
-                <h3 class="mb-5">INFORMACIÓN</h3>
-
-                <p class="mb-3 "><i class="fa-solid fa-location-dot pe-2"></i> <span>Dirección:</span></p>
-                <p class="mb-5 ps-5">{{constructionSelected.direction}}</p>
-
-                <p class="mb-3"><i class="fa-solid fa-phone pe-2"></i><span>Teléfono de caseta de obra: </span></p>
-                <p class="mb-5 ps-5">{{constructionSelected.phone}}</p>
-
-                <p class="mb-3"><i class="fa-solid fa-clock pe-2"></i><span>Horario laboral:</span></p>
-                <p class="mb-5 ps-5">{{constructionSelected.work_time}}</p>
-
-            </div>
+            <!--             <div class="map col-8" *ngFor="let construction of arrConstructions">
+                <app-map [constructions]="construction"></app-map> -->
         </div>
+        <div class="map-info col-4">
+            <h3 class="mb-5">INFORMACIÓN</h3>
+
+            <p class="mb-3 "><i class="fa-solid fa-location-dot pe-2"></i> <span>Dirección:</span></p>
+            <p class="mb-5 ps-5">{{constructionSelected.direction}}</p>
+
+            <p class="mb-3"><i class="fa-solid fa-phone pe-2"></i><span>Teléfono de caseta de obra: </span></p>
+            <p class="mb-5 ps-5">{{constructionSelected.phone}}</p>
+
+            <p class="mb-3"><i class="fa-solid fa-clock pe-2"></i><span>Horario laboral:</span></p>
+            <p class="mb-5 ps-5">{{constructionSelected.work_time}}</p>
+
+        </div>
+        <!--         </div> -->
 
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
             <h3 class="mb-4">Operarios asignados:</h3>

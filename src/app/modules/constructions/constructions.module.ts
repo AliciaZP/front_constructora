@@ -8,6 +8,7 @@ import { ConstructionsComponent } from './pages/constructions/constructions.comp
 import { ConstructionsRoutingModule } from './constructions-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IdConstructionComponent } from './pages/id-construction/id-construction.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -22,7 +23,8 @@ import { IdConstructionComponent } from './pages/id-construction/id-construction
     CommonModule,
     ConstructionsRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    GoogleMapsModule
   ]
 })
 export class ConstructionsModule { }

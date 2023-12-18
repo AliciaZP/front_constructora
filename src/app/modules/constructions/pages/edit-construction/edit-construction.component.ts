@@ -89,7 +89,7 @@ export class EditConstructionComponent {
       });
     }
   }
-  goBack(){
+  goBack() {
     this.location.back();
   }
 
