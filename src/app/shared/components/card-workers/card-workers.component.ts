@@ -12,7 +12,7 @@ export class CardWorkersComponent {
 
   constructor() {
     this.workers = {
-      _id: '',
+      id: '',
       name: 'Soraya',
       surname: 'Ramos',
       dni: '',

@@ -12,6 +12,13 @@
     font-size: 2rem;
 }
 
+.logo {
+    text-align: left;
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+}
+
 .right {
     background-color: white;
     padding-left: 4rem;
@@ -25,10 +32,6 @@
     margin-bottom: 0.625rem;
 }
 
-.logo {
-    text-align: left;
-    margin-top: 180px;
-}
 
 .logo hr {
     color: white;

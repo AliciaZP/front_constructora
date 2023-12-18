@@ -1,83 +1,117 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Construction } from 'src/app/core/interfaces/construction.interfaces';
+import { LogUser } from 'src/app/core/interfaces/logUser.interface';
+import { User } from 'src/app/core/interfaces/user.interface';
 import { ConstructionsService } from 'src/app/core/services/constructions.service';
+import { TokenService } from 'src/app/core/services/token.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'constructions',
   templateUrl: './constructions.component.html',
   styleUrls: ['./constructions.component.css']
 })
-export class ConstructionsComponent {
+export class ConstructionsComponent implements OnInit {
 
-
-  constructionsService = inject(ConstructionsService)
-
-  arrConstructions: Construction[] = []
-  /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK
-  page: number = 1;
-    totalPages: number = 0; */
-
-  arrCities: string[] = []
+  arrConstructions!: Construction[];
   arrConstructionTypes: string[] = []
 
+  constructionsService = inject(ConstructionsService)
   botonActivo: boolean = true;
+  arrCities: any[] = []
 
-  ngOnInit() {
-    this.arrConstructions = this.constructionsService.getAll();
-    this.arrCities = this.constructionsService.getCities();
-    this.arrConstructionTypes = this.constructionsService.getConstructionTypes();
+  tokenService = inject(TokenService);
+  userService = inject(UsersService);
+  userLogged!: User;
+  user!: any;
 
-    /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK    
-    this.loadConstructions(); */
+  constructor(){}
+
+  async ngOnInit() {
+    this.arrConstructions = await this.constructionsService.getAllConstructions();
+    console.log(this.arrConstructions)
+      // this.arrConstructions = this.constructionsService.getAll();
+      this.arrCities = this.getCities();
+      console.log(this.arrCities)
+      this.arrConstructionTypes = this.getConstructionTypes();
+
+
+
+
+    this.user = this.tokenService.decodeToken()
+    console.log(this.user)
+
+    this.userLogged = await this.userService.getUserLogged()
+    console.log(this.userLogged)
   }
 
-  onClickDelete($event: string) {
-    const response = this.constructionsService.deleteConstructionById($event)
-    this.arrConstructions = this.constructionsService.getAll();
+
+
+  getConstructionTypes(): string[] {
+    const constructionsUnordered = [...new Set(this.arrConstructions.map(construction => construction.construction_type))];
+    const constructionsOrdered = constructionsUnordered.sort((a, b) => a.localeCompare(b));
+    return constructionsOrdered;
   }
 
+  getCities() {
+    console.log(this.arrConstructions)
+    const constructionsUnordered = [...new Set(this.arrConstructions.map(construction => construction.city))];
+    const constructionsOrdered = constructionsUnordered.sort((a, b) => a.localeCompare(b));
+    console.log(constructionsOrdered);
+    return constructionsOrdered;
+  }
 
-  /* ESTO ES EL PAGINADO PARA CUANDO SE PUEDA USAR ENLAZADO CON EL BACK
-    modifyPage(siguiente: boolean) {
-      if (siguiente) this.page++;
-      else this.page--;
-      this.loadConstructions();
-    }
-  
-    async loadConstructions() {
-      try {
-        const response = await this.constructionsService.getAll(this.page)
-        this.arrConstructions = response.results;
-        this.totalPages = response.info.pages;
-      } catch (error) {
-        console.log(error);
+  filterByCity(pCity: string): Construction[] {
+    return this.arrConstructions.filter(construction => construction.city === pCity)
+  }
+
+  async onChangeCity($event: any) {
+    try {
+      if(!$event.target.value){
+        this.arrConstructions = await this.constructionsService.getAllConstructions();
+      }else{
+        const response = await this.constructionsService.getConstructionsByCity($event.target.value)
+        this.arrConstructions = response;
+
       }
+    } catch (error) {
+      console.log(error)
     }
-  
-   */
-  //Aqui empiezan los fitros
 
-  onChangeCity($event: any) {
-    this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAll() : this.constructionsService.filterByCity($event.target.value);
   };
 
-  onChangeConstructionType($event: any) {
-    this.arrConstructions = $event.target.value === "" ? this.constructionsService.getAll() : this.constructionsService.filterByConstructionType($event.target.value);
+  async onChangeConstructionType($event: any) {
+    try {
+      if(!$event.target.value){
+        this.arrConstructions = await this.constructionsService.getAllConstructions();
+      }else{
+      const response = await this.constructionsService.getConstructionByType($event.target.value);
+      this.arrConstructions = response;
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
   };
 
-  onChangeName($event: any) {
-    const ascendente = $event.target.value === "A-Z";
-    this.arrConstructions = this.constructionsService.orderByName(ascendente);
+  async onChangeName($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderName($event.target.value)
+    this.arrConstructions = response;
     //si el value no corresponde, la funcion ejectua en orden descendente
   }
 
-  onChangeAssignmentDate($event: any) {
-    const ascendente = $event.target.value === "reciente";
-    this.arrConstructions = this.constructionsService.orderByAssignmentDate(ascendente);
+  async onChangeAssignmentDate($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderDate($event.target.value)
+    this.arrConstructions = response;
   } //si el value no corresponde, la funcion ejectua en orden descendente
 
-  onChangeDeadline($event: any) {
-    const ascendente = $event.target.value === "reciente";
-    this.arrConstructions = this.constructionsService.orderByDeadline(ascendente);
+  async onChangeDeadline($event: any) {
+    const response = await this.constructionsService.getConstructionByOrderDeadline($event.target.value)
+    this.arrConstructions = response;
   } //si el value no corresponde, la funcion ejectua en orden descendente
+
+  // onClickDelete($event: string) {
+      //   const response = this.constructionsService.deleteConstructionById($event)
+      //   this.arrConstructions = this.constructionsService.getAll();
+      // }
 }

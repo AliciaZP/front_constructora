@@ -1,6 +1,6 @@
-import { User } from "../core/interfaces/user.interface";
+// import { User } from "../core/interfaces/user.interface";
 
-export const UsersDB: User[] = [
+export const UsersDB = [
     {
         _id: "user_1",
         name: "Juan",

@@ -4,6 +4,9 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { EpisComponent } from './shared/components/epis/epis.component';
 import { OfficesComponent } from './shared/components/offices/offices.component';
 import { NewsComponent } from './shared/components/news/news.component';
+import { ErrorComponent } from './shared/components/error/error.component';
+import { AboutUsComponent } from './shared/components/about-us/about-us.component';
+
 
 const routes: Routes = [
 
@@ -16,6 +19,7 @@ const routes: Routes = [
   { path: 'offices', component: OfficesComponent },
 
   { path: 'news', component: NewsComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
@@ -36,7 +40,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
-
+  { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/home' },
 
 ];

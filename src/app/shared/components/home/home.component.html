@@ -1,15 +1,16 @@
 <div id="wrapper" class="m-5">
-    <section id="projects">
+    <section id="projects" class="pb-4">
         <div class="contenedor row">
-            <div class="photos col-8">
+            <h3 class="pb-3">NOVEDADES</h3>
+            <div class="photos col-lg-8">
                 <article>
-                    <h3>Obras Finalizadas</h3>
+                    <h3 class="p-2">Obras Finalizadas</h3>
                 </article>
                 <article>
-                    <h3>Retrasos de obras</h3>
+                    <h3 class="p-2">Retrasos de obras</h3>
                 </article>
                 <article>
-                    <h3>Promociones SGAL 2024</h3>
+                    <h3 class="p-2">Promociones SGAL 2024</h3>
                 </article>
             </div>
             <div class="col-4">
@@ -17,38 +18,38 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="private-area" class="pb-4">
         <div class="row align-items-center">
-            <h3>MI AREA PRIVADA</h3>
-            <app-card-workers class="col-5"></app-card-workers>
-            <div class="ps-4 botones col-7">
+            <h3 class="pb-4">MI AREA PRIVADA</h3>
+            <app-card-workers [workers]="userLogged" class="col-lg-6"></app-card-workers>
+            <div class="botones col-lg-6">
                 <ul class="d-flex">
-                    <li class="p-2" [routerLink]="['/constructions']"><button><i
-                                class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button></li>
-                    <li class="p-2" [routerLink]="['/workers']"><button><i
+                    <li class="p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/constructions']">
+                        <button><i class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button>
+                    </li>
+                    <li class="p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/workers']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-person-digging"></i>Operarios</button></li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2" [routerLink]="['/tasks', 'user', 'task', userLogged.id]"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
                     </li>
+                    <!-- user/task/:userId -->
                     <li class="p-2" [routerLink]="['/epis']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-helmet-safety"></i>EPis</button>
                     </li>
                 </ul>
                 <ul class="d-flex">
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-address-card"></i>Perfil</button>
                     </li>
                     <li class="p-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-graduation-cap"></i>Formación</button></li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2" *ngIf="userLogged.role == 'admin'" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-calendar"></i>Permisos</button>
                     </li>
                     <li class="p-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-file-contract"></i>Docs</button>
                     </li>
-
                 </ul>
-
 
             </div>
         </div>

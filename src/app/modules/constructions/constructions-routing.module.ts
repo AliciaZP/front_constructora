@@ -5,10 +5,12 @@ import { ConstructionsComponent } from './pages/constructions/constructions.comp
 import { NewConstructionComponent } from './pages/new-construction/new-construction.component';
 import { EditConstructionComponent } from './pages/edit-construction/edit-construction.component';
 import { IdConstructionComponent } from './pages/id-construction/id-construction.component';
+import { ReportsComponent } from '../reports/pages/reports/reports.component';
 
 const routes: Routes = [
   { path: '', component: ConstructionsComponent },
   { path: 'construction/:constructionId', component: IdConstructionComponent },
+  { path: 'construction/reports/:constructionId', component: ReportsComponent },
   { path: 'new', component: NewConstructionComponent },
   { path: 'edit/:constructionId', component: EditConstructionComponent }
 ]

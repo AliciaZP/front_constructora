@@ -13,6 +13,7 @@ import { EpisComponent } from './components/epis/epis.component';
 import { OfficesComponent } from './components/offices/offices.component';
 import { NewsComponent } from './components/news/news.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -27,7 +28,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     EpisComponent,
     OfficesComponent,
     NewsComponent,
-    CalendarComponent
+    CalendarComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

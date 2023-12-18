@@ -71,7 +71,7 @@
                     date:'dd-MM-yyyy'}}
                 </p>
             </div>
-            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/tasks','edit', task.id]">Editar
+            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/tasks','edit', task.id, task.users_id, task.Constructions_id]">Editar
                 Tarea
             </button>
         </article>
