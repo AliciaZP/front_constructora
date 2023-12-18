@@ -52,7 +52,7 @@
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
             <h3 class="mb-4">Operarios asignados:</h3>
             <div class="mb-5 worker-flex" *ngFor="let worker of arrWorkers">
-                <app-card-workers [workers]="worker"></app-card-workers>
+                <app-card-workers  [workers]="worker"></app-card-workers>
                 <div>
                     <button [routerLink]="['/tasks','task', worker.id, worker.Constructions_id]"
                         class="worker-button">Tareas

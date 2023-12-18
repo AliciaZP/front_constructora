@@ -5,7 +5,7 @@
             <h1>SGAL <span>Construcciones</span></h1>
 
 
-            <h3>Portal del Empleado</h3>
+            <h3 *ngIf="userLogged?.role == 'worker'">Portal del Empleado</h3>
             <ul class="icons">
                 <li><i class="fa-solid fa-bell fa-xs"></i></li>
                 <li><i class="fa-solid fa-gear"></i></li>
@@ -22,9 +22,9 @@
           <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
             <ul class="nav-links ">
                 <li class="nav-item" [routerLink]="['/home']">HOME</li>
-                <li class="nav-item" *ngIf="userLogged.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
-                <li class="nav-item" *ngIf="userLogged.role == 'worker'" [routerLink]="['/constructions', 'construction', userLogged.Constructions_id]">MI OBRA</li>
-                <li class="nav-item" *ngIf="userLogged.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
+                <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
+                <li class="nav-item" *ngIf="userLogged?.role == 'worker'" [routerLink]="['/constructions', 'construction', userLogged?.Constructions_id]">MI OBRA</li>
+                <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
                 <li class="nav-item" [routerLink]="['/offices']">SEDES</li>
                 <li class="nav-item" [routerLink]="['/error']">NOTICIAS</li>
                 <li class="nav-item" [routerLink]="['/about-us']">NOSOTROS</li>
