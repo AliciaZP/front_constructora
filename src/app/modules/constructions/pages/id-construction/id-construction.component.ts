@@ -15,11 +15,11 @@ import Swal from 'sweetalert2';
 })
 export class IdConstructionComponent {
 
-  constructionSelected!: Construction
-  arrConstructions: Construction[] = []
-  constructionsService = inject(ConstructionsService)
-  activatedRoute = inject(ActivatedRoute)
-  router = inject(Router)
+  constructionSelected!: Construction;
+  arrConstructions: Construction[] = [];
+  constructionsService = inject(ConstructionsService);
+  activatedRoute = inject(ActivatedRoute);
+  router = inject(Router);
   botonActivo: boolean = true;
   arrWorkers!: any;
   usersService = inject(UsersService);

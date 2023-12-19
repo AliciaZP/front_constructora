@@ -16,7 +16,6 @@
                             date:'dd-MM-yyyy'}}</p>
                     </div>
                 </figure>
-
                 <div class="construction-info mt-3 ">
                     <p class="c-info mb-3 pe-5"><i
                             class="fa-solid fa-location-crosshairs pe-2"></i>{{constructionSelected.city}}</p>
@@ -26,27 +25,20 @@
                 </div>
             </div>
         </div>
-
-
         <div class="map-info">
             <div class="mb-5 p-4 info-container">
                 <div class="mb-4 map-container">
                     <card-map [lat]="constructionSelected.lat" [lng]="constructionSelected.lng"></card-map>
                 </div>
                 <h3 class="mb-3 info-h3">INFORMACIÓN</h3>
-
                 <p class="mb-3"><i class="fa-solid fa-location-dot pe-2"></i> <span>Dirección:</span></p>
                 <p class="mb-4">{{constructionSelected.direction}}</p>
-
                 <p class="mb-3"><i class="fa-solid fa-phone pe-2"></i><span>Teléfono: </span></p>
                 <p class="mb-4">{{constructionSelected.phone}}</p>
-
                 <p class="mb-3"><i class="fa-solid fa-clock pe-2"></i><span>Horario laboral:</span></p>
                 <p class="mb-3">{{constructionSelected.work_time}}</p>
             </div>
         </div>
-
-
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
             <h3 class="mb-4">Operarios asignados:</h3>
             <div class="mb-5 worker-flex" *ngFor="let worker of arrWorkers">
@@ -63,14 +55,12 @@
                     <button (click)="onClickRetirar(worker.id)" class="worker-button2">Retirar de la obra</button>
                 </div>
             </div>
-
         </section>
         <section *ngIf="userLogged.role == 'admin'" id="admin-area">
             <div class="dropdown">
                 <button class="admin dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Área privada
                 </button>
-
                 <ul class="dropdown-menu">
                     <li class="px-2"> <button class="mb-3" *ngIf="botonActivo"
                             [routerLink]="['/constructions','construction', 'reports', constructionSelected.id]">
@@ -90,5 +80,4 @@
             </div>
         </section>
     </article>
-
 </section>

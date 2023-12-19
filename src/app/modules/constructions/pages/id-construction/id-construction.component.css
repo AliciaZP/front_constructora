@@ -34,12 +34,12 @@ h2 {
 }
 
 img {
-    width: 300px;
+    width: 500px;
 }
 
 .asigned {
     display: inline-block;
-    width: 300px;
+    width: 500px;
     text-align: center;
     background-color: var(--color-second);
     color: var(--color-white);
@@ -48,7 +48,7 @@ img {
 
 .deadline {
     display: inline-block;
-    width: 300px;
+    width: 500px;
     text-align: center;
     background-color: var(--color-main);
     color: var(--color-white);
@@ -61,7 +61,7 @@ img {
 
 .flex-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: top;
     flex-wrap: wrap;
 }
@@ -145,7 +145,7 @@ button {
 .dropdown-menu {
     width: 450px;
     border-radius: none;
-    border: 1px solid black;
+    border: 1px solid var(--color-second);
 }
 
 .dropdown-menu button {
@@ -155,11 +155,11 @@ button {
     align-items: center;
     font-weight: 600;
     color: var(--color-second);
-    background-color: white;
+    background-color: var(--color-white);
     padding: 1rem;
 
     &:hover {
-        background-color: var(--color-main)
+        background-color: var(--color-main);
     }
 }
 
@@ -221,12 +221,12 @@ button {
 @media(min-width: 43rem) {
     .asigned {
         display: block;
-        width: 300px;
+        width: 500px;
     }
 
     .deadline {
         display: block;
-        width: 300px;
+        width: 500px;
     }
 
     .info-container {
@@ -358,9 +358,7 @@ button {
 
 
 
-
-
-
+    /* --------------------------------------- */
 
 
 
