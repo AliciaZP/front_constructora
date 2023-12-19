@@ -43,24 +43,6 @@ export class NewWorkerComponent {
     this.location.back();
   }
 
-  /*
-    async onSubmit() {
-      try {
-
-        if (this.newWorker.valid) {
-          await this.workersService.createWorker(this.newWorker.value);
-          this.router.navigate(['/workers']);
-        } else {
-          console.log('error');
-        }
-      } catch (error) {
-        console.log(error);
-      }
-
-    };
-   */
-
-
   async onSubmit() {
     try {
       if (this.newWorker.valid) {
