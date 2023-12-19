@@ -28,7 +28,7 @@ section {
 }
 
 .error {
-    font-size: 200px;
+    font-size: 12.5rem;
     font-weight: 700;
 }
 
@@ -56,17 +56,46 @@ p {
     margin: 10px 0;
 }
 
+.calvo {
+    font-size: 1.5rem;
+
+}
+
 .back-home {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--color-third);
     color: #fff;
     text-decoration: none;
-    font-size: 1.2em;
-    margin-top: 20px;
+    font-size: 1.19rem;
+    margin-top: 1.25rem;
     border-radius: 5px;
 }
 
 .back-home:hover {
     background-color: var(--color-main);
+}
+
+
+
+@media (max-width:700px) {
+    .back-home {
+        display: flex;
+        position: center;
+
+        font-size: 0.85rem;
+
+        margin-top: 0.85rem;
+        border-radius: 5px;
+    }
+
+    .error {
+        font-size: 5.5rem;
+        font-weight: 500;
+    }
+
+    .calvo {
+        font-size: 1.1rem;
+    }
+
 }
