@@ -103,3 +103,33 @@ ul li button {
     justify-content: center;
     flex-wrap: nowrap;
 }
+
+
+@media(max-width: 35rem) {
+  #projects .photos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 250px 250px 250px;
+    grid-gap: 10px;
+  }
+
+  ul li button {
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 140px;
+    height: 120px;
+    &:hover {
+        background-color: var(--color-second);
+    }
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+}
