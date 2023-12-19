@@ -32,12 +32,8 @@ export class AllTasksComponent {
       const user = await this.workersService.getWorkerById(this.userId)
       this.arrTasks = response;
       this.worker = user
-
-
     })
   }
-
-
 
 
   //Aqui empiezan los fitros

@@ -14,6 +14,7 @@ h2 {
     color: var(--color-main);
     font-size: var(--fontsize-h4);
     font-weight: var(--fontweight-h4);
+    font-family: var(--font-secondary);
 }
 
 .custom-select {
@@ -59,6 +60,7 @@ h3 {
 }
 
 h4 {
+
     font-size: var(--fontsize-h4);
     font-weight: 600;
 }
@@ -122,21 +124,24 @@ article button.edit {
     color: var(--color-main);
 }
 
-.black-title {
+.golden-title {
     color: var(--color-second);
 }
 
+.green-title {
+    color: royalblue;
+}
 
 .back {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .back h4 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-second);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-second);
 
-  &:hover {
-      color: var(--color-main);
-  }
+    &:hover {
+        color: var(--color-main);
+    }
 }
