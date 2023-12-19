@@ -1,11 +1,14 @@
-<section id="form-newReport" class="col-12 mx-5 mt-5">
-
-    <h2 class="mb-5">NUEVA TAREA </h2>
+<section id="form-newReport" >
+    <div class="back ms-5 mt-5">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    </div>
+    <h2 class="m-5">NUEVA TAREA </h2>
 
     <div class="row">
         <form class="col-sm-7" [formGroup]='newTask' (ngSubmit)="onSubmit()">
-            <h3 class="mb-4"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra una nueva tarea:</h3>
-            <div class="mb-4">
+            <h3 class="mb-5 ms-5"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra una nueva tarea:</h3>
+            <div class="">
                 <label class="mb-1">Título</label>
                 <input class="custom-option" type="text" formControlName='title'
                     placeholder="Inserta aquí el nombre de la tarea">
@@ -15,7 +18,7 @@
                 <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 70 caracteres.</p>
             </div>
 
-            <div class="mb-4">
+            <div class="">
                 <label class="mb-1">Descripción:</label>
                 <textarea class="custom-option" formControlName='description'
                     placeholder="Inserta aquí la descripción de la tarea">
@@ -24,7 +27,7 @@
                     La descripción es obligatoria.</p>
                 <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
             </div>
-            <div class="mb-4">
+            <div class="">
                 <label class="mb-1">Prioridad:</label>
                 <select class="custom-select" formControlName="priority">
                     <option class="custom-option" value="alta">Alta</option>
@@ -33,7 +36,7 @@
                 </select>
                 <p class="error" *ngIf="checkError('priority','required')">La prioridad es obligatoria.</p>
             </div>
-            <div class="mb-4">
+            <div class="">
                 <label class="mb-1">Fecha de entrega:</label>
                 <input class="custom-option date" type="date" formControlName='deadline'
                     placeholder="Inserta aquí la fecha de hoy">
@@ -41,7 +44,7 @@
                     La fecha de entrega obligatoria.</p>
             </div>
 
-            <div class="mb-4">
+            <div class="">
                 <label class="mb-1">Fecha de asignación</label>
                 <input class="custom-option date" type="date" formControlName='assignment_date'
                     placeholder="Inserta aquí la fecha de hoy">
@@ -49,7 +52,7 @@
                     La fecha de asignación obligatoria.</p>
             </div>
 
-            <div class="pt-2 pb-5">
+            <div class="">
                 <input class="button-create" type="submit" value="CREAR TAREA">
             </div>
         </form>

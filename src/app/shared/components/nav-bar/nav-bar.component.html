@@ -5,34 +5,36 @@
       <h1>SGAL <span>Construcciones</span></h1>
 
 
-            <h3 *ngIf="userLogged?.role == 'worker'">Portal del Empleado</h3>
-            <ul class="icons">
-                <li><i class="fa-solid fa-bell fa-xs"></i></li>
-                <li><i class="fa-solid fa-gear"></i></li>
-                <li (click)="onClickLogoff()" ><i class="fa-solid fa-power-off"></i></li>
-            </ul>
-        </div>
-    </nav>
-    <nav class="nav-bottom navbar navbar-expand-lg ">
-        <div class=" wrapper-nav-links mx-5 container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- <div class="centrar"> -->
-          <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <ul class="nav-links ">
-                <li class="nav-item" [routerLink]="['/home']">HOME</li>
-                <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
-                <li class="nav-item" *ngIf="userLogged?.role == 'worker'" [routerLink]="['/constructions', 'construction', userLogged?.Constructions_id]">MI OBRA</li>
-                <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
-                <li class="nav-item" [routerLink]="['/offices']">SEDES</li>
-                <li class="nav-item" [routerLink]="['/error']">NOTICIAS</li>
-                <li class="nav-item" [routerLink]="['/about-us']">NOSOTROS</li>
-            </ul>
-          </div>
-        <!-- </div> -->
-        </div>
-    </nav>
+      <h3>Portal del Empleado</h3>
+      <ul class="icons">
+        <li><i class="fa-solid fa-bell fa-xs"></i></li>
+        <li><i class="fa-solid fa-gear"></i></li>
+        <li (click)="onClickLogoff()"><i class="fa-solid fa-power-off"></i></li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="nav-bottom navbar navbar-expand-lg ">
+    <div class=" wrapper-nav-links mx-5 container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="centrar"> -->
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <ul class="nav-links ">
+          <li class="nav-item" [routerLink]="['/home']">HOME</li>
+          <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">OBRAS</li>
+          <li class="nav-item" *ngIf="userLogged?.role == 'worker'"
+            [routerLink]="['/constructions', 'construction', userLogged?.Constructions_id]">MI OBRA</li>
+          <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
+          <li class="nav-item" [routerLink]="['/offices']">SEDES</li>
+          <li class="nav-item" [routerLink]="['/news']">NOTICIAS</li>
+          <li class="nav-item" [routerLink]="['/about-us']">NOSOTROS</li>
+        </ul>
+      </div>
+      <!-- </div> -->
+    </div>
+  </nav>
 </header>
 
 

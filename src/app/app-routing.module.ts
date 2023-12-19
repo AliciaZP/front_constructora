@@ -25,6 +25,7 @@ const routes: Routes = [
   {
     path: 'constructions',
     loadChildren: () => import('./modules/constructions/constructions.module').then(m => m.ConstructionsModule),
+
   },
   {
     path: 'workers',

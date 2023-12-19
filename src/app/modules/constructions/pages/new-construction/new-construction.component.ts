@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,8 +15,10 @@ export class NewConstructionComponent {
 
   newConstruction: FormGroup;
   constructionsService = inject(ConstructionsService)
-
+  location = inject(Location);
   router = inject(Router)
+
+
 
   constructor() {
     this.newConstruction = new FormGroup({
@@ -36,6 +39,10 @@ export class NewConstructionComponent {
       Validators.maxLength(150)]),
       image: new FormControl(null, Validators.required),
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   async onSubmit() {

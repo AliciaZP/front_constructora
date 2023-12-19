@@ -15,6 +15,7 @@ import { NewsComponent } from './components/news/news.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 // import { GoogleMapsModule } from '@angular/google-maps';
 
 
@@ -39,7 +40,7 @@ import { MapComponent } from './components/map/map.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
-    // GoogleMapsModule,
+    GoogleMapsModule,
 
   ],
   exports: [

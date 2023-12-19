@@ -1,9 +1,13 @@
-<section id="form-newconstruction col-12">
+<section id=" form-newconstruction col-10">
+  <div class="back ms-5 mt-5">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    </div>
 
     <h2 class="m-5">NUEVA OBRA </h2>
-    <form [formGroup]='newConstruction' (ngSubmit)="onSubmit()">
+    <form  [formGroup]='newConstruction' (ngSubmit)="onSubmit()">
 
-        <div class="m-5">
+        <div class="campo">
             <label>Nombre:</label>
             <input
             class="custom-option"
@@ -14,14 +18,14 @@
             <p class="error" *ngIf="checkError('name','maxlength')">La longitud máxima son 45 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Imagen de la obra (300 x 300 px) </label>
             <input class="custom-option"  type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
             <p class="error" *ngIf="checkError('image','required')">
                 La imagen es obligatoria.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Tipo de construcción:</label>
             <input class="custom-option" type="text" formControlName='construction_type' placeholder="Inserta aquí el tipo de la obra">
             <p class="error" *ngIf="checkError('construction_type','required')">El
@@ -32,7 +36,7 @@
             </p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Descripción del proyecto:</label>
             <textarea
             class="custom-option" formControlName='description' placeholder="Inserta aquí la descripción de la obra">
@@ -42,7 +46,7 @@
             <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Ciudad:</label>
             <input class="custom-option"  type="text" formControlName='city' placeholder="Inserta aquí la ciudad de la obra">
             <p class="error" *ngIf="checkError('city','required')">
@@ -51,7 +55,7 @@
             <p class="error" *ngIf="checkError('city','maxlength')">La longitud máxima son 70 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Dirección completa:</label>
             <input class="custom-option"  type="text" formControlName='direction' placeholder="Inserta aquí la dirección de la obra">
             <p class="error" *ngIf="checkError('direction','required')">
@@ -60,7 +64,7 @@
             <p class="error" *ngIf="checkError('direction','maxlength')">La longitud máxima son 150 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Teléfono de contacto:</label>
             <input class="custom-option"  type="text" formControlName='phone' placeholder="Inserta aquí el teléfono de la obra">
             <p class="error" *ngIf="checkError('phone','required')">El
@@ -69,7 +73,7 @@
             <p class="error" *ngIf="checkError('phone','maxlength')">La longitud máxima son 12 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Horario laboral:</label>
             <input class="custom-option"  type="text" formControlName='work_time' placeholder="Inserta aquí el horario de la obra">
             <p class="error" *ngIf="checkError('work_time','required')">El
@@ -80,15 +84,15 @@
             </p>
         </div>
 
-        <div class="m-5">
-            <label>Fecha de asignación:</label>
+        <div class="">
+            <label>Fecha de finalización:</label>
             <input class="custom-option"  type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de creacion">
             <p class="error" *ngIf="checkError('deadline','required')">
                 La fecha de creación obligatoria.</p>
         </div>
 
-        <div class="m-5">
-            <label>Fecha de finalización:</label>
+        <div class="">
+            <label>Fecha de asignación:</label>
             <input class="custom-option"  type="date" formControlName='assignment_date' placeholder="Inserta aquí la fecha de finalizacion">
             <p class="error" *ngIf="checkError('assignment_date','required')">La fecha de finalización obligatoria.</p>
         </div>
@@ -100,7 +104,7 @@
                 mapa es obligatorio.</p>
         </div> -->
 
-        <div class="m-5">
+        <div class="">
             <input class="button-create custom-option" type="submit" value="Añadir obra">
         </div>
 
