@@ -16,11 +16,13 @@ export class LoginComponent {
   workersService = inject(WorkersService);
   userService = inject(UsersService);
   router = inject(Router);
+
   // tokenService = inject(TokenService);
 
   passwordVisible = false;
   password = '';
-
+  shakeButton: boolean = false;
+  errorMessage: string = '';
 
   constructor() {
     this.newLogin = new FormGroup({
@@ -30,32 +32,53 @@ export class LoginComponent {
   }
 
   async onSubmit() {
-
     try {
-      const response = await this.userService.userLogin(this.newLogin.value)
-      console.log(response);
+      const response = await this.userService.userLogin(this.newLogin.value);
 
       if (response.success) {
         localStorage.setItem('token', response.token);
-
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       } else {
-        await Swal.fire({
-          icon: 'error',
-          title: 'Datos erróneos',
-          text: 'El email o la contraseña no son válidos.',
-          confirmButtonText: 'Aceptar',
-          confirmButtonColor: '#af1e2d',
-          color: 'white',
-          background: '#0f0f0f',
-        })
+        this.shakeButton = true;
+        this.errorMessage = 'El email o la contraseña no son válidos';
+
+        setTimeout(() => {
+          this.shakeButton = false;
+          this.errorMessage = '';
+        }, 4000);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
   }
 
+
+  /*   async onSubmit() {
+  
+      try {
+        const response = await this.userService.userLogin(this.newLogin.value)
+        console.log(response);
+  
+        if (response.success) {
+          localStorage.setItem('token', response.token);
+  
+          this.router.navigate(['/home'])
+        } else {
+          await Swal.fire({
+            icon: 'error',
+            title: 'Datos erróneos',
+            text: 'El email o la contraseña no son válidos.',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#af1e2d',
+            color: 'white',
+            background: '#0f0f0f',
+          })
+        }
+      } catch (error) {
+        console.log(error)
+      }
+  
+    } */
 
   checkError(controlName: string, errorName: string) {
     return this.newLogin.get(controlName)?.hasError(errorName) && this.newLogin.get(controlName)?.touched;

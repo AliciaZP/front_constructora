@@ -134,6 +134,48 @@ input::placeholder {
     right: 1rem;
 }
 
+/* 
+Shake del boton de iniciar sesion y mensaje de error */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.button-flex {
+    position: relative;
+}
+
+.error-message {
+    position: absolute;
+    bottom: 0rem;
+    left: 12rem;
+    transform: translateX(-50%);
+    margin-top: -20px;
+    color: #af1e2d;
+    font-size: 0.9rem;
+}
 
 
 /* mediaqueries */
