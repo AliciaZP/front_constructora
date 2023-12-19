@@ -1,16 +1,6 @@
-h2 {
-    font-size: 2.5rem;
-    color: var(--color-main);
-    font-weight: 700;
-}
+/* MOBILE FIRST */
 
-h3 {
-    color: var(--color-second);
-    font-size: 1.3rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-}
-
+/* enlace volver */
 .back {
     cursor: pointer;
 }
@@ -25,58 +15,85 @@ h3 {
     }
 }
 
-p {
-    font-size: 0.9rem;
+/* obra */
+h2 {
+    color: var(--color-main);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: calc(var(--fontsize-h2)*1.2);
+    text-align: center;
 }
 
+.description {
+    line-height: 1.8rem;
+}
+
+.construction-info i {
+    font-size: 1.5rem;
+    color: var(--color-main);
+}
+
+img {
+    width: 500px;
+}
+
+.asigned {
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+    background-color: var(--color-second);
+    color: var(--color-white);
+    padding: 0.5rem;
+}
+
+.deadline {
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    padding: 0.5rem;
+}
+
+.c-info {
+    font-weight: var(--fontweight-h3);
+}
 
 .flex-container {
     display: flex;
     justify-content: center;
     align-items: top;
     flex-wrap: wrap;
-    gap: 2.5rem;
-}
-
-
-figure {
-    position: relative;
-}
-
-.dates :nth-child(2) {
-    display: inline-block;
-    position: absolute;
-    width: 150px;
-    bottom: 3rem;
-    right: 0;
-    padding: 0.5rem;
-    background-color: green;
-    color: white;
-}
-
-.dates :nth-child(4) {
-    display: inline-block;
-    position: absolute;
-    width: 150px;
-    bottom: 0;
-    right: 0;
-    padding: 0.5rem;
-    background-color: var(--color-main);
-    color: white;
-}
-
-span {
-    font-weight: 600;
-}
-
-.construction-info i {
-    font-size: 2rem;
-    color: var(--color-second);
 }
 
 .construction-info p:nth-child(-n+2) {
     font-size: 1.3rem;
     color: var(--color-second);
+}
+
+
+/* Estilos mapa */
+.info-container {
+    border: 1px solid var(--color-second);
+    background-color: rgb(234, 234, 234);
+    width: 100%;
+}
+
+.map-container {
+    border: 3px solid var(--color-main);
+}
+
+.info-h3 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--color-main);
+}
+
+.info-container span {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--color-main);
 }
 
 .map-info span {
@@ -88,40 +105,17 @@ span {
     color: var(--color-main);
 }
 
-.map-info h3 {
-    font-size: 1.7rem;
-    color: var(--color-main);
-}
-
-
-.description {
-    line-height: 1.5rem;
-}
-
-/* Estilos mapa */
-.bloque-2 {
-    border: 1px solid black;
-    background-color: rgb(234, 234, 234);
-    border-radius: 10px;
-}
-
-iframe {
-    border-radius: 10px;
-}
-
 
 /* Estilos del area privada */
 #admin-area {
     position: fixed;
-    top: 10rem;
-    /* Ajusta la distancia desde la parte inferior según tus necesidades */
-    right: 2rem;
-    background-color: var(--color-second);
+    top: 0;
+    right: 0;
 }
 
 #admin-area h3 {
+    color: var(--color-third);
     font-size: 1.5rem;
-    color: white;
     font-weight: 700;
 }
 
@@ -131,24 +125,27 @@ iframe {
 }
 
 .admin {
-    font-size: 2rem;
-    color: white;
+    font-size: 1rem;
+    color: var(--color-white);
     font-weight: 600;
-
 }
 
 button {
     border: none;
+    padding: 1rem;
     color: var(--color-second);
-    background-color: var(--color-second);
+    background-color: var(--color-third);
 
+    &:hover {
+        background-color: var(--color-second);
 
+    }
 }
 
 .dropdown-menu {
-    width: 250px;
+    width: 450px;
     border-radius: none;
-    border: 1px solid black;
+    border: 1px solid var(--color-second);
 }
 
 .dropdown-menu button {
@@ -158,10 +155,320 @@ button {
     align-items: center;
     font-weight: 600;
     color: var(--color-second);
-    background-color: white;
+    background-color: var(--color-white);
     padding: 1rem;
 
     &:hover {
-        background-color: var(--color-main)
+        background-color: var(--color-main);
+    }
+}
+
+/* Zona de operarios*/
+#worker-area h3 {
+    font-size: var(--fontsize-h2);
+    color: var(--color-main);
+    font-weight: 700;
+    font-family: var(--font-secondary);
+}
+
+.worker-flex {
+    display: flex;
+}
+
+.worker-buttonflex {
+    display: flex;
+    justify-content: start;
+}
+
+.worker-button {
+    width: 200px;
+    height: 70px;
+    display: block;
+    color: var(--color-white);
+    background-color: var(--color-second);
+    border: 2px solid var(--color-third);
+    border-top: none;
+    font-weight: var(--fontweight-h3);
+    font-size: 0.9rem;
+
+    &:hover {
+        color: var(--color-second);
+        background-color: var(--color-third);
+    }
+}
+
+.worker-button2 {
+    width: 200px;
+    height: 100px;
+    display: block;
+    color: var(--color-white);
+    background-color: var(--color-second);
+    border: 2px solid var(--color-third);
+    border-top: none;
+    border-bottom: none;
+    font-weight: var(--fontweight-h3);
+    font-size: 0.9rem;
+
+    &:hover {
+        color: var(--color-second);
+        background-color: var(--color-main);
+    }
+}
+
+
+/* mediaqueries */
+
+@media(min-width: 43rem) {
+    .asigned {
+        display: block;
+        width: 500px;
+    }
+
+    .deadline {
+        display: block;
+        width: 500px;
+    }
+
+    .info-container {
+        width: 100%;
+    }
+}
+
+
+@media(min-width: 48rem) {
+
+    img {
+        width: 500px;
+    }
+
+    .asigned {
+        display: block;
+        width: 500px;
+    }
+
+    .deadline {
+        display: block;
+        width: 500px;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        flex-wrap: wrap;
+    }
+
+    /* Estilos mapa */
+
+    .map-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-container {
+        width: 100%;
+    }
+
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 11rem;
+        right: 1rem;
+    }
+
+    .admin {
+        font-size: 1.5rem;
+    }
+
+    button {
+        border: none;
+        padding: 0.7rem;
+
+        &:hover {
+            background-color: var(--color-second);
+        }
+    }
+
+    .dropdown-menu {
+        width: 200px;
+    }
+}
+
+@media(min-width: 82rem) {
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        flex-wrap: nowrap;
+        gap: 3rem;
+    }
+}
+
+.info-container {
+    margin-top: 2rem;
+}
+
+@media(min-width: 87.5rem) {
+
+    /* Estilos mapa */
+
+    .map-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-container {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 11rem;
+        right: 2rem;
+    }
+
+    .admin {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 1.2rem;
+
+        &:hover {
+            background-color: var(--color-second);
+        }
+    }
+
+    .dropdown-menu {
+        width: 280px;
+    }
+
+    .dropdown-menu button {
+        width: 100%;
+
+        &:hover {
+            background-color: var(--color-main)
+        }
+    }
+
+
+
+
+
+    /* --------------------------------------- */
+
+
+
+    /* Zona de operarios*/
+    #worker-area h3 {
+        font-size: var(--fontsize-h2);
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: var(--font-secondary);
+    }
+
+    .worker-flex {
+        display: flex;
+    }
+
+    .worker-buttonflex {
+        display: flex;
+        justify-content: start;
+    }
+
+    .worker-button {
+        width: 200px;
+        height: 70px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-third);
+        }
+    }
+
+    .worker-button2 {
+        width: 200px;
+        height: 100px;
+        display: block;
+        color: var(--color-white);
+        background-color: var(--color-second);
+        border: 2px solid var(--color-third);
+        border-top: none;
+        border-bottom: none;
+        font-weight: var(--fontweight-h3);
+        font-size: 0.9rem;
+
+        &:hover {
+            color: var(--color-second);
+            background-color: var(--color-main);
+        }
+    }
+
+
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 11rem;
+        right: 2rem;
+    }
+
+    #admin-area h3 {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 700;
+    }
+
+    #admin-area i {
+        font-size: 2rem;
+        color: var(--color-second);
+    }
+
+    .admin {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    button {
+        border: none;
+        padding: 1.2rem;
+        color: var(--color-second);
+        background-color: var(--color-third);
+
+        &:hover {
+            background-color: var(--color-second);
+
+        }
+    }
+
+    .dropdown-menu {
+        width: 250px;
+        border-radius: none;
+        border: 1px solid black;
+    }
+
+    .dropdown-menu button {
+
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        font-weight: 600;
+        color: var(--color-second);
+        background-color: white;
+        padding: 1rem;
+
+        &:hover {
+            background-color: var(--color-main)
+        }
     }
 }

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,8 +14,10 @@ export class EditTaskComponent {
 
   editTask: FormGroup;
   taskId: string = '';
+  userId: string = '';
+  constructionId: string = '';
   tasksService = inject(TasksService)
-
+  location = inject(Location);
   router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
 
@@ -25,26 +28,41 @@ export class EditTaskComponent {
       deadline: new FormControl(),
       assignment_date: new FormControl(),
       priority: new FormControl(),
+      Constructions_id: new FormControl(),
+      users_id: new FormControl()
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(async params => {
       this.taskId = params['taskId']
-      const response = this.tasksService.getTaskById(this.taskId)
+      this.userId = params['userId']
+      this.constructionId = params['constructionId']
+      const response = await this.tasksService.getTaskById(this.taskId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { title, description, deadline, assignment_date, priority } = response
-      this.editTask.setValue({ title, description, deadline, assignment_date, priority })
+      const { title, description, deadline, assignment_date, priority, Constructions_id, users_id } = response
+      this.editTask.setValue({ title, description, deadline, assignment_date, priority, Constructions_id, users_id})
+
     })
 
-
   }
-  onSubmit() {
-    if (this.editTask.valid) {
-      this.tasksService.updateTaskById(this.taskId, this.editTask.value);
-      this.router.navigate([`/tasks`]);
-    } else {
-      console.log('error');
+  async onSubmit() {
+    try {
+      if (this.editTask.valid) {
+        const response = await this.tasksService.updateTaskById(this.taskId, this.editTask.value);
+        console.log(response)
+        this.router.navigate([`/tasks`,'task', this.userId, this.constructionId]);
+        // task/:userId/:constructionId
+      } else {
+        console.log('error');
+      }
+
+    } catch (error) {
+      console.log(error)
     }
   };
 

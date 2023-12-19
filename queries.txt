@@ -1,0 +1,8 @@
+
+/* mediaqueries */
+
+@media(min-width: 48rem) {}
+
+@media(min-width: 62.5rem) {}
+
+@media(min-width: 87.5rem) {}

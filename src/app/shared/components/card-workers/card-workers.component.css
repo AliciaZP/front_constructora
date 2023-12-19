@@ -1,33 +1,77 @@
-img {
-    width: 100%;
-    height: auto;
-    display: block;
+.card-container {
+  background: var(--color-second);
+  min-width: 300px;
+  height: auto;
+}
 
-    padding: 0.625rem;
-    background: var(--color-main);
-    background: linear-gradient(90deg, var(--color-main) 0%, rgb(215, 123, 142) 39%, rgb(222, 220, 220) 100%);
+article {
+  color: var(--color-white);
+  border: none;
+  background-color: var(--color-second);
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+
+.flex {
+  display: flex;
 
 }
 
-.contenedor article.card {
+figure {
+  width: 40%;
+  height: 100%;
+}
 
-    background-color: white;
-    padding: 0.125rem;
-    border: 0.25rem solid var(--color-main);
-    box-shadow: 0.3125rem 0.125rem 1.25rem var(color-second);
-    margin: 10px;
+.contenido {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    & .flex {
-        display: flex;
-        flex-wrap: wrap;
+img {
+  width: 100%;
+  padding: 0.625rem;
+  background: linear-gradient(90deg, var(--color-main) 0%, rgb(215, 123, 142) 25%, rgb(222, 220, 220) 100%);
 
-        & figure {
-            width: 50%;
-        }
+}
 
-        &>div {
-            width: 50%;
-        }
 
-    }
+h3 {
+  display: block;
+  color: var(--color-main);
+  font-size: var(--fontsize-h3);
+  font-weight: var(--fontweight-h3);
+  font-family: var(--font-secondary);
+}
+
+label {
+  color: var(--color-third);
+  font-size: 1rem;
+  font-weight: var(--fontweight-h3);
+}
+
+p {
+  color: var(--color-white);
+  display: block;
+}
+
+
+@media(max-width: 35rem) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  figure {
+    width: 100%;
+
+  }
+
+  .contenido {
+    width: 100%;
+
+  }
 }

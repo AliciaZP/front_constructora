@@ -125,3 +125,18 @@ article button.edit {
 .black-title {
     color: var(--color-second);
 }
+
+
+.back {
+  cursor: pointer;
+}
+
+.back h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-second);
+
+  &:hover {
+      color: var(--color-main);
+  }
+}

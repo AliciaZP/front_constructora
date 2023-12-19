@@ -1,12 +1,15 @@
-<section id="form-newReport" class="mx-5 mt-5">
-
-    <h2 class="mb-5">NUEVO REPORTE </h2>
+<section id="form-newReport" col-10>
+  <div class="back ms-5 mt-5">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    </div>
+    <h2 class="m-5">NUEVO REPORTE </h2>
 
     <div class="row">
-        <form class="col-sm-7" [formGroup]='newReport' (ngSubmit)="onSubmit()">
-            <h3 class="mb-4"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra tu trabajo en este reporte:</h3>
-            <div class="mb-4">
-                <label class="mb-1">Asunto:</label>
+        <form class="col-12 col-sm-7" [formGroup]='newReport' (ngSubmit)="onSubmit()">
+            <h3 class="mb-5 ms-5"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra tu trabajo en este reporte:</h3>
+            <div class="">
+                <label class="">Asunto:</label>
                 <input class="custom-option" type="text" formControlName='title'
                     placeholder="Inserta aquí el asunto del reporte">
                 <p class="error" *ngIf="checkError('title','required')">
@@ -15,8 +18,8 @@
                 <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 70 caracteres.</p>
             </div>
 
-            <div class="mb-4">
-                <label class="mb-1">Descripción:</label>
+            <div class="">
+                <label class="">Descripción:</label>
                 <textarea class="custom-option" formControlName='description'
                     placeholder="Inserta aquí la descripción del reporte">
                 </textarea>
@@ -24,31 +27,31 @@
                     La descripción es obligatoria.</p>
                 <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
             </div>
-            <div class="mb-4">
-                <label class="mb-1">Tipo de reporte:</label>
+            <div class="">
+                <label class="">Tipo de reporte:</label>
                 <select class="custom-select" formControlName="type">
-                    <option class="custom-option" value="actualización">Actualización</option>
-                    <option class="custom-option" value="incidencia">Incidencia</option>
+                    <option class="custom-option" value="actualizacion">Actualización</option>
+                    <option class="custom-option" value="incidencias">Incidencia</option>
                 </select>
                 <p class="error" *ngIf="checkError('type','required')">El
                     tipo de reporte es obligatorio.</p>
             </div>
-            <div class="mb-4">
-                <label class="mb-1">Fecha de creación:</label>
-                <input class="custom-option date" type="datetime-local" formControlName='date'
+            <div class="">
+                <label class="">Fecha de creación:</label>
+                <input class="custom-option date" type="date" formControlName='date'
                     placeholder="Inserta aquí la fecha de hoy">
                 <p class="error" *ngIf="checkError('date','required')">
                     La fecha de creación obligatoria.</p>
             </div>
 
-            <div class="pt-2 pb-5">
+            <div class="">
                 <input class="button-create" type="submit" value="CREAR REPORTE">
             </div>
         </form>
 
-        <div class="col-sm-4">
-            <h3 class="mb-4"> <i class="fa-regular fa-lightbulb me-2"></i>Antes de crear tu nuevo reporte...</h3>
-            <ul class="mb-5">
+        <div class="bajar col-12 col-sm-4">
+            <h3 class="px-2 mb-4"> <i class="fa-regular fa-lightbulb me-2"></i>Antes de crear tu nuevo reporte...</h3>
+            <ul class="px-4 mb-5">
                 <li class="mb-4">El <span>asunto</span> debe ser claro y conciso.</li>
                 <li class="mb-4">Añade en la <span>descripción</span> los detalles que desees.</li>
                 <li class="mb-4"></li>

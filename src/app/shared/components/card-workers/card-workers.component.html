@@ -1,17 +1,17 @@
-<div>
-    <div class="contenedor">
-        <article class="card">
-            <div class="flex">
-                <figure>
-                    <img [src]="workers.image" alt="">
-                </figure>
-                <div class="p-2">
-                    <h3>{{workers.name}} {{workers.surname}}</h3>
-                    <p class="p-2 my-2">Teléfono: {{workers.phone}}</p>
-                    <p class="p-2 my-2">Email: {{workers.email}}</p>
-                    <p class="p-2">{{workers.role}}</p>
-                </div>
-            </div>
-        </article>
+<article class="card-container">
+    <div class="flex">
+        <figure>
+            <img [src]="workers?.image" alt="">
+        </figure>
+        <div class="contenido py-3 ps-4">
+            <h3 class="pb-4">{{workers?.name}} {{workers?.surname}}</h3>
+            <label class="pb-1"><i class="fa-solid fa-mobile-screen-button pe-2"></i>Teléfono: </label>
+            <p class="pb-3 ps-4"> {{workers?.phone}}</p>
+            <label class="pb-1"><i class="fa-solid fa-envelope pe-2"></i>Email: </label>
+            <p class="pb-3 "> {{workers?.email}}</p>
+            <label class="pb-1"><i class="fa-solid fa-user pe-2"></i>Puesto: </label>
+            <p class="pb-3 ps-4"> {{workers?.job}} en {{workers?.city}}</p>
+
+        </div>
     </div>
-</div>
+</article>

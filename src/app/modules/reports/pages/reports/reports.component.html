@@ -1,4 +1,8 @@
 <section class="mx-5 mt-5">
+    <div class="back btn ms-4 mt-3 mb-3">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Atrás</h4>
+    </div>
     <h2 class="mb-4">LISTADO DE REPORTES</h2>
 
     <div id="filtros" class="m-1 row">
@@ -9,8 +13,10 @@
                     <label class="pe-3 pb-2"><span>Tipo de reporte:</span></label>
                     <select class="custom-select" (change)="onChangeType($event)">
                         <option class="custom-option" value="">Todos</option>
-                        <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}}
-                        </option>
+                        <option class="custom-option" value="incidencias">Incidencias</option>
+                        <option class="custom-option" value="actualizacion">Actualización</option>
+                        <!-- <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}} -->
+                        <!-- </option> -->
                     </select>
                 </div>
             </div>
@@ -22,19 +28,20 @@
                 <div>
                     <label class="pe-3 pb-2"><span>Fecha de creación:</span></label>
                     <select class="custom-select" (change)="onChangeDate($event)">
-                        <option class="custom-option" value="reciente">Más reciente</option>
-                        <option class="custom-option" value="antiguo">Más antigua</option>
+                        <option class="custom-option" value="desc">Más reciente</option>
+                        <option class="custom-option" value="asc">Más antigua</option>
                     </select>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-2">
-            <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/reports','new']">
-                AÑADIR REPORTE
+            <button class="my-3 new-button" *ngIf="botonActivo" [routerLink]="['/reports','new', constructionId]">
+                CREAR NUEVO REPORTE
             </button>
         </div>
     </div>
+
     <div class="my-4">
         <article class="mb-4 m-1 accordion accordion-flush" *ngFor="let report of arrReports; let i = index">
             <h3 class="accordion-header" [id]="'flush-heading-' + i">
@@ -57,7 +64,7 @@
                 <p><span><i class="fa-solid fa-calendar-days"></i> FECHA:</span> {{report.date | date:'dd-MM-yyyy'}}
                 </p>
             </div>
-            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/reports','edit', report._id]">Editar
+            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/reports','edit', report.id]">Editar
                 reporte
             </button>
         </article>

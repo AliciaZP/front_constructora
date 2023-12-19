@@ -1,9 +1,13 @@
 <section id="form-editReport">
+  <div class="back ms-5 mt-5">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    </div>
 
     <h2 class="m-5">EDITAR TAREA </h2>
     <form [formGroup]='editTask' (ngSubmit)="onSubmit()">
 
-        <div class="m-5">
+        <div class="">
             <label>Título:</label>
             <input type="text" formControlName='title' placeholder="Inserta aquí el nombre de la tarea">
             <p class="error" *ngIf="checkError('title','required')">
@@ -12,7 +16,7 @@
             <p class="error" *ngIf="checkError('title','maxlength')">La longitud máxima son 45 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Descripción:</label>
             <textarea formControlName='description' placeholder="Inserta aquí la descripción de la tarea">
             </textarea>
@@ -21,20 +25,20 @@
             <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Fecha de entrega:</label>
-            <input type="text" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
+            <input type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
             <p class="error" *ngIf="checkError('deadline','required')">
                 La fecha de entrega obligatoria.</p>
         </div>
-        <div class="m-5">
+        <div class="">
             <label>Fecha de asignación:</label>
-            <input type="text" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
+            <input type="date" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
             <p class="error" *ngIf="checkError('assignment_date','required')">
                 La fecha de asignación obligatoria.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Prioridad:</label>
             <select class="custom-select" formControlName="priority">
                 <option class="custom-option" value="alta">Alta</option>
@@ -48,8 +52,8 @@
             </p>
         </div>
 
-        <div class="m-5">
-            <input class="button" type="submit" value="Editar tarea">
+        <div class="">
+            <input class="button-create" type="submit" value="Editar tarea">
         </div>
 
     </form>

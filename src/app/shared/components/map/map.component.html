@@ -1,0 +1,16 @@
+<div class="map-style">
+    <google-map width="auto" height="40vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId">
+        <map-marker *ngFor="let construction of constructions; let i = index" [position]="{
+        lat: construction.lat,
+        lng: construction.lng,
+        }" [options]="{icon: generateIcon(construction)}"></map-marker>
+    </google-map>
+
+
+    <select class="custom-select" name="select" (change)="onChangeType($event)">
+        <option class="custom-option" value="hybrid">Híbrido</option>
+        <option class="custom-option" value="terrain">Geográfico</option>
+        <option class="custom-option" value="roadmap">Carreteras</option>
+        <option class="custom-option" value="satellite">Satélite</option>
+    </select>
+</div>

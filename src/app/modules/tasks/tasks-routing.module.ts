@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { AllTasksComponent } from './pages/all-tasks/all-tasks.component';
 
 const routes: Routes = [
-  { path: '', component: TasksComponent },
-  { path: 'new', component: NewTaskComponent },
-  { path: 'edit/:taskId', component: EditTaskComponent }
+  { path: 'task/:userId/:constructionId', component: TasksComponent },
+  { path: 'user/task/:userId', component: AllTasksComponent },
+  { path: 'new/:userId/:constructionId', component: NewTaskComponent },
+  { path: 'edit/:taskId/:userId/:constructionId', component: EditTaskComponent }
 ]
 
 @NgModule({

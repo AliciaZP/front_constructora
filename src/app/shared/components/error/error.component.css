@@ -70,6 +70,7 @@ p {
     font-size: 1.19rem;
     margin-top: 1.25rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .back-home:hover {

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from 'src/app/core/interfaces/task.interface';
@@ -14,15 +15,28 @@ export class TasksComponent {
 
   arrTasks: Task[] = []
   arrPriority: string[] = []
+  location = inject(Location);
 
   reportSelected!: Task
   botonActivo: boolean = true;
   activatedRoute = inject(ActivatedRoute)
-
+  constructionId: number = 0;
+  userId: number = 0;
 
   ngOnInit() {
-    this.arrTasks = this.tasksService.getAll();
+    this.arrTasks;
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      this.constructionId = params.constructionId;
+      this.userId = params.userId;
+      const response = await this.tasksService.getTaskByCWId(this.userId, this.constructionId);
+      this.arrTasks = response;
+
+
+    })
   }
+
+
+
 
   //Aqui empiezan los fitros
   onChangePriority($event: any) {
@@ -32,4 +46,6 @@ export class TasksComponent {
 
   onChangeAssignmentDate($event: any) {
   };
+
+
 }

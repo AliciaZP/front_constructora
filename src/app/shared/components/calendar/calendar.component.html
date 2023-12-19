@@ -1,0 +1,37 @@
+<!-- Contenedor principal del calendario -->
+<div class="calendar">
+    <!-- Encabezado del calendario con botones para cambiar de mes -->
+    <div class="header">
+        <button class="left-arrow" (click)="previousMonth()"><i class="fa-solid fa-arrow-left"></i></button>
+        <!-- Muestra el mes y año actual en formato "MMMM y" -->
+        <h2>{{ currentMonthString}}</h2>
+        <button class="right-arrow" (click)="nextMonth()"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+
+    <!-- Tabla que representa el calendario -->
+    <table>
+
+        <!-- Encabezado de la tabla con los días de la semana -->
+        <thead>
+            <tr>
+                <!-- Itera sobre los días de la semana y muestra cada uno -->
+                <th *ngFor="let day of daysOfWeek">{{ day }}</th>
+            </tr>
+        </thead>
+        <!-- Cuerpo de la tabla con las semanas y días del mes -->
+        <tbody>
+            <!-- Itera sobre las semanas del mes -->
+            <tr *ngFor="let week of weeksInMonth">
+                <!-- Itera sobre los días de cada semana -->
+                <td *ngFor="let day of week">
+                    <!-- Celda que representa un día del mes -->
+                    <div class="day" [ngClass]="{'today': isToday(day), 'event': hasEvent(day)}">
+                        <!-- Muestra el día del mes en formato "d" -->
+                        {{ day | date: 'd' }}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

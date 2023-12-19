@@ -11,9 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { EpisComponent } from './components/epis/epis.component';
 import { OfficesComponent } from './components/offices/offices.component';
+import { NewsComponent } from './components/news/news.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-
-
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CardMapComponent } from './components/card-map/card-map.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,18 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     SearchBarComponent,
     EpisComponent,
     OfficesComponent,
-    AboutUsComponent
+    NewsComponent,
+    CalendarComponent,
+    AboutUsComponent,
+    MapComponent,
+    CardMapComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterLink
+    RouterLink,
+    GoogleMapsModule,
 
   ],
   exports: [
@@ -40,7 +48,10 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     FooterComponent,
     ErrorComponent,
     CardWorkersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MapComponent,
+    CardMapComponent
+
   ]
 })
 export class SharedModule { }
