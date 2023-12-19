@@ -13,6 +13,7 @@
 
 h1 {
     font-size: calc(var(--fontsize-h2)*1.5);
+    font-weight: var(--fontweight-h2);
 }
 
 h2 {
@@ -153,10 +154,11 @@ input::placeholder {
         bottom: 5rem;
         left: 2rem;
         font-size: calc(var(--fontsize-h2) * 2);
+        font-weight: var(--fontweight-h2);
     }
 
     h2 {
-        font-size: calc(var(--fontsize-h3)*1.3);
+        font-size: calc(var(--fontsize-h3) * 1.5);
     }
 
     .left h3 {
@@ -165,7 +167,6 @@ input::placeholder {
         left: 2rem;
         font-size: calc(var(--fontsize-h2) * 1.3);
     }
-
 
     /* Lado derecho */
     .right {
@@ -212,7 +213,7 @@ input::placeholder {
     /* Lado izquierdo*/
 
     h2 {
-        font-size: var(--fontsize-h2);
+        font-size: calc(var(--fontsize-h2)* 1.1);
     }
 
     .left h3 {
