@@ -28,25 +28,23 @@ export class IdConstructionComponent {
   location = inject(Location);
 
 
-
   async ngOnInit() {
     this.arrConstructions = await this.constructionsService.getAllConstructions();
     // const { workers } = this.constructionSelected;
     this.userLogged = await this.usersService.getUserLogged();
     this.activatedRoute.params.subscribe(async (params) => {
-
       const response = await this.constructionsService.getConstructionById(params['constructionId']);
       this.constructionSelected = response
       localStorage.setItem('Construction_id', this.constructionSelected.id);
       const { workers } = this.constructionSelected;
       this.arrWorkers = workers;
-    })
-  }
+    });
+  };
 
   async onClickDelete($event: string) {
     const result = await Swal.fire({
       title: "Eliminar obra",
-      text: "¿Quieres borrada esta obra?",
+      text: "¿Quieres borrar esta obra?",
       icon: "warning",
       color: 'white',
       background: '#0f0f0f',
@@ -71,10 +69,10 @@ export class IdConstructionComponent {
       }).then(() => {
         this.router.navigate(['/constructions']);
       });
-    }
-  }
+    };
+  };
 
-  async onClickRetirar( workerId: any){
+  async onClickRetirar(workerId: any) {
     try {
       const result = await Swal.fire({
         title: "Retirar operario",
@@ -89,38 +87,36 @@ export class IdConstructionComponent {
         cancelButtonText: "Cancelar",
       });
       if (result.isConfirmed) {
-      const response = await this.workerService.addWorkerToConstruction(workerId, {
-        active: 0,
-        Constructions_id: null
-      });
-      console.log(response);
-      Swal.fire({
-        title: "Operario retirado",
-        text: "El operario ha sido retirado con exito",
-        icon: "success",
-        color: 'white',
-        background: '#0f0f0f',
-        confirmButtonColor: "#af1e2d",
-        confirmButtonText: "Aceptar",
-      }).then(() => {
-        this.reloadCurrentRoute()
-      });
-    }
+        const response = await this.workerService.addWorkerToConstruction(workerId, {
+          active: 0,
+          Constructions_id: null
+        });
+        console.log(response);
+        Swal.fire({
+          title: "Operario retirado",
+          text: "El operario ha sido retirado con éxito",
+          icon: "success",
+          color: 'white',
+          background: '#0f0f0f',
+          confirmButtonColor: "#af1e2d",
+          confirmButtonText: "Aceptar",
+        }).then(() => {
+          this.reloadCurrentRoute()
+        });
+      };
     } catch (error) {
-      console.log('Estoy aqui')
-      console.log(error)
-    }
-  }
+      console.log(error);
+    };
+  };
 
   reloadCurrentRoute() {
     const currentUrl = this.router.url;
-
     this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);
     });
-  }
+  };
 
-  goBack(){
+  goBack() {
     this.location.back();
-  }
-}
+  };
+};

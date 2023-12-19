@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 // import { TokenService } from 'src/app/core/services/token.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import { WorkersService } from 'src/app/core/services/workers.service';
-import Swal from 'sweetalert2';
+/* import Swal from 'sweetalert2'; */
 
 @Component({
   selector: 'login',
@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
   newLogin: FormGroup;
   workersService = inject(WorkersService);
   userService = inject(UsersService);
@@ -29,7 +30,7 @@ export class LoginComponent {
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
     })
-  }
+  };
 
   async onSubmit() {
     try {
@@ -46,15 +47,14 @@ export class LoginComponent {
           this.shakeButton = false;
           this.errorMessage = '';
         }, 2000);
-      }
+      };
     } catch (error) {
       console.log(error);
-    }
-  }
+    };
+  };
 
 
   /*   async onSubmit() {
-  
       try {
         const response = await this.userService.userLogin(this.newLogin.value)
         console.log(response);
@@ -82,11 +82,11 @@ export class LoginComponent {
 
   checkError(controlName: string, errorName: string) {
     return this.newLogin.get(controlName)?.hasError(errorName) && this.newLogin.get(controlName)?.touched;
-  }
+  };
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
-  }
-}
+  };
+};
 
 
