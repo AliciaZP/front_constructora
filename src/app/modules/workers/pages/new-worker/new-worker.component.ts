@@ -75,16 +75,6 @@ export class NewWorkerComponent {
   }
 
 
-
-
-
-
-
-
-
-
-
-
   checkError(controlName: string, errorName: string) {
     return this.newWorker.get(controlName)?.hasError(errorName) && this.newWorker.get(controlName)?.touched;
   };

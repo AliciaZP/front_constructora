@@ -33,11 +33,11 @@ export class EditWorkerComponent {
       role: new FormControl(null, Validators.required),
       active: new FormControl(null, Validators.required),
       job: new FormControl(null, [Validators.required, Validators.minLength(3),
-        Validators.maxLength(70)]),
-        city: new FormControl(null, [Validators.required, Validators.minLength(3),
-          Validators.maxLength(45)]),
-          image: new FormControl(null, Validators.required),
-          // password: new FormControl(null, [Validators.required, this.passwordValidator]),
+      Validators.maxLength(70)]),
+      city: new FormControl(null, [Validators.required, Validators.minLength(3),
+      Validators.maxLength(45)]),
+      image: new FormControl(null, Validators.required),
+      // password: new FormControl(null, [Validators.required, this.passwordValidator]),
     })
   }
 
@@ -50,8 +50,8 @@ export class EditWorkerComponent {
       this.workerId = params['workerId']
       const response = await this.workersService.getWorkerById(this.workerId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { name, surname, dni, phone, email, role, active, job, city, Constructions_id ,image } = response
-      this.editWorker.setValue({ name, surname, dni, phone, email, role, active, job, city,Constructions_id, image})
+      const { name, surname, dni, phone, email, role, active, job, city, Constructions_id, image } = response
+      this.editWorker.setValue({ name, surname, dni, phone, email, role, active, job, city, Constructions_id, image })
     })
   }
   async onSubmit() {
