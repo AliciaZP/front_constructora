@@ -1,13 +1,14 @@
 <section id="form-newReport" col-10>
-  <div class="back ms-5 mt-5">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    <div class="back ms-5 mt-5">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
     <h2 class="m-5">NUEVO REPORTE </h2>
 
     <div class="row">
         <form class="col-12 col-sm-7" [formGroup]='newReport' (ngSubmit)="onSubmit()">
-            <h3 class="mb-5 ms-5"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra tu trabajo en este reporte:</h3>
+            <h3 class="mb-5 ms-5"> <i class="fa-regular fa-pen-to-square me-2"></i>Registra tu trabajo en este reporte:
+            </h3>
             <div class="">
                 <label class="">Asunto:</label>
                 <input class="custom-option" type="text" formControlName='title'
