@@ -7,7 +7,6 @@
         <div>
             <h2 class="mb-5 mt-4">{{constructionSelected.name}}</h2>
             <div class="flex-container">
-
                 <figure>
                     <img [src]="constructionSelected.image" alt="imagen de la obra">
                     <div class="dates">
@@ -29,7 +28,7 @@
         </div>
 
 
-        <div class="map-info col-4">
+        <div class="map-info">
             <div class="mb-5 p-4 info-container">
                 <div class="mb-4 map-container">
                     <card-map [lat]="constructionSelected.lat" [lng]="constructionSelected.lng"></card-map>
@@ -64,8 +63,6 @@
                     <button (click)="onClickRetirar(worker.id)" class="worker-button2">Retirar de la obra</button>
                 </div>
             </div>
-
-
 
         </section>
         <section *ngIf="userLogged.role == 'admin'" id="admin-area">
