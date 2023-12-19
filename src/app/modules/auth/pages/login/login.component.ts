@@ -18,7 +18,6 @@ export class LoginComponent {
   router = inject(Router);
   // tokenService = inject(TokenService);
 
-
   passwordVisible = false;
   password = '';
 
@@ -32,28 +31,30 @@ export class LoginComponent {
 
   async onSubmit() {
 
-      try {
-        const response = await this.userService.userLogin(this.newLogin.value)
-        console.log(response);
+    try {
+      const response = await this.userService.userLogin(this.newLogin.value)
+      console.log(response);
 
-        if(response.success){
-          localStorage.setItem('token', response.token);
+      if (response.success) {
+        localStorage.setItem('token', response.token);
 
-          this.router.navigate(['/home'])
-        }else{
-          await Swal.fire({  icon: 'error',
+        this.router.navigate(['/home'])
+      } else {
+        await Swal.fire({
+          icon: 'error',
           title: 'Datos erróneos',
           text: 'El email o la contraseña no son válidos.',
           confirmButtonText: 'Aceptar',
           confirmButtonColor: '#af1e2d',
           color: 'white',
-          background: '#0f0f0f',})
-        }
-      } catch (error) {
-        console.log(error)
+          background: '#0f0f0f',
+        })
       }
-
+    } catch (error) {
+      console.log(error)
     }
+
+  }
 
 
   checkError(controlName: string, errorName: string) {
