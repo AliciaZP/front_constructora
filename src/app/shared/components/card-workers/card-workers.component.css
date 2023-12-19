@@ -1,7 +1,8 @@
 .card-container {
   background: var(--color-second);
   min-width: 300px;
-  height: auto;
+  max-width: 600px;
+  max-height: auto;
 }
 
 article {

@@ -173,6 +173,7 @@ button {
 
 .worker-flex {
     display: flex;
+    flex-direction: column;
 }
 
 .worker-buttonflex {
@@ -197,9 +198,14 @@ button {
     }
 }
 
+.buttons-flex{
+  display: flex;
+
+}
+
 .worker-button2 {
     width: 200px;
-    height: 100px;
+    height: 70px;
     display: block;
     color: var(--color-white);
     background-color: var(--color-second);
@@ -208,6 +214,7 @@ button {
     border-bottom: none;
     font-weight: var(--fontweight-h3);
     font-size: 0.9rem;
+
 
     &:hover {
         color: var(--color-second);
@@ -232,6 +239,19 @@ button {
     .info-container {
         width: 100%;
     }
+
+    .worker-flex {
+      flex-direction: column;
+  }
+
+  .buttons-flex{
+    display: flex;
+
+  }
+
+  .worker-button2{
+    height: 70px;
+  }
 }
 
 
@@ -292,6 +312,8 @@ button {
     .dropdown-menu {
         width: 200px;
     }
+
+
 }
 
 @media(min-width: 82rem) {
@@ -369,6 +391,7 @@ button {
         font-weight: 700;
         font-family: var(--font-secondary);
     }
+
 
     .worker-flex {
         display: flex;
@@ -471,4 +494,17 @@ button {
             background-color: var(--color-main)
         }
     }
+
+    .worker-flex {
+      flex-direction: column;
+  }
+
+  .buttons-flex{
+    display: flex;
+
+  }
+
+  .worker-button2{
+    height: 70px;
+  }
 }
