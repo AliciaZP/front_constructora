@@ -5,7 +5,8 @@
       <h1>SGAL <span>Construcciones</span></h1>
 
 
-      <h3>Portal del Empleado</h3>
+      <h3 *ngIf="userLogged?.role == 'worker'" >Portal del Empleado</h3>
+      <h3 *ngIf="userLogged?.role == 'admin'" > Administrador</h3>
       <ul class="icons">
         <li><i class="fa-solid fa-bell fa-xs"></i></li>
         <li><i class="fa-solid fa-gear"></i></li>

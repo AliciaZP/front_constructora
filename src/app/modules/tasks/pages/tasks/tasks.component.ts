@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from 'src/app/core/interfaces/task.interface';
@@ -14,6 +15,7 @@ export class TasksComponent {
 
   arrTasks: Task[] = []
   arrPriority: string[] = []
+  location = inject(Location);
 
   reportSelected!: Task
   botonActivo: boolean = true;
@@ -44,4 +46,6 @@ export class TasksComponent {
 
   onChangeAssignmentDate($event: any) {
   };
+
+
 }

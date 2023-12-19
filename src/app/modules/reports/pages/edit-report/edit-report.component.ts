@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +15,7 @@ export class EditReportComponent {
   editReport: FormGroup;
   reportId: string = '';
   reportsService = inject(ReportsService)
-
+  location = inject(Location);
   router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
 
@@ -39,6 +40,10 @@ export class EditReportComponent {
       const { title, description, date, type } = response
       this.editReport.setValue({ title, description, date, type })
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   async onSubmit() {

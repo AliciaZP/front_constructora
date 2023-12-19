@@ -1,6 +1,7 @@
 .calendar {
-    max-width: 400px;
+    /* max-width: 400px; */
     margin: 0 auto;
+    height: auto;
 }
 
 .header {
@@ -50,9 +51,7 @@ td {
 }
 
 .day {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+
     text-align: center;
     border-radius: 50%;
     margin: 2px;

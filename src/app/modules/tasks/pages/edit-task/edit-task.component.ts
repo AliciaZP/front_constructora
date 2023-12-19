@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,7 +17,7 @@ export class EditTaskComponent {
   userId: string = '';
   constructionId: string = '';
   tasksService = inject(TasksService)
-
+  location = inject(Location);
   router = inject(Router)
   activatedRoute = inject(ActivatedRoute)
 
@@ -30,6 +31,10 @@ export class EditTaskComponent {
       Constructions_id: new FormControl(),
       users_id: new FormControl()
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   ngOnInit() {

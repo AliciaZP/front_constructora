@@ -1,9 +1,14 @@
 <section id="form-newworker">
 
+  <div class="back ms-5 mt-5">
+    <i class="fa-solid fa-arrow-left "></i>
+    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    </div>
+
     <h2 class="m-5">NUEVO OPERARIO</h2>
     <form [formGroup]='newWorker' (ngSubmit)="onSubmit()">
 
-        <div class="m-5">
+        <div class="">
             <label>Nombre:</label>
             <input type="text" formControlName='name' placeholder="Inserta aquí el nombre del operario">
             <p class="error" *ngIf="checkError('name','required')">
@@ -12,7 +17,7 @@
             <p class="error" *ngIf="checkError('name','maxlength')">La longitud máxima son 45 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Apellido</label>
             <input type="text" formControlName='surname' placeholder="Inserta aquí el apellido del operario">
             <p class="error" *ngIf="checkError('surname','required')">
@@ -21,14 +26,14 @@
             <p class="error" *ngIf="checkError('surname','maxlength')">La longitud máxima son 70 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Fotografía del operario (300 x 300 px) </label>
             <input type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
             <p class="error" *ngIf="checkError('image','required')">
                 La imagen es obligatoria.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Dni</label>
             <input type="text" formControlName='dni' placeholder="Inserta aquí el DNI del operario">
             <p class="error" *ngIf="checkError('dni','required')">El
@@ -36,7 +41,7 @@
             <p class="error" *ngIf="checkError('dni','dniValidator')">Inserta un dni válido.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Teléfono de contacto:</label>
             <input type="text" formControlName='phone' placeholder="Inserta aquí el teléfono del operario">
             <p class="error" *ngIf="checkError('phone','required')">El
@@ -45,14 +50,14 @@
             <p class="error" *ngIf="checkError('phone','maxlength')">La longitud máxima son 12 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Email:</label>
             <input type="email" formControlName='email' placeholder="Inserta aquí el email del operario">
             <p class="error" *ngIf="checkError('email','required')">El email es obligatorio.</p>
             <p class="error" *ngIf="checkError('email','pattern')">El formato del email no es válido.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Contraseña:</label>
             <input type="text" formControlName='password' placeholder="Inserta aquí el la contraseña del operario">
             <p class="error" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
@@ -61,7 +66,7 @@
                 longitud no puede superar 20 caracteres</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Puesto:</label>
             <input type="text" formControlName='job' placeholder="Inserta aquí el puesto del operario">
             <p class="error" *ngIf="checkError('job','required')">El
@@ -72,7 +77,7 @@
             </p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Ciudad:</label>
             <input type="text" formControlName='city' placeholder="Inserta aquí la ciudad de la obra">
             <p class="error" *ngIf="checkError('city','required')">
@@ -81,7 +86,7 @@
             <p class="error" *ngIf="checkError('city','maxlength')">La longitud máxima son 70 caracteres.</p>
         </div>
 
-        <div class="m-5">
+        <div class="">
             <label>Rol:</label>
             <select formControlName='role'>
                 <option value="" selected>Seleccionar</option>
@@ -93,7 +98,7 @@
         </div>
 
 
-        <div class="m-5">
+        <div class="">
             <label>Activo:</label>
             <select formControlName='active'>
 
@@ -104,8 +109,8 @@
                 El estado es obligatorio.</p>
         </div>
 
-        <div class="m-5">
-            <input class="button" type="submit" value="Añadir operario">
+        <div class="">
+            <input class="button-create" type="submit" value="Añadir operario">
         </div>
 
     </form>

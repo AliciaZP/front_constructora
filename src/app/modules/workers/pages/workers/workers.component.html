@@ -2,7 +2,22 @@
     <h2 class="mb-4">NUESTROS OPERARIOS</h2>
 
     <div id="filtros" class="m-1 row">
-        <div class="col-md-3  pb-3">
+        <div class="col-md-2  pb-3">
+            <div>
+                <h4 class="mb-2 pt-3">Filtrar:</h4>
+                <div>
+                    <label class="pe-3 pb-2"><span>Selecciona por disponibilidad:</span></label>
+                    <select class="custom-select" (change)="onChangeActive($event)">
+                        <option class="custom-option" value="">Todos</option>
+                        <option class="custom-option" value="1">Ocupado</option>
+                        <option class="custom-option" value="0">Disponible</option>
+
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2  pb-3">
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
@@ -15,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
@@ -28,7 +43,7 @@
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="pb-2">
                 <h4 class="mb-2 pt-3">Ordenar:</h4>
                 <div>

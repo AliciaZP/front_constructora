@@ -415,4 +415,60 @@ button {
     }
 
 
+    /* Estilos del area privada */
+    #admin-area {
+        position: fixed;
+        top: 11rem;
+        right: 2rem;
+    }
+
+    #admin-area h3 {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 700;
+    }
+
+    #admin-area i {
+        font-size: 2rem;
+        color: var(--color-second);
+    }
+
+    .admin {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    button {
+        border: none;
+        padding: 1.2rem;
+        color: var(--color-second);
+        background-color: var(--color-third);
+
+        &:hover {
+            background-color: var(--color-second);
+
+        }
+    }
+
+    .dropdown-menu {
+        width: 250px;
+        border-radius: none;
+        border: 1px solid black;
+    }
+
+    .dropdown-menu button {
+
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        font-weight: 600;
+        color: var(--color-second);
+        background-color: white;
+        padding: 1rem;
+
+        &:hover {
+            background-color: var(--color-main)
+        }
+    }
 }

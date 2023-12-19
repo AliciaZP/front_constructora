@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,7 +13,8 @@ import Swal from 'sweetalert2';
 export class NewWorkerComponent {
 
   newWorker: FormGroup;
-  workersService = inject(WorkersService)
+  workersService = inject(WorkersService);
+  location = inject(Location);
 
   router = inject(Router)
 
@@ -36,10 +38,15 @@ export class NewWorkerComponent {
       image: new FormControl(null, Validators.required)
     })
   }
-  /* 
+
+  goBack() {
+    this.location.back();
+  }
+
+  /*
     async onSubmit() {
       try {
-  
+
         if (this.newWorker.valid) {
           await this.workersService.createWorker(this.newWorker.value);
           this.router.navigate(['/workers']);
@@ -49,7 +56,7 @@ export class NewWorkerComponent {
       } catch (error) {
         console.log(error);
       }
-  
+
     };
    */
 
@@ -100,17 +107,17 @@ export class NewWorkerComponent {
     return this.newWorker.get(controlName)?.hasError(errorName) && this.newWorker.get(controlName)?.touched;
   };
 
-  /* 
+  /*
     dniValidator(control: AbstractControl) {
       const value = control.value;
       const letrasAceptadas = 'TRWAGMYFPDXBNJZSQVHLCKET';
-  
+
       if (/^\d{8}[a-zA-Z]$/.test(value)) {
         const numero = value.substring(0, value.length - 1); //sacar numero sin letra
         const letra = value.substring(value.length - 1, value.length)//Si quiero que se admita letra minuscula le meto .toUpperCase(); //sacar letra
         const resto = numero % 23; //sacar el resto
         const letraSeleccionada = letrasAceptadas.at(resto) //buscar la posicion de la letra
-  
+
         if (letra != letraSeleccionada!.toUpperCase()) {
           return { dnivalidator: 'Dni erroneo, la letra del NIF no se corresponde' }
         } else {

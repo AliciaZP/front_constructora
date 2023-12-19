@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,6 +17,7 @@ export class NewTaskComponent {
   userId: number = 0;
   newTask: FormGroup;
   tasksService = inject(TasksService)
+  location = inject(Location);
 
   router = inject(Router)
 
@@ -40,6 +42,10 @@ export class NewTaskComponent {
       Constructions_id: new FormControl(),
       users_id: new FormControl()
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   async onSubmit() {

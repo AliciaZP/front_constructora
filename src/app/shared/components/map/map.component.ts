@@ -17,6 +17,7 @@ export class MapComponent {
 
   async ngOnInit() {
     this.constructions = await this.constructionsService.getAllConstructions()
+    console.log(this.constructions)
   }
 
   constructor() {
@@ -47,6 +48,7 @@ export class MapComponent {
   }
 
   generateIcon(construction: any) {
+    console.log('esto funciona')
     return {
       url: "https://cdn-icons-png.flaticon.com/512/2810/2810796.png",
       scaledSize: new google.maps.Size(30, 30),

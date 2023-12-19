@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,6 +17,7 @@ export class NewReportComponent {
   reportsService = inject(ReportsService)
   constructionId: number = 0;
   router = inject(Router)
+  location = inject(Location);
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
@@ -37,6 +39,9 @@ export class NewReportComponent {
     })
   }
 
+  goBack() {
+    this.location.back();
+  }
 
   async onSubmit() {
     if (this.newReport.valid) {
