@@ -1,4 +1,4 @@
-<div id="wrapper" class="m-5">
+<div  class="m-5 contenedor">
     <section id="projects" class="pb-4 row">
 
             <h3 class="pb-3">NOVEDADES</h3>
@@ -13,7 +13,7 @@
                     <h3 class="p-2">Promociones SGAL 2024</h3>
                 </article>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="calendario col-12 col-lg-4">
                 <app-calendar></app-calendar>
             </div>
 
@@ -33,20 +33,19 @@
                                 class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
                     </li>
                     <!-- user/task/:userId -->
-                    <li class="p-2" [routerLink]="['/epis']"><button><i
+                    <li class="p-2 m-2" [routerLink]="['/epis']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-helmet-safety"></i>EPis</button>
                     </li>
-                </ul>
-                <ul class="d-flex">
-                    <li class="p-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/']"><button><i
+
+                    <li class="p-2 m-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-address-card"></i>Perfil</button>
                     </li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2 m-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-graduation-cap"></i>Formación</button></li>
-                    <li class="p-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/']"><button><i
+                    <li class="p-2 m-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-regular fa-calendar"></i>Permisos</button>
                     </li>
-                    <li class="p-2" [routerLink]="['/']"><button><i
+                    <li class="p-2 m-2" [routerLink]="['/']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-file-contract"></i>Docs</button>
                     </li>
                 </ul>

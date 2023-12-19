@@ -1,5 +1,11 @@
 /*imagenes home*/
+.calendario{
+  padding-top: 80px;
+}
 
+.contenedor{
+  padding: 0 50px;
+}
 #projects .photos {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -97,11 +103,19 @@ ul li button {
     }
 }
 
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 90px;
+}
+
 .d-flex {
     display: flex;
+    padding-left: 10px;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 
@@ -111,6 +125,10 @@ ul li button {
     grid-template-columns: 1fr;
     grid-template-rows: 250px 250px 250px 250px;
     grid-gap: 10px;
+  }
+
+  .calendario{
+    padding-top: 0;
   }
 
   ul li button {
@@ -130,6 +148,10 @@ ul li button {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.contenedor{
+  padding: 0;
 }
 
 }

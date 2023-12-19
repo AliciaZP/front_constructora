@@ -1,8 +1,8 @@
 <div class="map-style">
-    <google-map width="90vw" height="80vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId">
+    <google-map width="auto" height="40vh" [center]="center" [zoom]="zoom" [mapTypeId]="mapTypeId">
         <map-marker *ngFor="let construction of constructions; let i = index" [position]="{
         lat: construction.lat,
-        lng: construction.lng, 
+        lng: construction.lng,
         }" [options]="{icon: generateIcon(construction)}"></map-marker>
     </google-map>
 
