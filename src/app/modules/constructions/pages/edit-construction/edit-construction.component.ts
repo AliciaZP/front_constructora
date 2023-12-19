@@ -39,7 +39,8 @@ export class EditConstructionComponent {
       work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(150)]),
       image: new FormControl(null, Validators.required),
-
+      lat: new FormControl(null, Validators.required),
+      lng: new FormControl(null, Validators.required),
     })
   }
 
@@ -49,10 +50,10 @@ export class EditConstructionComponent {
         this.constructionId = params['constructionId']
         const response = await this.constructionsService.getConstructionById(this.constructionId)
         // hay que pasarle un objeto con los mismo campos que definimos en el form group
-        let { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image } = response;
+        let { name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image, lat, lng } = response;
         assignment_date = dayjs(assignment_date).format('YYYY-MM-DD')
         deadline = dayjs(deadline).format('YYYY-MM-DD')
-        this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image })
+        this.editConstruction.setValue({ name, description, direction, city, assignment_date, deadline, phone, construction_type, work_time, image, lat, lng })
       })
     } catch (error) {
       console.log(error)
