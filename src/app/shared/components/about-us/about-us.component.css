@@ -30,3 +30,24 @@ h2 {
     margin-right: 350px;
     font-weight: 400;
 }
+
+
+@media (max-width:926px) {
+    .primero {
+        margin-right: 50px;
+    }
+
+    .Bienvenido {
+        font-size: 20px;
+
+        margin-left: 40px;
+        margin-right: 50px;
+
+    }
+
+
+
+
+
+
+}
