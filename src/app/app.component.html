@@ -1,4 +1,4 @@
-<header *ngIf="!isAuthRoute()">
+<header *ngIf="!isAuthRoute() && !isErrorRoute()">
     <nav-bar></nav-bar>
 </header>
 
@@ -6,6 +6,6 @@
     <router-outlet></router-outlet>
 </main>
 
-<footer *ngIf="!isAuthRoute()">
+<footer *ngIf="!isAuthRoute() && !isErrorRoute()">
     <app-footer></app-footer>
 </footer>
