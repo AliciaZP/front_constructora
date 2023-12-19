@@ -16,9 +16,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-// import { GoogleMapsModule } from '@angular/google-maps';
-
-
+import { CardMapComponent } from './components/card-map/card-map.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +31,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NewsComponent,
     CalendarComponent,
     AboutUsComponent,
-    MapComponent
+    MapComponent,
+    CardMapComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +49,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     ErrorComponent,
     CardWorkersComponent,
     SearchBarComponent,
-    MapComponent
+    MapComponent,
+    CardMapComponent
 
   ]
 })

@@ -28,11 +28,17 @@
 
             </div>
         </div>
-        <div class="row mb-5 p-4 bloque-2">
-            <!--             <div class="map col-8" *ngFor="let construction of arrConstructions">
-                <app-map [constructions]="construction"></app-map> -->
-        </div>
+        <!--    MAPA DE LA OBRA -->
+
         <div class="map-info col-4">
+
+            <div class="row mb-5 p-4 bloque-2">
+
+                <card-map [lat]="constructionSelected.lat" [lng]="constructionSelected.lng"></card-map>
+
+            </div>
+
+
             <h3 class="mb-5">INFORMACIÓN</h3>
 
             <p class="mb-3 "><i class="fa-solid fa-location-dot pe-2"></i> <span>Dirección:</span></p>
@@ -45,7 +51,7 @@
             <p class="mb-5 ps-5">{{constructionSelected.work_time}}</p>
 
         </div>
-        <!--         </div> -->
+
 
         <section id="worker-area" *ngIf="userLogged.role == 'admin'" class="row">
             <h3 class="mb-4">Operarios asignados:</h3>
