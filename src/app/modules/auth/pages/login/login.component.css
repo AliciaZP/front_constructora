@@ -134,8 +134,7 @@ input::placeholder {
     right: 1rem;
 }
 
-/* 
-Shake del boton de iniciar sesion y mensaje de error */
+/* Shake del boton de iniciar sesion y mensaje de error */
 @keyframes shake {
 
     0%,
@@ -163,18 +162,10 @@ Shake del boton de iniciar sesion y mensaje de error */
     animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
 }
 
-.button-flex {
-    position: relative;
-}
-
 .error-message {
-    position: absolute;
-    bottom: 0rem;
-    left: 12rem;
-    transform: translateX(-50%);
-    margin-top: -20px;
-    color: #af1e2d;
+    color: var(--color-main);
     font-size: 0.9rem;
+    padding-top: 1rem;
 }
 
 
@@ -249,8 +240,6 @@ Shake del boton de iniciar sesion y mensaje de error */
     }
 }
 
-
-
 @media(min-width: 87.5rem) {
     /* Lado izquierdo*/
 
@@ -278,4 +267,6 @@ Shake del boton de iniciar sesion y mensaje de error */
             border: none;
         }
     }
+
+
 }

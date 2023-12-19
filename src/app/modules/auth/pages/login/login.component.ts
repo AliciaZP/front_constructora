@@ -45,7 +45,7 @@ export class LoginComponent {
         setTimeout(() => {
           this.shakeButton = false;
           this.errorMessage = '';
-        }, 4000);
+        }, 2000);
       }
     } catch (error) {
       console.log(error);

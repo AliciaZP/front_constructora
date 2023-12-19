@@ -29,13 +29,14 @@
                     </span>
                     <p class="error pt-3" *ngIf="checkError('password','required')">La contraseña es obligatoria.</p>
                 </div>
+
                 <div class="button-flex pt-3">
                     <input [class.shake]="shakeButton" class="button" type="submit" value="Iniciar sesión">
                 </div>
-
                 <p [hidden]="!shakeButton" class="error-message animate__animated animate__fadeIn">{{
                     errorMessage }}
                 </p>
+
             </form>
         </div>
     </section>
