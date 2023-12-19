@@ -24,12 +24,12 @@
             <app-card-workers [workers]="userLogged" class="col-12 col-xl-6"></app-card-workers>
             <div class="botones col-12 col-xl-6">
                 <ul class="d-flex">
-                  <li class="p-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">
+                  <li class="p-2 m-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/constructions']">
                         <button><i class="d-block mb-2 fs-2 fa-solid fa-city"></i>Obras</button>
                     </li>
-                  <li class="p-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']"><button><i
+                  <li class="p-2 m-2" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-person-digging"></i>Operarios</button></li>
-                  <li class="p-2" [routerLink]="['/tasks', 'user', 'task', userLogged?.id]"><button><i
+                  <li class="p-2 m-2" [routerLink]="['/tasks', 'user', 'task', userLogged?.id]"><button><i
                                 class="d-block mb-2 fs-2 fa-solid fa-list-check"></i>Asignación</button>
                     </li>
                     <!-- user/task/:userId -->
