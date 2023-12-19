@@ -49,7 +49,8 @@ import { CardMapComponent } from './components/card-map/card-map.component';
     ErrorComponent,
     CardWorkersComponent,
     SearchBarComponent,
-    MapComponent
+    MapComponent,
+    CardMapComponent
 
   ]
 })
