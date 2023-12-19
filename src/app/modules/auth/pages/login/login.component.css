@@ -1,5 +1,6 @@
-/* Lado izquierdo*/
+/* MOBILE FIRST */
 
+/* Lado izquierdo*/
 .left {
     text-align: center;
     color: var(--color-white);
@@ -34,11 +35,11 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    padding-top: 5rem
+    padding-top: 5rem;
 }
 
 .right3 {
-    padding-top: 1rem
+    padding-top: 1rem;
 }
 
 .right4 {
@@ -135,8 +136,6 @@ input::placeholder {
 
 
 
-
-
 /* mediaqueries */
 
 @media(min-width: 62.5rem) {
@@ -145,15 +144,10 @@ input::placeholder {
     }
 
     /* Lado izquierdo*/
-
     .left {
-        background-color: var(--color-main);
         width: 40vw;
         height: 100vh;
-        text-align: center;
-        color: white;
     }
-
 
     .sgal-logo {
         text-align: left;
@@ -182,7 +176,7 @@ input::placeholder {
 
     /* Lado derecho */
     .right {
-        background-color: white;
+        background-color: var(--color-white);
         width: 60vw;
         padding-left: 4rem;
         height: 100vh;
@@ -227,7 +221,6 @@ input::placeholder {
     input:focus {
         outline: none;
         border: 1px solid var(--color-second);
-
     }
 
     input::placeholder {
@@ -239,7 +232,7 @@ input::placeholder {
         margin-left: 15rem;
         padding: 1rem;
         border: none;
-        color: white;
+        color: var(--color-white);
         background-color: var(--color-second);
         font-size: var(--fontsize-h4);
 
@@ -273,129 +266,30 @@ input::placeholder {
 
 
 @media(min-width: 87.5rem) {
-    #wrapper {
-        display: flex;
-    }
-
     /* Lado izquierdo*/
-
-    .left {
-        background-color: var(--color-main);
-        width: 40vw;
-        height: 100vh;
-        text-align: center;
-        color: white;
-    }
-
-
-    .sgal-logo {
-        text-align: left;
-    }
-
-    h1 {
-        font-size: calc(var(--fontsize-h2) * 2);
-        font-weight: var(--fontweight-h2);
-        position: absolute;
-        bottom: 5rem;
-        left: 2rem;
-    }
 
     h2 {
         font-size: var(--fontsize-h2);
     }
 
     .left h3 {
-        font-family: var(--font-secondary);
         font-size: calc(var(--fontsize-h2) * 1.5);
-        position: absolute;
-        bottom: 2rem;
-        left: 2rem;
     }
 
 
     /* Lado derecho */
-    .right {
-        background-color: white;
-        width: 60vw;
-        padding-left: 4rem;
-        height: 100vh;
-    }
-
-    .right2 {
-        position: absolute;
-        bottom: 5rem;
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    .right h3 {
-        color: var(--color-main);
-        font-size: var(--fontsize-h2);
-        font-weight: 700;
-
-    }
-
-    .bar {
-        display: inline;
-        width: 2rem;
-        height: 19.5rem;
-        border-right: 5px solid var(--color-main);
-    }
-
-    label {
-        font-size: var(--fontsize-h3);
-        font-weight: 500;
-        font-family: var(--font-secondary);
-    }
 
     .input {
-        display: block;
         width: 30rem;
-        font-size: 0.8rem;
-        border: 1px solid var(--color-third);
-        padding: 1rem;
-        box-shadow: 10px 10px 0px var(--color-third);
-    }
-
-    input:focus {
-        outline: none;
-        border: 1px solid var(--color-second);
-
-    }
-
-    input::placeholder {
-        color: var(--color-third);
-        font-style: italic;
     }
 
     .button {
         margin-left: 20.5rem;
         padding: 1rem;
-        border: none;
-        color: white;
-        background-color: var(--color-second);
-        font-size: var(--fontsize-h4);
 
         &:hover {
             background-color: var(--color-main);
             border: none;
         }
-    }
-
-    /* Ojito ver constraseñas */
-    .pass {
-        display: inline;
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-    }
-
-    #togglePassword {
-        cursor: pointer;
-        user-select: none;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
     }
 }
