@@ -50,8 +50,10 @@ export class EditWorkerComponent {
       this.workerId = params['workerId']
       const response = await this.workersService.getWorkerById(this.workerId)
       //hay que pasarle un objeto con los mismo campos que definimos en el form group
-      const { name, surname, dni, phone, email, role, active, job, city, Constructions_id, image } = response
-      this.editWorker.setValue({ name, surname, dni, phone, email, role, active, job, city, Constructions_id, image })
+
+      const { name, surname, dni, phone, email, role, active, job, city,  image } = response
+      console.log(image)
+      this.editWorker.setValue({ name, surname, dni, phone, email, role, active, job, city,  image })
     })
   }
   async onSubmit() {

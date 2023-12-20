@@ -58,7 +58,7 @@ export class EditReportComponent {
           color: 'white',
           background: '#0f0f0f',
         }).then(() => {
-          this.router.navigate([`/constructions`]);
+          this.location.back();
           /*       this.router.navigate([`/constructions/construction/reports/${this.constructionId}`]) */
         });
       } catch (error) {
