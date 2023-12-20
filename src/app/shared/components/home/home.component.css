@@ -1,6 +1,6 @@
 /*imagenes home*/
 .calendario{
-  padding-top: 80px;
+
 }
 
 .contenedor{
@@ -107,7 +107,7 @@ ul li button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 90px;
+  padding: 0 150px;
 }
 
 .d-flex {
