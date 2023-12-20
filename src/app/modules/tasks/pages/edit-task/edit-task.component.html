@@ -1,7 +1,7 @@
 <section id="form-editReport">
-  <div class="back ms-5 mt-5">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    <div class="back ms-5 mt-5">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
 
     <h2 class="m-5">EDITAR TAREA </h2>
@@ -24,20 +24,18 @@
                 La descripción es obligatoria.</p>
             <p class="error" *ngIf="checkError('description','minlength')">La longitud mínima son 3 caracteres.</p>
         </div>
-
-        <div class="">
-            <label>Fecha de entrega:</label>
-            <input type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
-            <p class="error" *ngIf="checkError('deadline','required')">
-                La fecha de entrega obligatoria.</p>
-        </div>
         <div class="">
             <label>Fecha de asignación:</label>
             <input type="date" formControlName='assignment_date' placeholder="Inserta aquí la fecha de asignación">
             <p class="error" *ngIf="checkError('assignment_date','required')">
                 La fecha de asignación obligatoria.</p>
         </div>
-
+        <div class="">
+            <label>Fecha de entrega:</label>
+            <input type="date" formControlName='deadline' placeholder="Inserta aquí la fecha de entrega">
+            <p class="error" *ngIf="checkError('deadline','required')">
+                La fecha de entrega obligatoria.</p>
+        </div>
         <div class="">
             <label>Prioridad:</label>
             <select class="custom-select" formControlName="priority">

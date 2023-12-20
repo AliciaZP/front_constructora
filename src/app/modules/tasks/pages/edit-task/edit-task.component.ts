@@ -29,6 +29,8 @@ export class EditTaskComponent {
       deadline: new FormControl(null, Validators.required),
       assignment_date: new FormControl(null, Validators.required),
       priority: new FormControl(null, Validators.required),
+      Constructions_id: new FormControl(),
+      users_id: new FormControl()
     })
   }
 

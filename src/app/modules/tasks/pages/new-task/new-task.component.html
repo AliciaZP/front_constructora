@@ -1,7 +1,7 @@
-<section id="form-newReport" >
+<section id="form-newReport">
     <div class="back ms-5 mt-5">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
     <h2 class="m-5">NUEVA TAREA </h2>
 
@@ -36,13 +36,6 @@
                 </select>
                 <p class="error" *ngIf="checkError('priority','required')">La prioridad es obligatoria.</p>
             </div>
-            <div class="">
-                <label class="mb-1">Fecha de entrega:</label>
-                <input class="custom-option date" type="date" formControlName='deadline'
-                    placeholder="Inserta aquí la fecha de hoy">
-                <p class="error" *ngIf="checkError('deadline','required')">
-                    La fecha de entrega obligatoria.</p>
-            </div>
 
             <div class="">
                 <label class="mb-1">Fecha de asignación</label>
@@ -50,6 +43,13 @@
                     placeholder="Inserta aquí la fecha de hoy">
                 <p class="error" *ngIf="checkError('assignment_date','required')">
                     La fecha de asignación obligatoria.</p>
+            </div>
+            <div class="">
+                <label class="mb-1">Fecha de entrega:</label>
+                <input class="custom-option date" type="date" formControlName='deadline'
+                    placeholder="Inserta aquí la fecha de hoy">
+                <p class="error" *ngIf="checkError('deadline','required')">
+                    La fecha de entrega obligatoria.</p>
             </div>
 
             <div class="">
