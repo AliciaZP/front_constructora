@@ -1,7 +1,7 @@
 <section class="mx-5 mt-5">
-    <div class="back btn ms-4 mt-3 mb-3">
+    <div class="back btn mb-3">
         <i class="fa-solid fa-arrow-left "></i>
-        <h4 class="d-inline" (click)="goBack()"> Atrás</h4>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
     <h2 class="mb-4">LISTADO DE REPORTES</h2>
 
@@ -15,8 +15,6 @@
                         <option class="custom-option" value="">Todos</option>
                         <option class="custom-option" value="incidencias">Incidencias</option>
                         <option class="custom-option" value="actualizacion">Actualización</option>
-                        <!-- <option class="custom-option" *ngFor="let type of arrTypes" [value]="type">{{type}} -->
-                        <!-- </option> -->
                     </select>
                 </div>
             </div>
@@ -48,7 +46,7 @@
                 <button class="accordion-button custom-button" type="button" data-bs-toggle="collapse"
                     [attr.data-bs-target]="'#flush-collapse-' + i" aria-expanded="false"
                     [attr.aria-controls]="'flush-collapse-' + i"
-                    [ngClass]="{'red-title': report.type === 'incidencia', 'black-title': report.type === 'actualización'}">
+                    [ngClass]="{'red-title': report.type === 'incidencias', 'black-title': report.type === 'actualizacion'}">
                     <h4>{{report.title}}</h4>
                 </button>
             </h3>

@@ -8,6 +8,8 @@ import { ErrorComponent } from './shared/components/error/error.component';
 import { AboutUsComponent } from './shared/components/about-us/about-us.component';
 import { MapComponent } from './shared/components/map/map.component';
 import { authGuard } from './core/guards/auth.guard';
+import { ExtraComponent } from './shared/components/extra/extra.component';
+
 
 
 const routes: Routes = [
@@ -20,8 +22,10 @@ const routes: Routes = [
 
   { path: 'offices', component: OfficesComponent, canActivate: [authGuard] },
 
-  { path: 'news', component: NewsComponent, canActivate: [authGuard] },
-  { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard] },
+  { path: 'news', component: NewsComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'extra', component: ExtraComponent },
+
 
   {
     path: 'constructions',

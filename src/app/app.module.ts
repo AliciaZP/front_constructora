@@ -14,6 +14,8 @@ import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor
 import { GoogleMapsModule } from '@angular/google-maps';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     EditReportComponent,
     TasksComponent,
     NewTaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
+
 
   ],
   providers: [

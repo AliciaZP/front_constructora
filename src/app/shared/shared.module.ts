@@ -17,6 +17,10 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CardMapComponent } from './components/card-map/card-map.component';
+import { SemaforoComponent } from './components/semaforo/semaforo.component';
+import { ExtraComponent } from './components/extra/extra.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { CardMapComponent } from './components/card-map/card-map.component';
     CalendarComponent,
     AboutUsComponent,
     MapComponent,
-    CardMapComponent
+    CardMapComponent,
+    SemaforoComponent,
+    ExtraComponent
   ],
   imports: [
     CommonModule,

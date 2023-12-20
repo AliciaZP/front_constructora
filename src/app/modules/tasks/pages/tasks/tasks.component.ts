@@ -30,22 +30,18 @@ export class TasksComponent {
       this.userId = params.userId;
       const response = await this.tasksService.getTaskByCWId(this.userId, this.constructionId);
       this.arrTasks = response;
-
-
     })
   }
-
-
-
 
   //Aqui empiezan los fitros
   onChangePriority($event: any) {
   };
   onChangeDeadline($event: any) {
   };
-
   onChangeAssignmentDate($event: any) {
   };
 
-
 }
+
+
+

@@ -1,8 +1,8 @@
 <section id="form-newworker">
 
-  <div class="back ms-5 mt-5">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    <div class="back ms-5 mt-5">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
 
     <h2 class="m-5">NUEVO OPERARIO</h2>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="">
-            <label>Apellido</label>
+            <label>Apellidos:</label>
             <input type="text" formControlName='surname' placeholder="Inserta aquí el apellido del operario">
             <p class="error" *ngIf="checkError('surname','required')">
                 El apellido es obligatorio.</p>
@@ -27,14 +27,14 @@
         </div>
 
         <div class="">
-            <label>Fotografía del operario (300 x 300 px) </label>
+            <label>Fotografía del operario:</label>
             <input type="text" formControlName='image' placeholder="Inserta aquí la url de la imagen">
             <p class="error" *ngIf="checkError('image','required')">
                 La imagen es obligatoria.</p>
         </div>
 
         <div class="">
-            <label>Dni</label>
+            <label>Dni:</label>
             <input type="text" formControlName='dni' placeholder="Inserta aquí el DNI del operario">
             <p class="error" *ngIf="checkError('dni','required')">El
                 dni es obligatorio.</p>
