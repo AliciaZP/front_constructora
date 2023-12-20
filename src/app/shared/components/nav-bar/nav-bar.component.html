@@ -28,8 +28,9 @@
             [routerLink]="['/constructions', 'construction', userLogged?.Constructions_id]">MI OBRA</li>
           <li class="nav-item" *ngIf="userLogged?.role == 'admin'" [routerLink]="['/workers']">USUARIOS</li>
           <li class="nav-item" [routerLink]="['/offices']">SEDES</li>
-          <li class="nav-item" [routerLink]="['/error']">NOTICIAS</li>
+          <li class="nav-item" [routerLink]="['/news']">NOTICIAS</li>
           <li class="nav-item" [routerLink]="['/about-us']">NOSOTROS</li>
+          <li class="nav-item" [routerLink]="['/extra']">EXTRA</li>
         </ul>
       </div>
       <!-- </div> -->

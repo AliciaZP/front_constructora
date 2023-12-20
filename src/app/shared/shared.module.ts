@@ -16,6 +16,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MapComponent } from './components/map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { SemaforoComponent } from './components/semaforo/semaforo.component';
+import { ExtraComponent } from './components/extra/extra.component';
 
 
 
@@ -32,7 +34,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NewsComponent,
     CalendarComponent,
     AboutUsComponent,
-    MapComponent
+    MapComponent,
+    SemaforoComponent,
+    ExtraComponent
   ],
   imports: [
     CommonModule,
