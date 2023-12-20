@@ -180,6 +180,27 @@ span {
 
 /* mediaqueries */
 
+@media(max-width: 70rem) {
+  input {
+      width: 30rem;
+  }
+
+  select {
+      width: 30rem;
+  }
+
+  textarea {
+      width: 30rem;
+  }
+
+  .date {
+      width: 30rem;
+  }
+
+
+}
+
+
 @media(max-width: 35rem) {
   input {
       width: 20rem;
