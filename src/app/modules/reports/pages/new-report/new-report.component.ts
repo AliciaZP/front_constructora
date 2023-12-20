@@ -29,7 +29,6 @@ export class NewReportComponent {
   constructor() {
 
     this.newReport = new FormGroup({
-
       title: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(70)]),
       description: new FormControl(null, [Validators.required, Validators.minLength(3)]),

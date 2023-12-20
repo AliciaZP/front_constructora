@@ -6,7 +6,7 @@
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
-                    <label class="pe-3 pb-2"><span>Selecciona por disponibilidad:</span></label>
+                    <label class="pe-3 pb-2"><span>Seleccionar Disponibilidad:</span></label>
                     <select class="custom-select" (change)="onChangeActive($event)">
                         <option class="custom-option" value="">Todos</option>
                         <option class="custom-option" value="1">Ocupado</option>
@@ -21,7 +21,7 @@
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
-                    <label class="pe-3 pb-2"><span>Selecciona la ciudad:</span></label>
+                    <label class="pe-3 pb-2"><span>Seleccionar Ciudad:</span></label>
                     <select class="custom-select" (change)="onChangeCity($event)">
                         <option class="custom-option" value="">Todas</option>
                         <option class="custom-option" *ngFor="let city of arrCities" [value]="city">{{city}}
@@ -34,7 +34,7 @@
             <div>
                 <h4 class="mb-2 pt-3">Filtrar:</h4>
                 <div>
-                    <label class="pe-3 pb-2"><span>Selecciona el puesto:</span></label>
+                    <label class="pe-3 pb-2"><span>Seleccionar Puesto:</span></label>
                     <select class="custom-select" (change)="onChangeJob($event)">
                         <option class="custom-option" value="">Todos</option>
                         <option class="custom-option" *ngFor="let job of arrJobs" [value]="job">{{job}}</option>

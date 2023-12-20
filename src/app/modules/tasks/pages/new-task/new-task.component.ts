@@ -21,24 +21,23 @@ export class NewTaskComponent {
 
   router = inject(Router)
 
-  ngOnInit(){
+  ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
       this.constructionId = parseInt(params.constructionId);
       this.userId = parseInt(params.userId);
     });
 
-    this.newTask.get('Constructions_id')?.setValue( this.constructionId);
-    this.newTask.get('users_id')?.setValue( this.userId);
+    this.newTask.get('Constructions_id')?.setValue(this.constructionId);
+    this.newTask.get('users_id')?.setValue(this.userId);
   }
 
   constructor() {
     this.newTask = new FormGroup({
-      id: new FormControl(),
-      title: new FormControl(),
-      description: new FormControl(),
-      deadline: new FormControl(),
-      assignment_date: new FormControl(),
-      priority: new FormControl(),
+      title: new FormControl(null, Validators.required),
+      description: new FormControl(null, Validators.required),
+      deadline: new FormControl(null, Validators.required),
+      assignment_date: new FormControl(null, Validators.required),
+      priority: new FormControl(null, Validators.required),
       Constructions_id: new FormControl(),
       users_id: new FormControl()
     })
@@ -77,7 +76,7 @@ export class NewTaskComponent {
 
     } catch (error) {
       console.log(error);
-  }
+    }
   }
   checkError(controlName: string, errorName: string) {
     return this.newTask.get(controlName)?.hasError(errorName) && this.newTask.get(controlName)?.touched;

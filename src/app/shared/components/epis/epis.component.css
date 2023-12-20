@@ -7,15 +7,15 @@
 
 .epi {
     position: fixed;
-    top: 15.25rem;
-    left: 11.25rem;
+    top: 248px;
+    left: 180px;
     font-size: 2rem;
 }
 
 .logo {
     text-align: left;
     position: fixed;
-    bottom: 10px;
+    bottom: 35px;
     left: 20px;
 }
 

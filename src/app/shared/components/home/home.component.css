@@ -1,6 +1,6 @@
 /*imagenes home*/
 .calendario{
-  padding-top: 80px;
+
 }
 
 .contenedor{
@@ -107,7 +107,7 @@ ul li button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 90px;
+  padding: 0 150px;
 }
 
 .d-flex {
@@ -161,5 +161,41 @@ ul li button {
   align-items: center;
   padding: 0px;
 }
+
+}
+
+
+@media(max-width: 1400px) {
+
+
+
+  ul li button {
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    &:hover {
+        background-color: var(--color-second);
+    }
+  }
+
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+
 
 }

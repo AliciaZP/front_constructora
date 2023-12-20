@@ -1,8 +1,8 @@
 <section class="mx-5 mt-5">
 
-  <div class="back ms-2 mt-3 mb-4">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" [routerLink]="['/constructions', 'construction', this.constructionId]"> Volver</h4>
+    <div class="back ms-2 mt-3 mb-4">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" [routerLink]="['/constructions', 'construction', this.constructionId]"> Volver</h4>
     </div>
     <h2 class="mb-4">LISTADO DE TAREAS</h2>
 
@@ -22,26 +22,24 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
-            <div class="pb-2">
-                <h4 class="mb-2 pt-3">Ordenar:</h4>
 
-                <label class="pe-3 pb-2"><span>Fecha de asignación:</span></label>
-                <select class="custom-select" (change)="onChangeAssignmentDate($event)">
-                    <option class="custom-option" value="reciente">Más reciente</option>
-                    <option class="custom-option" value="antiguo">Más antigua</option>
-                </select>
+        <div class="pb-2 col-sm-3">
+            <h4 class="mb-2 pt-3">Ordenar:</h4>
 
-            </div>
-            <div class="pb-2">
+            <label class="pe-3 pb-2"><span>Fecha de asignación:</span></label>
+            <select class="custom-select" (change)="onChangeAssignmentDate($event)">
+                <option class="custom-option" value="desc">Más reciente</option>
+                <option class="custom-option" value="asc">Más antigua</option>
+            </select>
 
-                <label class="pe-3 pb-2"><span>Fecha de entrega:</span></label>
-                <select class="custom-select" (change)="onChangeDeadline($event)">
-                    <option class="custom-option" value="reciente">Más reciente</option>
-                    <option class="custom-option" value="antiguo">Más antigua</option>
-                </select>
-
-            </div>
+        </div>
+        <div class="pb-2 col-sm-3">
+            <h4 class="mb-2 pt-3">Ordenar:</h4>
+            <label class="pe-3 pb-2"><span>Fecha de entrega:</span></label>
+            <select class="custom-select" (change)="onChangeDeadline($event)">
+                <option class="custom-option" value="desc">Más reciente</option>
+                <option class="custom-option" value="asc">Más antigua</option>
+            </select>
         </div>
 
         <!-- <div class="col-sm-2">
@@ -56,7 +54,7 @@
                 <button class="accordion-button custom-button" type="button" data-bs-toggle="collapse"
                     [attr.data-bs-target]="'#flush-collapse-' + i" aria-expanded="false"
                     [attr.aria-controls]="'flush-collapse-' + i"
-                    [ngClass]="{'red-title': task.priority === 'incidencia', 'black-title': task.priority === 'actualización'}">
+                    [ngClass]="{'red-title': task.priority === 'alta', 'golden-title': task.priority === 'media', 'green-title': task.priority === 'baja'}">
                     <h4>{{task.title}}</h4>
                 </button>
             </h3>
@@ -67,16 +65,18 @@
                 </div>
             </div>
             <div class="p-3 mb-3">
-                <p class="mb-3"><span><i class="fa-solid fa-circle-exclamation"></i> PRIORIDAD DE LA TAREA:</span>
+                <p class="mb-4"><span><i class="fa-solid fa-circle-exclamation"></i> PRIORIDAD DE LA TAREA:</span>
                     {{task.priority}}</p>
-                <p><span><i class="fa-solid fa-calendar-days"></i> PLAZO MÁXIMO:</span> {{task.deadline |
+                <p><span><i class="fa-solid fa-calendar-days mb-2 "></i> PLAZO MÁXIMO:</span> {{task.deadline |
                     date:'dd-MM-yyyy'}}
                 </p>
-                <p><span><i class="fa-solid fa-calendar-days"></i> FECHA DE ASIGNACIÓN:</span> {{task.assignment_date|
+                <p><span><i class="fa-solid fa-calendar-days"></i> FECHA DE ASIGNACIÓN:</span>
+                    {{task.assignment_date|
                     date:'dd-MM-yyyy'}}
                 </p>
             </div>
-            <button class="mb-4 edit" *ngIf="botonActivo" [routerLink]="['/tasks','edit', task.id, task.users_id, task.Constructions_id]">Editar
+            <button class="mb-4 edit" *ngIf="botonActivo"
+                [routerLink]="['/tasks','edit', task.id, task.users_id, task.Constructions_id]">Editar
                 Tarea
             </button>
         </article>

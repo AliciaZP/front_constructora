@@ -18,8 +18,6 @@ export class NewConstructionComponent {
   location = inject(Location);
   router = inject(Router)
 
-
-
   constructor() {
     this.newConstruction = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.minLength(3),
@@ -38,6 +36,8 @@ export class NewConstructionComponent {
       work_time: new FormControl(null, [Validators.required, Validators.minLength(3),
       Validators.maxLength(150)]),
       image: new FormControl(null, Validators.required),
+      lat: new FormControl(null, Validators.required),
+      lng: new FormControl(null, Validators.required),
     })
   }
 

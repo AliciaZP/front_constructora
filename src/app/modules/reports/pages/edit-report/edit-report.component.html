@@ -1,7 +1,7 @@
 <section id="form-editReport">
-  <div class="back ms-5 mt-5">
-    <i class="fa-solid fa-arrow-left "></i>
-    <h4 class="d-inline" (click)="goBack()"> Volver</h4>
+    <div class="back ms-5 mt-5">
+        <i class="fa-solid fa-arrow-left "></i>
+        <h4 class="d-inline" (click)="goBack()"> Volver</h4>
     </div>
     <h2 class="m-5">EDITAR REPORTE </h2>
     <form [formGroup]='editReport' (ngSubmit)="onSubmit()">
@@ -26,7 +26,7 @@
 
         <div class="">
             <label>Fecha de creación:</label>
-            <input type="text" formControlName='date' placeholder="Inserta aquí la fecha de creacion">
+            <input type="date" formControlName='date' placeholder="Inserta aquí la fecha de creacion">
             <p class="error" *ngIf="checkError('date','required')">
                 La fecha de creación obligatoria.</p>
         </div>

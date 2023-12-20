@@ -4,18 +4,23 @@ h2 {
     font-size: var(--fontsize-h2);
     font-weight: var(--fontweight-h2);
 }
+
 .back {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+.back i {
+    color: var(--color-second);
 }
 
 .back h4 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-second);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-second);
 
-  &:hover {
-      color: var(--color-main);
-  }
+    &:hover {
+        color: var(--color-main);
+    }
 }
 
 /* filtros */
@@ -27,6 +32,7 @@ h2 {
     color: var(--color-main);
     font-size: var(--fontsize-h4);
     font-weight: var(--fontweight-h4);
+    font-family: var(--font-secondary);
 }
 
 .custom-select {
@@ -52,10 +58,9 @@ h2 {
     color: white;
     background-color: var(--color-second);
     border: none;
-    padding: 1rem;
+    padding: 0.5rem;
     font-weight: 700;
     line-height: var(--font-lineheight);
-    border-radius: 10px;
 
     &:hover {
         background-color: var(--color-main);
